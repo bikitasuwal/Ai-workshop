@@ -1,0 +1,27 @@
+# dependencies (installed with: npm run setup)
+node_modules/
+
+# secrets and local settings: never commit these (copy the .env.example files instead)
+.env
+.env.*
+!.env.example
+
+# build output and generated files
+dist/
+.next/
+.next-*/
+*.tsbuildinfo
+next-env.d.ts
+
+# visitor photo uploads and local database files live only on each computer
+backend/uploads/
+
+# original WhatsApp files (resized copies are already in frontend/public/media)
+WhatsApp *
+
+# logs and editor/OS clutter
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
