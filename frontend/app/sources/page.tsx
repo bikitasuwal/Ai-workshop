@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageLayout from "@/components/ui/PageLayout";
 import { Reveal, SectionTitle } from "@/components/ui";
 import { limitations, sources } from "@/lib/content";
 
@@ -6,7 +7,7 @@ export const metadata: Metadata = { title: "Sources | Balaju Living Heritage" };
 
 export default function Sources() {
   return (
-    <section className="mx-auto max-w-2xl px-5 py-12">
+    <PageLayout variant="narrow">
       <Reveal>
         <SectionTitle ne="स्रोतहरू" en="Sources & open questions" />
         <p className="mx-auto mt-3 max-w-md text-center text-wood/80">
@@ -42,6 +43,6 @@ export default function Sources() {
           ))}
         </ol>
       </Reveal>
-    </section>
+    </PageLayout>
   );
 }

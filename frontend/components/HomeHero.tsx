@@ -25,7 +25,7 @@ export default function HomeHero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto grid max-w-5xl items-center gap-8 px-5 pb-16 pt-10 md:grid-cols-2 md:py-20">
+      <div className="relative mx-auto grid max-w-5xl items-center gap-8 px-5 pb-16 pt-24 md:grid-cols-2 md:py-20">
         <motion.div variants={container} initial="hidden" animate="show" className="text-center md:text-left">
           <motion.p variants={item} className="font-deva text-base font-semibold tracking-wide text-marigold">
             बैसधारा · प्याः थ्वँ अजिमा

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import VideoWalk from "@/components/VideoWalk";
 import VisitorPhotos from "@/components/VisitorPhotos";
+import PageLayout from "@/components/ui/PageLayout";
 import { Reveal, SectionTitle } from "@/components/ui";
 import { places } from "@/lib/places";
 
@@ -10,7 +11,7 @@ export const metadata: Metadata = { title: "Gallery | Balaju Living Heritage" };
 
 export default function Gallery() {
   return (
-    <section className="mx-auto max-w-3xl px-5 py-12">
+    <PageLayout variant="narrow">
       <Reveal>
         <SectionTitle ne="ग्यालरी" en="Gallery" />
         <p className="mx-auto mt-3 max-w-md text-center text-wood/80">
@@ -65,6 +66,6 @@ export default function Gallery() {
           </Link>
         </div>
       </Reveal>
-    </section>
+    </PageLayout>
   );
 }

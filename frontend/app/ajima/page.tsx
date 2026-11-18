@@ -3,6 +3,7 @@ import Link from "next/link";
 import FactAccordion from "@/components/FactAccordion";
 import AskButton from "@/components/AskButton";
 import PanoramaViewer from "@/components/PanoramaViewer";
+import PageLayout from "@/components/ui/PageLayout";
 import { scenes } from "@/lib/places";
 import { Reveal, SectionTitle } from "@/components/ui";
 import { byPlace } from "@/lib/content";
@@ -12,7 +13,7 @@ export const metadata: Metadata = { title: "Pyah Thwam Ajima | Balaju Living Her
 export default function Ajima() {
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-wood via-brick-deep to-brick px-5 pb-20 pt-12 text-center text-cream">
+      <section className="relative overflow-hidden bg-gradient-to-b from-wood via-brick-deep to-brick px-5 pb-20 pt-24 text-center text-cream">
         <div className="lattice absolute inset-0 opacity-[0.07]" aria-hidden />
         <Reveal className="relative mx-auto max-w-xl">
           <svg viewBox="0 0 120 70" className="mx-auto mb-3 h-16" aria-hidden>
@@ -33,22 +34,25 @@ export default function Ajima() {
       </section>
 
       {/* Respect note */}
-      <section className="mx-auto max-w-2xl px-5 pt-10">
-        <Reveal>
-          <aside className="flex gap-4 rounded-2xl border-2 border-dashed border-marigold bg-paper/80 p-5">
-            <svg viewBox="0 0 40 40" className="h-10 w-10 shrink-0" aria-hidden>
-              <path d="M20 4c4 4 5 7 0 11-5-4-4-7 0-11Z" fill="#e8a317" className="flame" />
-              <path d="M6 21h28c0 7-6 12-14 12S6 28 6 21Z" fill="#8b2e1f" />
-            </svg>
-            <p className="text-[15px] text-wood/90">
-              <strong>Please be respectful.</strong> This is a living place of worship. Some rituals may be private or
-              restricted, so ask the Guthi before photographing or recording.
-            </p>
-          </aside>
-        </Reveal>
-      </section>
+      <PageLayout variant="narrow" underHero>
+        <PageLayout.Section>
+          <Reveal>
+            <aside className="flex gap-4 rounded-2xl border-2 border-dashed border-marigold bg-paper/80 p-5">
+              <svg viewBox="0 0 40 40" className="h-10 w-10 shrink-0" aria-hidden>
+                <path d="M20 4c4 4 5 7 0 11-5-4-4-7 0-11Z" fill="#e8a317" className="flame" />
+                <path d="M6 21h28c0 7-6 12-14 12S6 28 6 21Z" fill="#8b2e1f" />
+              </svg>
+              <p className="text-[15px] text-wood/90">
+                <strong>Please be respectful.</strong> This is a living place of worship. Some rituals may be private or
+                restricted, so ask the Guthi before photographing or recording.
+              </p>
+            </aside>
+          </Reveal>
+        </PageLayout.Section>
+      </PageLayout>
 
-      <section className="relative mt-10 overflow-hidden bg-gradient-to-b from-wood to-brick-deep px-5 py-14 text-cream">
+      {/* Full-bleed panorama band */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-wood to-brick-deep px-5 py-14 text-cream">
         <div className="lattice absolute inset-0 opacity-[0.06]" aria-hidden />
         <div className="relative mx-auto max-w-2xl">
           <Reveal>
@@ -60,34 +64,36 @@ export default function Ajima() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-2xl px-5 py-10">
-        <Reveal>
-          <SectionTitle ne="अजिमाको कथा" en="The Ajima, in short pieces" />
-          <p className="mx-auto mt-2 max-w-md text-center text-wood/75">
-            Local reporting and oral tradition are marked as such. Where details need confirming, we say so.
-          </p>
-        </Reveal>
-        <div className="mt-6">
-          <FactAccordion items={byPlace("ajima")} accent="brick" />
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-2xl px-5 pb-6">
-        <Reveal>
-          <div className="wood-frame rounded-3xl bg-teal-deep p-6 text-center text-cream">
-            <h2 className="font-display text-2xl">See the water side of the story</h2>
-            <p className="mt-2 text-cream/85">The Ajima and the 22 spouts are two parts of one tradition.</p>
-            <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
-              <Link href="/dhara" className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-marigold px-6 font-semibold text-wood active:scale-95">
-                Visit 22 Dhara
-              </Link>
-              <AskButton question="What is Dristi Lekhan?" className="min-h-[50px] rounded-full border-2 border-marigold/70 px-6 font-semibold active:scale-95">
-                Ask about Dristi Lekhan
-              </AskButton>
-            </div>
+      <PageLayout variant="narrow" underHero>
+        <PageLayout.Section>
+          <Reveal>
+            <SectionTitle ne="अजिमाको कथा" en="The Ajima, in short pieces" />
+            <p className="mx-auto mt-2 max-w-md text-center text-wood/75">
+              Local reporting and oral tradition are marked as such. Where details need confirming, we say so.
+            </p>
+          </Reveal>
+          <div className="mt-6">
+            <FactAccordion items={byPlace("ajima")} accent="brick" />
           </div>
-        </Reveal>
-      </section>
+        </PageLayout.Section>
+
+        <PageLayout.Section>
+          <Reveal>
+            <div className="wood-frame rounded-3xl bg-teal-deep p-6 text-center text-cream">
+              <h2 className="font-display text-2xl">See the water side of the story</h2>
+              <p className="mt-2 text-cream/85">The Ajima and the 22 spouts are two parts of one tradition.</p>
+              <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
+                <Link href="/dhara" className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-marigold px-6 font-semibold text-wood active:scale-95">
+                  Visit 22 Dhara
+                </Link>
+                <AskButton question="What is Dristi Lekhan?" className="min-h-[50px] rounded-full border-2 border-marigold/70 px-6 font-semibold active:scale-95">
+                  Ask about Dristi Lekhan
+                </AskButton>
+              </div>
+            </div>
+          </Reveal>
+        </PageLayout.Section>
+      </PageLayout>
     </>
   );
 }

@@ -5,6 +5,7 @@ import SpoutGrid from "@/components/SpoutGrid";
 import AskButton from "@/components/AskButton";
 import PanoramaViewer from "@/components/PanoramaViewer";
 import VideoWalk from "@/components/VideoWalk";
+import PageLayout from "@/components/ui/PageLayout";
 import { scenes } from "@/lib/places";
 import { Reveal, SectionTitle } from "@/components/ui";
 import { byPlace } from "@/lib/content";
@@ -14,7 +15,7 @@ export const metadata: Metadata = { title: "22 Dhara (Baisdhara) | Balaju Living
 export default function Dhara() {
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-teal-deep to-teal px-5 pb-20 pt-12 text-center text-cream">
+      <section className="relative overflow-hidden bg-gradient-to-b from-teal-deep to-teal px-5 pb-20 pt-24 text-center text-cream">
         <div className="lattice absolute inset-0 opacity-[0.07]" aria-hidden />
         <Reveal className="relative mx-auto max-w-xl">
           <p className="font-deva text-base font-semibold text-marigold">२२ धारा · बैसधारा</p>
@@ -36,24 +37,27 @@ export default function Dhara() {
         </svg>
       </section>
 
-      <section className="mx-auto max-w-xl px-5 py-12">
-        <Reveal>
-          <SectionTitle ne="धाराहरू" en="Meet the spouts" />
-        </Reveal>
-        <Reveal className="mt-6">
-          <SpoutGrid />
-        </Reveal>
-      </section>
+      <PageLayout variant="narrow" underHero>
+        <PageLayout.Section>
+          <Reveal>
+            <SectionTitle ne="धाराहरू" en="Meet the spouts" />
+          </Reveal>
+          <Reveal className="mt-6">
+            <SpoutGrid />
+          </Reveal>
+        </PageLayout.Section>
 
-      <section className="mx-auto max-w-xl px-5 pb-12">
-        <Reveal>
-          <SectionTitle ne="हिँडेर हेर्नुहोस्" en="Walk along the spouts" />
-        </Reveal>
-        <Reveal className="mt-6">
-          <VideoWalk />
-        </Reveal>
-      </section>
+        <PageLayout.Section>
+          <Reveal>
+            <SectionTitle ne="हिँडेर हेर्नुहोस्" en="Walk along the spouts" />
+          </Reveal>
+          <Reveal className="mt-6">
+            <VideoWalk />
+          </Reveal>
+        </PageLayout.Section>
+      </PageLayout>
 
+      {/* Full-bleed panorama band */}
       <section className="relative overflow-hidden bg-gradient-to-b from-wood to-teal-deep px-5 py-14 text-cream">
         <div className="lattice absolute inset-0 opacity-[0.06]" aria-hidden />
         <div className="relative mx-auto max-w-2xl">
@@ -66,34 +70,36 @@ export default function Dhara() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-2xl px-5 py-12">
-        <Reveal>
-          <SectionTitle ne="कथा र आस्था" en="The story, in short pieces" />
-          <p className="mx-auto mt-2 max-w-md text-center text-wood/75">
-            Tap a title to open it. The seal above each piece tells you how well it is documented.
-          </p>
-        </Reveal>
-        <div className="mt-6">
-          <FactAccordion items={byPlace("dhara")} accent="teal" />
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-2xl px-5 pb-6">
-        <Reveal>
-          <div className="wood-frame rounded-3xl bg-brick p-6 text-center text-cream">
-            <h2 className="font-display text-2xl">Continue to Pyah Thwam Ajima</h2>
-            <p className="mt-2 text-cream/85">After bathing, many devotees worship at the nearby Ajima shrine.</p>
-            <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
-              <Link href="/ajima" className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-marigold px-6 font-semibold text-wood active:scale-95">
-                Visit the shrine page
-              </Link>
-              <AskButton question="What is 22 Dhara?" className="min-h-[50px] rounded-full border-2 border-marigold/70 px-6 font-semibold active:scale-95">
-                Ask the guide
-              </AskButton>
-            </div>
+      <PageLayout variant="narrow" underHero>
+        <PageLayout.Section>
+          <Reveal>
+            <SectionTitle ne="कथा र आस्था" en="The story, in short pieces" />
+            <p className="mx-auto mt-2 max-w-md text-center text-wood/75">
+              Tap a title to open it. The seal above each piece tells you how well it is documented.
+            </p>
+          </Reveal>
+          <div className="mt-6">
+            <FactAccordion items={byPlace("dhara")} accent="teal" />
           </div>
-        </Reveal>
-      </section>
+        </PageLayout.Section>
+
+        <PageLayout.Section>
+          <Reveal>
+            <div className="wood-frame rounded-3xl bg-brick p-6 text-center text-cream">
+              <h2 className="font-display text-2xl">Continue to Pyah Thwam Ajima</h2>
+              <p className="mt-2 text-cream/85">After bathing, many devotees worship at the nearby Ajima shrine.</p>
+              <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
+                <Link href="/ajima" className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-marigold px-6 font-semibold text-wood active:scale-95">
+                  Visit the shrine page
+                </Link>
+                <AskButton question="What is 22 Dhara?" className="min-h-[50px] rounded-full border-2 border-marigold/70 px-6 font-semibold active:scale-95">
+                  Ask the guide
+                </AskButton>
+              </div>
+            </div>
+          </Reveal>
+        </PageLayout.Section>
+      </PageLayout>
     </>
   );
 }

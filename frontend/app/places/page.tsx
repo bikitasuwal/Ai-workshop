@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PlaceCard from "@/components/PlaceCard";
+import PageLayout from "@/components/ui/PageLayout";
 import { Reveal, SectionTitle } from "@/components/ui";
 import { places } from "@/lib/places";
 
@@ -7,7 +8,7 @@ export const metadata: Metadata = { title: "Places | Balaju Living Heritage" };
 
 export default function Places() {
   return (
-    <section className="mx-auto max-w-3xl px-5 py-12">
+    <PageLayout variant="narrow">
       <Reveal>
         <SectionTitle ne="स्थानहरू" en="The places" />
         <p className="mx-auto mt-3 max-w-md text-center text-wood/80">
@@ -21,6 +22,6 @@ export default function Places() {
           </Reveal>
         ))}
       </div>
-    </section>
+    </PageLayout>
   );
 }

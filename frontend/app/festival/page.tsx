@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import FactAccordion from "@/components/FactAccordion";
 import AskButton from "@/components/AskButton";
+import PageLayout from "@/components/ui/PageLayout";
 import { Reveal, SectionTitle, Stamp } from "@/components/ui";
 import { byPlace } from "@/lib/content";
 
@@ -9,7 +10,7 @@ export const metadata: Metadata = { title: "Lhuti Punhi & Baisdhara Mela | Balaj
 export default function Festival() {
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-teal-deep to-wood px-5 pb-20 pt-12 text-center text-cream">
+      <section className="relative overflow-hidden bg-gradient-to-b from-teal-deep to-wood px-5 pb-20 pt-24 text-center text-cream">
         <div className="lattice absolute inset-0 opacity-[0.06]" aria-hidden />
         <svg className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden>
           {[10, 28, 46, 64, 82, 94].map((x, i) => (
@@ -33,36 +34,38 @@ export default function Festival() {
         </svg>
       </section>
 
-      {/* date card */}
-      <section className="mx-auto max-w-2xl px-5 pt-10">
-        <Reveal>
-          <div className="wood-frame rounded-3xl bg-paper p-6 text-center">
-            <p className="font-deva text-sm font-semibold text-vermilion">मिति</p>
-            <h2 className="font-display text-2xl text-brick">This year&apos;s date</h2>
-            <div className="mt-3 flex justify-center">
-              <Stamp type="verify" size="md" />
+      <PageLayout variant="narrow" underHero>
+        {/* date card */}
+        <PageLayout.Section>
+          <Reveal>
+            <div className="wood-frame rounded-3xl bg-paper p-6 text-center">
+              <p className="font-deva text-sm font-semibold text-vermilion">मिति</p>
+              <h2 className="font-display text-2xl text-brick">This year&apos;s date</h2>
+              <div className="mt-3 flex justify-center">
+                <Stamp type="verify" size="md" />
+              </div>
+              <p className="mx-auto mt-3 max-w-md text-[17px] text-wood/85">
+                Reports disagree: some say the full moon of Chaitra, one 2024 report says Baisakh. We will publish the
+                date only after it is confirmed by the local committee or Guthi.
+              </p>
             </div>
-            <p className="mx-auto mt-3 max-w-md text-[17px] text-wood/85">
-              Reports disagree: some say the full moon of Chaitra, one 2024 report says Baisakh. We will publish the
-              date only after it is confirmed by the local committee or Guthi.
-            </p>
-          </div>
-        </Reveal>
-      </section>
+          </Reveal>
+        </PageLayout.Section>
 
-      <section className="mx-auto max-w-2xl px-5 py-10">
-        <Reveal>
-          <SectionTitle ne="पर्वको बारेमा" en="About the festival" />
-        </Reveal>
-        <div className="mt-6">
-          <FactAccordion items={byPlace("festival")} accent="teal" />
-        </div>
-        <Reveal className="mt-8 text-center">
-          <AskButton question="When is Lhuti Punhi?" className="min-h-[52px] rounded-full bg-brick px-7 font-semibold text-cream active:scale-95">
-            Ask the guide about the festival
-          </AskButton>
-        </Reveal>
-      </section>
+        <PageLayout.Section>
+          <Reveal>
+            <SectionTitle ne="पर्वको बारेमा" en="About the festival" />
+          </Reveal>
+          <div className="mt-6">
+            <FactAccordion items={byPlace("festival")} accent="teal" />
+          </div>
+          <Reveal className="mt-8 text-center">
+            <AskButton question="When is Lhuti Punhi?" className="min-h-[52px] rounded-full bg-brick px-7 font-semibold text-cream active:scale-95">
+              Ask the guide about the festival
+            </AskButton>
+          </Reveal>
+        </PageLayout.Section>
+      </PageLayout>
     </>
   );
 }

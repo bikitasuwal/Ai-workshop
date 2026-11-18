@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Sign in | Balaju Living Heritage" };
 
 export default function Login() {
   return (
-    <section className="mx-auto max-w-md px-5 py-12">
+    <section className="mx-auto max-w-md px-5 pb-12 pt-24">
       <Reveal>
         <SectionTitle ne="प्रवेश" en="Sign in" />
         <p className="mx-auto mt-3 text-center text-wood/80">Welcome back. Sign in to share your visit.</p>
