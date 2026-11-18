@@ -85,7 +85,7 @@ export default function MobileMenu({ links }: { links: NavLink[] }) {
       {open && (
         <button
           type="button"
-          aria-label="Close navigation menu"
+          aria-label={t("nav.closeMenu", "Close navigation menu")}
           onClick={() => setOpen(false)}
           className="fixed inset-0 z-40 cursor-default bg-wood/50 backdrop-blur-sm lg:hidden"
         />
@@ -104,7 +104,7 @@ export default function MobileMenu({ links }: { links: NavLink[] }) {
           <button
             type="button"
             onClick={() => setOpen(false)}
-            aria-label="Close navigation menu"
+            aria-label={t("nav.closeMenu", "Close navigation menu")}
             className="rounded-sm p-2 text-wood transition-colors hover:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-marigold"
           >
             <svg

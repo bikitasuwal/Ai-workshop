@@ -62,13 +62,13 @@ export default function NavbarShell({ links }: { links: NavLink[] }) {
       }`}
     >
       <nav
-        aria-label="Main"
+        aria-label={t("nav.mainNav", "Main")}
         className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
       >
         {/* Wordmark: Devanagari name over the English eyebrow */}
         <Link
           href="/"
-          aria-label="Balaju Living Heritage — go to the homepage"
+          aria-label={t("nav.homeLink", "Balaju Living Heritage — go to the homepage")}
           className="group flex shrink-0 flex-col leading-none"
         >
           <span className="font-display text-xl text-marigold transition-colors duration-200 group-hover:text-cream">

@@ -132,7 +132,9 @@ export default function Home() {
                 <div className="w-40 shrink-0">
                   <Stamp type={type} />
                 </div>
-                <p className="text-[15px] text-wood/85">{evidenceMeta[type].hint}</p>
+                <p className="text-[15px] text-wood/85">
+                  {t(`evidence.${type}.hint`, evidenceMeta[type].hint)}
+                </p>
               </div>
             </Reveal>
           ))}
@@ -147,15 +149,18 @@ export default function Home() {
             <h2 className="font-display text-3xl">{t("home.ask.title")}</h2>
             <p className="mt-2 text-cream/85">{t("home.ask.body")}</p>
             <div className="mt-5 flex flex-wrap justify-center gap-2">
-              {chatSuggestions.map((q) => (
-                <AskButton
-                  key={q}
-                  question={q}
-                  className="min-h-[44px] rounded-full border border-marigold/70 px-4 text-sm text-cream transition active:scale-95 hover:bg-marigold hover:text-wood"
-                >
-                  {q}
-                </AskButton>
-              ))}
+              {chatSuggestions.map((q, i) => {
+                const question = t(`chatSuggestions.${i}`, q);
+                return (
+                  <AskButton
+                    key={q}
+                    question={question}
+                    className="min-h-[44px] rounded-full border border-marigold/70 px-4 text-sm text-cream transition active:scale-95 hover:bg-marigold hover:text-wood"
+                  >
+                    {question}
+                  </AskButton>
+                );
+              })}
             </div>
           </div>
         </Reveal>

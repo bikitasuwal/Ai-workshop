@@ -5,6 +5,7 @@ import Image from "next/image";
 import "@photo-sphere-viewer/core/index.css";
 import type { Viewer } from "@photo-sphere-viewer/core";
 import type { Scene } from "@/lib/places";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 /** Partial-panorama data: place a flat photo on the sphere at its real field of view. */
 function panoDataFor(s: Scene) {
@@ -37,7 +38,10 @@ export default function PanoramaViewer({
   const [error, setError] = useState(false);
   const box = useRef<HTMLDivElement>(null);
   const viewer = useRef<Viewer | null>(null);
+  const { t } = useLanguage();
   const scene = scenes[Math.min(index, scenes.length - 1)];
+  const sceneTitle = t(`sceneCopy.${scene.id}.title`, scene.title);
+  const sceneCaption = t(`sceneCopy.${scene.id}.caption`, scene.caption);
   const partial = !scene.equirect;
 
   // Create the viewer once the user asks for it; load the 3D library only then.
@@ -62,9 +66,9 @@ export default function PanoramaViewer({
           minFov: 20,
           mousewheelCtrlKey: true, // keep normal page scrolling; ctrl + wheel zooms
           touchmoveTwoFingers: false,
-          caption: scene.caption,
+          caption: sceneCaption,
           navbar: ["zoom", "gyroscope", "fullscreen"],
-          loadingTxt: "Loading…",
+          loadingTxt: t("components.panorama.loading", "Loading…"),
           plugins: [GyroscopePlugin],
         });
       } catch (e) {
@@ -87,18 +91,18 @@ export default function PanoramaViewer({
     if (!v) return;
     v.setPanorama(scene.src, {
       panoData: panoDataFor(scene),
-      caption: scene.caption,
+      caption: sceneCaption,
       transition: false,
       position: { yaw: 0, pitch: 0 },
       zoom: partial ? 0 : 40,
     }).catch(() => setError(true));
     v.setOption("maxFov", maxFovFor(scene));
-  }, [scene, partial]);
+  }, [scene, partial, sceneCaption]);
 
   return (
     <div className={className}>
       {scenes.length > 1 && (
-        <div role="tablist" aria-label="Choose a place to look around" className="mb-4 flex justify-center gap-2">
+        <div role="tablist" aria-label={t("components.panorama.chooseLabel", "Choose a place to look around")} className="mb-4 flex justify-center gap-2">
           {scenes.map((s, i) => (
             <button
               key={s.id}
@@ -112,7 +116,7 @@ export default function PanoramaViewer({
                 i === index ? "border-marigold bg-marigold text-wood" : "border-marigold/60 text-cream"
               }`}
             >
-              {s.title}
+              {t(`sceneCopy.${s.id}.title`, s.title)}
             </button>
           ))}
         </div>
@@ -124,7 +128,7 @@ export default function PanoramaViewer({
           <>
             <Image
               src={scene.src}
-              alt={scene.caption}
+              alt={sceneCaption}
               fill
               sizes="(max-width: 768px) 100vw, 720px"
               className="object-cover"
@@ -134,7 +138,7 @@ export default function PanoramaViewer({
             <button
               onClick={() => setActive(true)}
               className="absolute inset-0 flex flex-col items-center justify-end gap-3 pb-6 text-cream"
-              aria-label={`Look around: ${scene.title}`}
+              aria-label={t("components.panorama.lookAroundPrefix", "Look around: ") + sceneTitle}
             >
               <span className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-marigold bg-brick/90 shadow-xl">
                 <svg viewBox="0 0 48 48" className="h-9 w-9" fill="none" stroke="#E8A317" strokeWidth="2.2" strokeLinecap="round" aria-hidden>
@@ -142,24 +146,29 @@ export default function PanoramaViewer({
                   <path d="M24 5c-7 5-7 33 0 38M24 5c7 5 7 33 0 38" />
                 </svg>
               </span>
-              <span className="font-display text-lg">Tap to look around</span>
+              <span className="font-display text-lg">
+                {t("components.panorama.tapToLook", "Tap to look around")}
+              </span>
             </button>
           </>
         )}
         <div ref={box} className={`absolute inset-0 ${active ? "" : "pointer-events-none opacity-0"}`} />
         {error && (
           <p role="alert" className="absolute inset-x-4 bottom-4 rounded-xl bg-cream p-3 text-sm text-brick-deep">
-            The viewer couldn&apos;t start on this device. The photo is still shown in the gallery.
+            {t("components.panorama.error", "The viewer couldn't start on this device. The photo is still shown in the gallery.")}
           </p>
         )}
       </div>
 
       <p className="mt-3 text-center text-sm text-cream/80">
-        {active ? "Drag to look around · pinch to zoom" : scene.caption}
+        {active ? t("components.panorama.dragHint", "Drag to look around · pinch to zoom") : sceneCaption}
       </p>
       {partial && (
         <p className="mt-1 text-center text-xs text-cream/60">
-          Photo view (about {scene.hfov}° wide). A full 360° capture will replace it when available.
+          {t("components.panorama.photoView", "Photo view (about {hfov}° wide). A full 360° capture will replace it when available.").replace(
+            "{hfov}",
+            String(scene.hfov),
+          )}
         </p>
       )}
     </div>

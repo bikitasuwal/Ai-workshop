@@ -8,15 +8,18 @@ import type { SectionTitleKey } from "@/i18n/dictionaries/en";
 
 /** Seal-style evidence label. */
 export function Stamp({ type, size = "sm" }: { type: Evidence; size?: "sm" | "md" }) {
+  const { t } = useLanguage();
   const m = evidenceMeta[type];
+  const label = t(`evidence.${type}.label`, m.label);
+  const hint = t(`evidence.${type}.hint`, m.hint);
   return (
     <span
-      title={m.hint}
+      title={hint}
       className={`inline-flex items-center gap-1.5 rounded-full border border-wood/20 font-semibold uppercase tracking-wider shadow-sm ${size === "sm" ? "px-2.5 py-1 text-[10px]" : "px-3 py-1.5 text-xs"}`}
       style={{ background: m.bg, color: m.color }}
     >
       <span className="h-1.5 w-1.5 rounded-full" style={{ background: m.color, opacity: 0.8 }} />
-      {m.label}
+      {label}
     </span>
   );
 }

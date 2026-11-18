@@ -8,6 +8,7 @@ import "leaflet/dist/leaflet.css";
 import type * as LeafletNS from "leaflet";
 import { places as landmarks, WARD } from "@/lib/places";
 import { chip, chipAction } from "@/lib/styles";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 type LMap = LeafletNS.Map;
 type LBounds = LeafletNS.LatLngBounds;
@@ -24,6 +25,7 @@ const pinBounds = (L: typeof LeafletNS) =>
 
 export default function HeritageMap() {
   const router = useRouter();
+  const { t } = useLanguage();
   const box = useRef<HTMLDivElement>(null);
   const map = useRef<LMap | null>(null);
   const wardBounds = useRef<LBounds | null>(null);
@@ -66,7 +68,12 @@ export default function HeritageMap() {
           iconSize: [0, 0],
           html: `<span class="lm" style="--c:${lm.color}"><span class="lm-dot"></span><span class="lm-label lm-${side}"><b>${lm.name}</b></span></span>`,
         });
-        L.marker([lm.lat, lm.lng], { icon, title: `${lm.name} — open details`, keyboard: true, riseOnHover: true })
+        L.marker([lm.lat, lm.lng], {
+          icon,
+          title: t("components.map.markerTitle", "{name} — open details").replace("{name}", lm.name),
+          keyboard: true,
+          riseOnHover: true,
+        })
           .addTo(m)
           .on("click", () => router.push(lm.href));
       });
@@ -95,7 +102,8 @@ export default function HeritageMap() {
       map.current?.remove();
       map.current = null;
     };
-  }, [tab, router]);
+    // `t` re-runs this when the language changes so marker tooltips follow the locale.
+  }, [tab, router, t]);
 
   const zoomToLandmarks = async () => {
     const L = await loadLeaflet();
@@ -117,11 +125,11 @@ export default function HeritageMap() {
 
   return (
     <div>
-      <div role="tablist" aria-label="Map type" className="mb-4 flex justify-center gap-2">
+      <div role="tablist" aria-label={t("components.map.typeLabel", "Map type")} className="mb-4 flex justify-center gap-2">
         {(
           [
-            ["map", "Interactive map"],
-            ["google", "Google Maps"],
+            ["map", t("components.map.tabMap", "Interactive map")],
+            ["google", t("components.map.tabGoogle", "Google Maps")],
           ] as const
         ).map(([k, label]) => (
           <button
@@ -139,14 +147,16 @@ export default function HeritageMap() {
       {tab === "map" && (
         <div className="mb-3 flex flex-wrap justify-center gap-2">
           <button onClick={zoomToLandmarks} className={chipAction}>
-            Zoom to landmarks
+            {t("components.map.zoomLandmarks", "Zoom to landmarks")}
           </button>
           <button onClick={showWard} className={chipAction}>
-            Whole ward
+            {t("components.map.wholeWard", "Whole ward")}
           </button>
           {touch && (
             <button onClick={toggleLock} className={chip(true)}>
-              {unlocked ? "Lock map (to scroll page)" : "Unlock map to move it"}
+              {unlocked
+                ? t("components.map.lockMap", "Lock map (to scroll page)")
+                : t("components.map.unlockMap", "Unlock map to move it")}
             </button>
           )}
         </div>
@@ -155,16 +165,20 @@ export default function HeritageMap() {
       <div className="wood-frame relative isolate overflow-hidden rounded-3xl bg-paper">
         {tab === "map" ? (
           <>
-            <div ref={box} className="h-[420px] w-full sm:h-[480px]" aria-label={`Map of ${WARD.name} with landmarks`} />
+            <div
+              ref={box}
+              className="h-[420px] w-full sm:h-[480px]"
+              aria-label={t("components.map.ariaLabel", "Map of {name} with landmarks").replace("{name}", WARD.name)}
+            />
             {failed && (
               <p role="alert" className="absolute inset-x-4 top-4 z-[500] rounded-xl bg-cream p-3 text-sm text-brick-deep">
-                The map couldn&apos;t load. Use the landmark cards below or open Google Maps.
+                {t("components.map.loadError", "The map couldn't load. Use the landmark cards below or open Google Maps.")}
               </p>
             )}
           </>
         ) : (
           <iframe
-            title={`Google Map near ${landmarks[0].name}`}
+            title={t("components.map.iframeTitle", "Google Map near {name}").replace("{name}", landmarks[0].name)}
             src={`https://www.google.com/maps?q=${center.lat},${center.lng}&z=16&output=embed`}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -176,8 +190,11 @@ export default function HeritageMap() {
 
       <p className="mt-3 text-center text-xs text-wood/65">
         {tab === "map"
-          ? "Tap a landmark name to open its page. Map data © OpenStreetMap contributors."
-          : "Landmark pins open pages only on the Interactive map. Use the cards below here."}
+          ? t("components.map.hintMap", "Tap a landmark name to open its page. Map data © OpenStreetMap contributors.")
+          : t(
+              "components.map.hintGoogle",
+              "Landmark pins open pages only on the Interactive map. Use the cards below here.",
+            )}
       </p>
 
       {/* Landmark cards: always available, also the route to the pages from the Google view */}
@@ -194,8 +211,12 @@ export default function HeritageMap() {
               <span className="flex flex-col justify-center gap-0.5 p-4">
                 <span className="font-deva text-xs font-semibold text-vermilion">{lm.ne}</span>
                 <span className="font-display text-lg leading-tight text-brick">{lm.name}</span>
-                <span className="text-sm text-wood/75">{lm.mapBlurb}</span>
-                {lm.approximate && <span className="mt-1 text-[11px] text-wood/55">Pin position approximate</span>}
+                <span className="text-sm text-wood/75">{t(`placeCopy.${lm.id}.mapBlurb`, lm.mapBlurb)}</span>
+                {lm.approximate && (
+                  <span className="mt-1 text-[11px] text-wood/55">
+                    {t("components.map.approx", "Pin position approximate")}
+                  </span>
+                )}
               </span>
             </Link>
           </li>
@@ -204,7 +225,10 @@ export default function HeritageMap() {
 
       <div className="mt-5 flex flex-wrap justify-center gap-3 text-sm">
         <a href={gmapsWard} target="_blank" rel="noreferrer" className="font-semibold text-teal underline underline-offset-4">
-          Open {WARD.name} in Google Maps ↗
+          {t("components.map.openWard", "Open {ward} in Google Maps ↗").replace(
+            "{ward}",
+            t("components.map.wardName", WARD.name),
+          )}
         </a>
         <a
           href={gmapsLink(landmarks[0].lat, landmarks[0].lng)}
@@ -212,7 +236,7 @@ export default function HeritageMap() {
           rel="noreferrer"
           className="font-semibold text-teal underline underline-offset-4"
         >
-          Directions to Baisdhara ↗
+          {t("components.map.directions", "Directions to Baisdhara ↗")}
         </a>
       </div>
     </div>

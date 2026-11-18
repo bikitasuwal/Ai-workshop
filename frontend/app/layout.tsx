@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import ChatWidget from "@/components/ChatWidget";
 import Footer from "@/components/Footer";
+import SkipLink from "@/components/SkipLink";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 
 const yatra = Yatra_One({
@@ -37,12 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <LanguageProvider>
           {/* Accessibility: skip the navbar and land on the page content */}
-          <a
-            href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-marigold focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-wood focus-visible:outline-wood focus:shadow-lg"
-          >
-            Skip to main content
-          </a>
+          <SkipLink />
           <Navbar />
           <main id="main-content" tabIndex={-1} className="outline-none">
             {children}

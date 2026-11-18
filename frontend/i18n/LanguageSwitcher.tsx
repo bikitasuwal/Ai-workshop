@@ -27,11 +27,15 @@ export default function LanguageSwitcher({
   scrolled?: boolean;
   className?: string;
 }) {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   if (variant === "mobile") {
     return (
-      <div className={`flex items-center gap-2 ${className}`} role="group" aria-label="Language selection">
+      <div
+        className={`flex items-center gap-2 ${className}`}
+        role="group"
+        aria-label={t("nav.langSelection", "Language selection")}
+      >
         <button
           type="button"
           onClick={() => setLanguage("en")}
@@ -68,7 +72,7 @@ export default function LanguageSwitcher({
   return (
     <div
       role="group"
-      aria-label="Language selector"
+      aria-label={t("nav.langSelector", "Language selector")}
       className={[
         "flex items-center rounded-sm border text-xs font-medium transition-colors duration-200",
         scrolled
@@ -81,7 +85,7 @@ export default function LanguageSwitcher({
         type="button"
         onClick={() => setLanguage("en")}
         aria-pressed={language === "en"}
-        title="Switch to English"
+        title={t("nav.switchToEn", "Switch to English")}
         className={[
           "rounded-l-sm px-2.5 py-1.5 transition-all duration-150 focus-visible:ring-1 focus-visible:ring-marigold focus-visible:outline-none",
           language === "en"
@@ -100,7 +104,7 @@ export default function LanguageSwitcher({
         type="button"
         onClick={() => setLanguage("ne")}
         aria-pressed={language === "ne"}
-        title="नेपाली भाषामा हेर्नुहोस्"
+        title={t("nav.switchToNe", "नेपाली भाषामा हेर्नुहोस्")}
         className={[
           "font-deva rounded-r-sm px-2.5 py-1.5 transition-all duration-150 focus-visible:ring-1 focus-visible:ring-marigold focus-visible:outline-none",
           language === "ne"

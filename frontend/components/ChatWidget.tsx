@@ -5,19 +5,19 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { chatSuggestions, type Evidence } from "@/lib/content";
 import { Stamp } from "./ui";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 type Ref = { id: string; title: string; evidence: Evidence; sources: { key: string; title: string; url: string }[] };
 type Msg = { role: "user" | "bot"; text: string; refs?: Ref[] };
 
-const WELCOME: Msg = {
-  role: "bot",
-  text: "Namaste! I'm the Heritage Guide. Ask me about 22 Dhara, Pyah Thwam Ajima, or the Lhuti Punhi festival. I answer only from the verified notes on this site.",
-};
+const WELCOME_TEXT =
+  "Namaste! I'm the Heritage Guide. Ask me about 22 Dhara, Pyah Thwam Ajima, or the Lhuti Punhi festival. I answer only from the verified notes on this site.";
 
 export default function ChatWidget() {
   const path = usePathname();
+  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
-  const [msgs, setMsgs] = useState<Msg[]>([WELCOME]);
+  const [msgs, setMsgs] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
@@ -35,9 +35,15 @@ export default function ChatWidget() {
         body: JSON.stringify({ message: text }),
       });
       const d = await r.json();
-      setMsgs((m) => [...m, { role: "bot", text: d.answer ?? "Sorry, something went wrong.", refs: d.refs }]);
+      setMsgs((m) => [
+        ...m,
+        { role: "bot", text: d.answer ?? t("components.chat.errorFallback", "Sorry, something went wrong."), refs: d.refs },
+      ]);
     } catch {
-      setMsgs((m) => [...m, { role: "bot", text: "I couldn't connect. Please check your network and try again." }]);
+      setMsgs((m) => [
+        ...m,
+        { role: "bot", text: t("components.chat.netError", "I couldn't connect. Please check your network and try again.") },
+      ]);
     } finally {
       setBusy(false);
     }
@@ -72,7 +78,7 @@ export default function ChatWidget() {
     <>
       {/* Floating lamp button, centred over the bottom bar on phones */}
       <button
-        aria-label="Ask the Heritage Guide"
+        aria-label={t("components.chat.openLabel", "Ask the Heritage Guide")}
         onClick={() => setOpen(true)}
         className="safe-bottom fixed bottom-[26px] left-1/2 z-50 flex h-[68px] w-[68px] -translate-x-1/2 items-center justify-center rounded-full border-[3px] border-marigold bg-brick shadow-[0_8px_24px_rgba(0,0,0,0.5)] transition active:scale-90 md:bottom-6 md:left-auto md:right-6 md:translate-x-0"
       >
@@ -96,7 +102,7 @@ export default function ChatWidget() {
             />
             <motion.section
               role="dialog"
-              aria-label="Heritage Guide chat"
+              aria-label={t("components.chat.dialogLabel", "Heritage Guide chat")}
               className="fixed inset-x-0 bottom-0 z-[70] mx-auto flex h-[88dvh] max-w-xl flex-col overflow-hidden rounded-t-[28px] border-x-2 border-t-2 border-marigold bg-cream shadow-2xl md:bottom-6 md:h-[640px] md:rounded-[28px] md:border-2"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
@@ -112,12 +118,12 @@ export default function ChatWidget() {
                 <div className="mx-auto mb-2 h-1.5 w-12 rounded-full bg-cream/40" aria-hidden />
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-deva text-xs font-semibold text-marigold">सम्पदा मार्गदर्शक</p>
-                    <h2 className="font-display text-xl leading-tight">Heritage Guide</h2>
+                    <p className="font-deva text-xs font-semibold text-marigold">{t("components.chat.headerNe", "सम्पदा मार्गदर्शक")}</p>
+                    <h2 className="font-display text-xl leading-tight">{t("components.chat.headerEn", "Heritage Guide")}</h2>
                   </div>
                   <button
                     onClick={() => setOpen(false)}
-                    aria-label="Close chat"
+                    aria-label={t("components.chat.closeLabel", "Close chat")}
                     className="flex h-11 w-11 items-center justify-center rounded-full border border-cream/40 text-2xl"
                   >
                     ×
@@ -127,7 +133,7 @@ export default function ChatWidget() {
               </header>
 
               <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4" aria-live="polite">
-                {msgs.map((m, i) => (
+                {[{ role: "bot", text: t("components.chat.welcome", WELCOME_TEXT) } as Msg, ...msgs].map((m, i) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, y: 10 }}
@@ -153,7 +159,7 @@ export default function ChatWidget() {
                                     title={s.title}
                                     className="rounded-full border border-teal/40 px-2 py-0.5 text-[11px] font-semibold text-teal underline-offset-2 hover:underline"
                                   >
-                                    Source {s.key}
+                                    {t("components.chat.sourceLabel", "Source")} {s.key}
                                   </a>
                                 ))}
                               </div>
@@ -165,7 +171,7 @@ export default function ChatWidget() {
                   </motion.div>
                 ))}
                 {busy && (
-                  <div className="flex gap-1.5 pl-2" aria-label="Typing">
+                  <div className="flex gap-1.5 pl-2" aria-label={t("components.chat.typingLabel", "Typing")}>
                     {[0, 1, 2].map((d) => (
                       <motion.span
                         key={d}
@@ -180,17 +186,20 @@ export default function ChatWidget() {
               </div>
 
               <div className="border-t border-wood/15 bg-cream px-4 pb-[max(env(safe-area-inset-bottom),12px)] pt-3">
-                {msgs.length <= 1 && (
+                {msgs.length === 0 && (
                   <div className="rail -mx-4 mb-3 flex gap-2 overflow-x-auto px-4">
-                    {chatSuggestions.map((q) => (
-                      <button
-                        key={q}
-                        onClick={() => send(q)}
-                        className="min-h-[44px] shrink-0 rounded-full border border-brick/50 bg-paper px-4 text-sm text-brick active:scale-95"
-                      >
-                        {q}
-                      </button>
-                    ))}
+                    {chatSuggestions.map((q, i) => {
+                      const question = t(`chatSuggestions.${i}`, q);
+                      return (
+                        <button
+                          key={q}
+                          onClick={() => send(question)}
+                          className="min-h-[44px] shrink-0 rounded-full border border-brick/50 bg-paper px-4 text-sm text-brick active:scale-95"
+                        >
+                          {question}
+                        </button>
+                      );
+                    })}
                   </div>
                 )}
                 <form
@@ -203,7 +212,7 @@ export default function ChatWidget() {
                   <input
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    placeholder="Ask in English or नेपाली…"
+                    placeholder={t("components.chat.placeholder", "Ask in English or नेपाली…")}
                     maxLength={400}
                     enterKeyHint="send"
                     className="min-h-[50px] flex-1 rounded-full border-2 border-wood/25 bg-white px-5 text-base outline-none focus:border-marigold"
@@ -211,7 +220,7 @@ export default function ChatWidget() {
                   <button
                     type="submit"
                     disabled={busy || !input.trim()}
-                    aria-label="Send"
+                    aria-label={t("components.chat.sendLabel", "Send")}
                     className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full bg-brick text-cream disabled:opacity-40 active:scale-90"
                   >
                     <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -220,7 +229,7 @@ export default function ChatWidget() {
                   </button>
                 </form>
                 <p className="mt-2 text-center text-[11px] text-wood/60">
-                  Answers come only from verified local sources. Beliefs are not medical advice.
+                  {t("components.chat.disclaimer", "Answers come only from verified local sources. Beliefs are not medical advice.")}
                 </p>
               </div>
             </motion.section>

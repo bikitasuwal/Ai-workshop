@@ -15,34 +15,40 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import AccountMenu from "@/components/AccountMenu";
+import { useLanguage } from "@/i18n/LanguageContext";
 
-const ADMIN_LINKS: { href: string; label: string; exact: boolean }[] = [
-  { href: "/admin", label: "Dashboard", exact: true },
-  { href: "/admin/posts", label: "Posts", exact: false },
-  { href: "/admin/users", label: "Members", exact: false },
-  { href: "/", label: "View site", exact: true },
+type AdminLinkKey = "dashboard" | "posts" | "members" | "viewSite";
+
+const ADMIN_LINKS: { href: string; key: AdminLinkKey; label: string; exact: boolean }[] = [
+  { href: "/admin", key: "dashboard", label: "Dashboard", exact: true },
+  { href: "/admin/posts", key: "posts", label: "Posts", exact: false },
+  { href: "/admin/users", key: "members", label: "Members", exact: false },
+  { href: "/", key: "viewSite", label: "View site", exact: true },
 ];
 
 export default function AdminNav() {
   const path = usePathname();
+  const { t } = useLanguage();
   const isActive = (link: (typeof ADMIN_LINKS)[number]) =>
     link.exact ? path === link.href : path.startsWith(link.href);
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b-2 border-marigold bg-wood text-cream shadow-md">
       <nav
-        aria-label="Admin"
+        aria-label={t("components.admin.nav.ariaAdmin", "Admin")}
         className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
       >
         <Link
           href="/admin"
           className="flex shrink-0 items-center gap-3"
-          aria-label="Admin dashboard"
+          aria-label={t("components.admin.nav.ariaDashboard", "Admin dashboard")}
         >
           <span className="rounded-full bg-marigold px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-wood">
-            Admin
+            {t("components.admin.nav.badge", "Admin")}
           </span>
-          <span className="hidden text-sm text-cream/80 sm:block">Balaju Living Heritage</span>
+          <span className="hidden text-sm text-cream/80 sm:block">
+            {t("components.admin.nav.siteName", "Balaju Living Heritage")}
+          </span>
         </Link>
 
         <ul className="hidden items-center gap-1 md:flex">
@@ -57,7 +63,7 @@ export default function AdminNav() {
                     : "text-cream/90 hover:bg-cream/10 hover:text-marigold"
                 }`}
               >
-                {link.label}
+                {t(`components.admin.nav.${link.key}`, link.label)}
               </Link>
             </li>
           ))}
@@ -68,7 +74,7 @@ export default function AdminNav() {
 
       {/* Phones: the same links as a scrollable strip under the main row */}
       <nav
-        aria-label="Admin sections"
+        aria-label={t("components.admin.nav.ariaSections", "Admin sections")}
         className="rail flex gap-1 overflow-x-auto border-t border-marigold/30 px-3 py-1 md:hidden"
       >
         {ADMIN_LINKS.map((link) => (
@@ -80,7 +86,7 @@ export default function AdminNav() {
               isActive(link) ? "bg-marigold text-wood" : "text-cream/80 hover:bg-cream/10 hover:text-marigold"
             }`}
           >
-            {link.label}
+            {t(`components.admin.nav.${link.key}`, link.label)}
           </Link>
         ))}
       </nav>

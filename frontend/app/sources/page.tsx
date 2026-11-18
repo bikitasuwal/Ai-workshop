@@ -1,48 +1,8 @@
 import type { Metadata } from "next";
-import PageLayout from "@/components/ui/PageLayout";
-import { Reveal, SectionTitle } from "@/components/ui";
-import { limitations, sources } from "@/lib/content";
+import SourcesView from "./SourcesView";
 
 export const metadata: Metadata = { title: "Sources | Balaju Living Heritage" };
 
 export default function Sources() {
-  return (
-    <PageLayout variant="narrow">
-      <Reveal>
-        <SectionTitle titleKey="sources" />
-        <p className="mx-auto mt-3 max-w-md text-center text-wood/80">
-          These notes summarise published reporting and academic context. They do not replace the voices of Guthi
-          members, priests, artists and residents.
-        </p>
-      </Reveal>
-
-      <div className="mt-8 space-y-3">
-        {Object.entries(sources).map(([k, s], i) => (
-          <Reveal key={k} delay={i * 0.04}>
-            <a href={s.url} target="_blank" rel="noreferrer" className="wood-frame flex gap-4 rounded-2xl bg-paper p-4 transition active:scale-[0.99]">
-              <span className="font-display flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brick text-lg text-cream">
-                {k}
-              </span>
-              <span>
-                <span className="block font-semibold text-wood">{s.title}</span>
-                <span className="mt-0.5 block text-sm text-wood/70">{s.note}</span>
-              </span>
-            </a>
-          </Reveal>
-        ))}
-      </div>
-
-      <Reveal className="mt-12">
-        <h2 className="font-display text-2xl text-brick">Still to be confirmed</h2>
-        <ol className="mt-4 space-y-3">
-          {limitations.map((l, i) => (
-            <li key={i} className="flex gap-3 text-[16px] text-wood/90">
-              <span className="font-display text-lg text-vermilion">{i + 1}.</span>
-              {l}
-            </li>
-          ))}
-        </ol>
-      </Reveal>
-    </PageLayout>
-  );
+  return <SourcesView />;
 }
