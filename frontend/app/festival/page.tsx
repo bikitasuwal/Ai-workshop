@@ -54,7 +54,7 @@ export default function Festival() {
 
         <PageLayout.Section>
           <Reveal>
-            <SectionTitle ne="पर्वको बारेमा" en="About the festival" />
+            <SectionTitle titleKey="festivalAbout" />
           </Reveal>
           <div className="mt-6">
             <FactAccordion items={byPlace("festival")} accent="teal" />

@@ -40,7 +40,7 @@ export default function Dhara() {
       <PageLayout variant="narrow" underHero>
         <PageLayout.Section>
           <Reveal>
-            <SectionTitle ne="धाराहरू" en="Meet the spouts" />
+            <SectionTitle titleKey="dharaSpouts" />
           </Reveal>
           <Reveal className="mt-6">
             <SpoutGrid />
@@ -49,7 +49,7 @@ export default function Dhara() {
 
         <PageLayout.Section>
           <Reveal>
-            <SectionTitle ne="हिँडेर हेर्नुहोस्" en="Walk along the spouts" />
+            <SectionTitle titleKey="dharaWalk" />
           </Reveal>
           <Reveal className="mt-6">
             <VideoWalk />
@@ -62,7 +62,7 @@ export default function Dhara() {
         <div className="lattice absolute inset-0 opacity-[0.06]" aria-hidden />
         <div className="relative mx-auto max-w-2xl">
           <Reveal>
-            <SectionTitle ne="चारैतिर हेर्नुहोस्" en="Look around" light />
+            <SectionTitle titleKey="lookAround" light />
           </Reveal>
           <Reveal className="mt-6" delay={0.1}>
             <PanoramaViewer scenes={scenes.filter((s) => s.placeId === "dhara")} />
@@ -73,7 +73,7 @@ export default function Dhara() {
       <PageLayout variant="narrow" underHero>
         <PageLayout.Section>
           <Reveal>
-            <SectionTitle ne="कथा र आस्था" en="The story, in short pieces" />
+            <SectionTitle titleKey="dharaStory" />
             <p className="mx-auto mt-2 max-w-md text-center text-wood/75">
               Tap a title to open it. The seal above each piece tells you how well it is documented.
             </p>

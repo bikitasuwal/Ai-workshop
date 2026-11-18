@@ -23,7 +23,7 @@ export default function Voices() {
   return (
     <PageLayout variant="narrow">
       <Reveal>
-        <SectionTitle ne="तपाईंको आवाज" en="Voices of visitors" />
+        <SectionTitle titleKey="voices" />
         <p className="mx-auto mt-3 max-w-md text-center text-wood/80">
           Tell us about your visit, share a photo, or report a problem that needs care.
         </p>

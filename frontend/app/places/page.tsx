@@ -10,7 +10,7 @@ export default function Places() {
   return (
     <PageLayout variant="narrow">
       <Reveal>
-        <SectionTitle ne="स्थानहरू" en="The places" />
+        <SectionTitle titleKey="thePlaces" />
         <p className="mx-auto mt-3 max-w-md text-center text-wood/80">
           Two places inside the Balaju Baisdhara Park complex. They are best understood together.
         </p>

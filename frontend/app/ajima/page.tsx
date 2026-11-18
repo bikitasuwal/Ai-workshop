@@ -56,7 +56,7 @@ export default function Ajima() {
         <div className="lattice absolute inset-0 opacity-[0.06]" aria-hidden />
         <div className="relative mx-auto max-w-2xl">
           <Reveal>
-            <SectionTitle ne="चारैतिर हेर्नुहोस्" en="Look around the shrine" light />
+            <SectionTitle titleKey="lookAroundShrine" light />
           </Reveal>
           <Reveal className="mt-6" delay={0.1}>
             <PanoramaViewer scenes={scenes.filter((s) => s.placeId === "ajima")} />
@@ -67,7 +67,7 @@ export default function Ajima() {
       <PageLayout variant="narrow" underHero>
         <PageLayout.Section>
           <Reveal>
-            <SectionTitle ne="अजिमाको कथा" en="The Ajima, in short pieces" />
+            <SectionTitle titleKey="ajimaStory" />
             <p className="mx-auto mt-2 max-w-md text-center text-wood/75">
               Local reporting and oral tradition are marked as such. Where details need confirming, we say so.
             </p>

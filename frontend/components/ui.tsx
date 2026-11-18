@@ -3,6 +3,8 @@
 import { useRef, useState } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "motion/react";
 import { Evidence, evidenceMeta } from "@/lib/content";
+import { useLanguage } from "@/i18n/LanguageContext";
+import type { SectionTitleKey } from "@/i18n/dictionaries/en";
 
 /** Seal-style evidence label. */
 export function Stamp({ type, size = "sm" }: { type: Evidence; size?: "sm" | "md" }) {
@@ -154,21 +156,31 @@ export function PagodaDivider({ className = "" }: { className?: string }) {
   );
 }
 
+/**
+ * Bilingual section heading. The pair lives in the dictionaries under
+ * `titles.<key>`; which line becomes the big heading follows the active
+ * language (English: Devanagari eyebrow + English heading — the original
+ * look; Nepali: English eyebrow + Devanagari heading).
+ */
 export function SectionTitle({
-  ne,
-  en,
+  titleKey,
   center = true,
   light = false,
 }: {
-  ne: string;
-  en: string;
+  titleKey: SectionTitleKey;
   center?: boolean;
   light?: boolean;
 }) {
+  const { t, isNepali } = useLanguage();
+  const neLine = t(`titles.${titleKey}.ne`);
+  const enLine = t(`titles.${titleKey}.en`);
+  const heading = isNepali ? neLine : enLine;
+  const eyebrow = isNepali ? enLine : neLine;
+
   return (
     <div className={center ? "text-center" : ""}>
-      <p className={`font-deva text-sm font-semibold tracking-wide ${light ? "text-marigold" : "text-vermilion"}`}>{ne}</p>
-      <h2 className={`font-display text-3xl leading-tight sm:text-4xl ${light ? "text-cream" : "text-brick"}`}>{en}</h2>
+      <p className={`font-deva text-sm font-semibold tracking-wide ${light ? "text-marigold" : "text-vermilion"}`}>{eyebrow}</p>
+      <h2 className={`font-display text-3xl leading-tight sm:text-4xl ${light ? "text-cream" : "text-brick"}`}>{heading}</h2>
     </div>
   );
 }

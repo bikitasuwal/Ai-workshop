@@ -19,8 +19,16 @@ import { usePathname } from "next/navigation";
 import MobileMenu from "./MobileMenu";
 import AccountMenu from "@/components/AccountMenu";
 import { useUser } from "@/lib/useUser";
+import LanguageSwitcher from "@/i18n/LanguageSwitcher";
+import { useLanguage } from "@/i18n/LanguageContext";
+import type { Dictionary } from "@/i18n/dictionaries/en";
 
-export type NavLink = { label: string; href: string };
+export type NavLink = {
+  label: string;
+  href: string;
+  /** i18n key under `nav.*` — translated via t(); falls back to `label`. */
+  key?: keyof Dictionary["nav"];
+};
 
 /** Routes whose first screen is a dark hero, so the navbar may start transparent. */
 const DARK_HERO_ROUTES = ["/", "/dhara", "/ajima", "/festival"];
@@ -28,6 +36,7 @@ const DARK_HERO_ROUTES = ["/", "/dhara", "/ajima", "/festival"];
 export default function NavbarShell({ links }: { links: NavLink[] }) {
   const pathname = usePathname();
   const user = useUser();
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -83,13 +92,16 @@ export default function NavbarShell({ links }: { links: NavLink[] }) {
                     : "text-cream/90 hover:bg-cream/10 hover:text-marigold"
                 }`}
               >
-                {link.label}
+                {link.key ? t(`nav.${link.key}`, link.label) : link.label}
               </Link>
             </li>
           ))}
         </ul>
 
         <div className="flex shrink-0 items-center gap-3">
+          {/* Bilingual language selector — hidden on the smallest screens,
+              where the mobile drawer offers it instead */}
+          <LanguageSwitcher scrolled={isSolid} className="hidden sm:flex" />
           <AccountMenu />
           <div className="lg:hidden">
             <MobileMenu links={links} />

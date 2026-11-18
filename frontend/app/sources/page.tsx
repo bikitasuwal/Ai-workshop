@@ -9,7 +9,7 @@ export default function Sources() {
   return (
     <PageLayout variant="narrow">
       <Reveal>
-        <SectionTitle ne="स्रोतहरू" en="Sources & open questions" />
+        <SectionTitle titleKey="sources" />
         <p className="mx-auto mt-3 max-w-md text-center text-wood/80">
           These notes summarise published reporting and academic context. They do not replace the voices of Guthi
           members, priests, artists and residents.

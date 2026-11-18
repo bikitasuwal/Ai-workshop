@@ -13,7 +13,7 @@ export default function Gallery() {
   return (
     <PageLayout variant="narrow">
       <Reveal>
-        <SectionTitle ne="ग्यालरी" en="Gallery" />
+        <SectionTitle titleKey="gallery" />
         <p className="mx-auto mt-3 max-w-md text-center text-wood/80">
           Photographs and video, shown with the care these living places deserve.
         </p>

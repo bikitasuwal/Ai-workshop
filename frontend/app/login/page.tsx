@@ -8,7 +8,7 @@ export default function Login() {
   return (
     <section className="mx-auto max-w-md px-5 pb-12 pt-24">
       <Reveal>
-        <SectionTitle ne="प्रवेश" en="Sign in" />
+        <SectionTitle titleKey="signIn" />
         <p className="mx-auto mt-3 text-center text-wood/80">Welcome back. Sign in to share your visit.</p>
       </Reveal>
       <Reveal className="mt-8" delay={0.1}>

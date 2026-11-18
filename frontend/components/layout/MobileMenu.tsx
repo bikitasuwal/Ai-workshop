@@ -12,11 +12,14 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import AccountMenu from "@/components/AccountMenu";
+import LanguageSwitcher from "@/i18n/LanguageSwitcher";
+import { useLanguage } from "@/i18n/LanguageContext";
 import type { NavLink } from "./NavbarShell";
 
 export default function MobileMenu({ links }: { links: NavLink[] }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   // Close the drawer when the route changes (a link was followed, the back
   // button was pressed, or navigation happened elsewhere in the app).
@@ -54,7 +57,9 @@ export default function MobileMenu({ links }: { links: NavLink[] }) {
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+        aria-label={
+          open ? t("nav.closeMenu", "Close navigation menu") : t("nav.openMenu", "Open navigation menu")
+        }
         className="rounded-sm p-2 text-cream transition-colors duration-150 hover:bg-cream/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-marigold"
       >
         <span className="flex w-5 flex-col gap-1.5" aria-hidden>
@@ -129,14 +134,20 @@ export default function MobileMenu({ links }: { links: NavLink[] }) {
                   isActive(link.href) ? "border-l-4 border-l-marigold text-brick" : "text-wood"
                 }`}
               >
-                {link.label}
+                {link.key ? t(`nav.${link.key}`, link.label) : link.label}
               </Link>
             </li>
           ))}
         </ul>
 
-        {/* Sign-in / account, kept reachable while the drawer is open */}
-        <div className="border-t border-marigold/25 p-4">
+        {/* Language selector + sign-in / account, kept reachable while the drawer is open */}
+        <div className="space-y-3 border-t border-marigold/25 p-4">
+          <div>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-wood/60">
+              {t("nav.language", "Language")}
+            </p>
+            <LanguageSwitcher variant="mobile" />
+          </div>
           <AccountMenu />
         </div>
       </div>

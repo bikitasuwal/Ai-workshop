@@ -11,12 +11,16 @@
 
 import NavbarShell, { type NavLink } from "./NavbarShell";
 
+/**
+ * `key` maps each tab onto the i18n dictionary (`nav.<key>`); `label` is the
+ * English fallback shown if the key is ever missing.
+ */
 export const NAV_LINKS: NavLink[] = [
-  { label: "Places", href: "/places" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Festival", href: "/festival" },
-  { label: "Voices", href: "/reviews" },
-  { label: "Sources", href: "/sources" },
+  { label: "Places", href: "/places", key: "places" },
+  { label: "Gallery", href: "/gallery", key: "gallery" },
+  { label: "Festival", href: "/festival", key: "festival" },
+  { label: "Voices", href: "/reviews", key: "voices" },
+  { label: "Sources", href: "/sources", key: "sources" },
 ];
 
 export default function Navbar() {
