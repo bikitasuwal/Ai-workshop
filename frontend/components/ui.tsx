@@ -3,18 +3,23 @@
 import { useRef, useState } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "motion/react";
 import { Evidence, evidenceMeta } from "@/lib/content";
+import { useLanguage } from "@/i18n/LanguageContext";
+import type { SectionTitleKey } from "@/i18n/dictionaries/en";
 
 /** Seal-style evidence label. */
 export function Stamp({ type, size = "sm" }: { type: Evidence; size?: "sm" | "md" }) {
+  const { t } = useLanguage();
   const m = evidenceMeta[type];
+  const label = t(`evidence.${type}.label`, m.label);
+  const hint = t(`evidence.${type}.hint`, m.hint);
   return (
     <span
-      title={m.hint}
+      title={hint}
       className={`inline-flex items-center gap-1.5 rounded-full border border-wood/20 font-semibold uppercase tracking-wider shadow-sm ${size === "sm" ? "px-2.5 py-1 text-[10px]" : "px-3 py-1.5 text-xs"}`}
       style={{ background: m.bg, color: m.color }}
     >
       <span className="h-1.5 w-1.5 rounded-full" style={{ background: m.color, opacity: 0.8 }} />
-      {m.label}
+      {label}
     </span>
   );
 }
@@ -154,21 +159,31 @@ export function PagodaDivider({ className = "" }: { className?: string }) {
   );
 }
 
+/**
+ * Bilingual section heading. The pair lives in the dictionaries under
+ * `titles.<key>`; which line becomes the big heading follows the active
+ * language (English: Devanagari eyebrow + English heading — the original
+ * look; Nepali: English eyebrow + Devanagari heading).
+ */
 export function SectionTitle({
-  ne,
-  en,
+  titleKey,
   center = true,
   light = false,
 }: {
-  ne: string;
-  en: string;
+  titleKey: SectionTitleKey;
   center?: boolean;
   light?: boolean;
 }) {
+  const { t, isNepali } = useLanguage();
+  const neLine = t(`titles.${titleKey}.ne`);
+  const enLine = t(`titles.${titleKey}.en`);
+  const heading = isNepali ? neLine : enLine;
+  const eyebrow = isNepali ? enLine : neLine;
+
   return (
     <div className={center ? "text-center" : ""}>
-      <p className={`font-deva text-sm font-semibold tracking-wide ${light ? "text-marigold" : "text-vermilion"}`}>{ne}</p>
-      <h2 className={`font-display text-3xl leading-tight sm:text-4xl ${light ? "text-cream" : "text-brick"}`}>{en}</h2>
+      <p className={`font-deva text-sm font-semibold tracking-wide ${light ? "text-marigold" : "text-vermilion"}`}>{eyebrow}</p>
+      <h2 className={`font-display text-3xl leading-tight sm:text-4xl ${light ? "text-cream" : "text-brick"}`}>{heading}</h2>
     </div>
   );
 }

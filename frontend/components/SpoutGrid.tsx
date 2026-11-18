@@ -3,14 +3,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Stamp } from "./ui";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 /** 22 tappable spouts. The sources do not say WHICH spout was added later, so we never single one out. */
 export default function SpoutGrid() {
+  const { t } = useLanguage();
   const [active, setActive] = useState<number | null>(null);
 
   return (
     <div className="wood-frame rounded-3xl bg-teal-deep p-5 text-cream">
-      <p className="text-center text-sm text-cream/75">Touch a spout</p>
+      <p className="text-center text-sm text-cream/75">{t("components.spouts.touch", "Touch a spout")}</p>
       <div className="mx-auto mt-4 grid max-w-sm grid-cols-11 gap-x-1.5 gap-y-5">
         {Array.from({ length: 22 }, (_, i) => {
           const on = active === i;
@@ -18,7 +20,7 @@ export default function SpoutGrid() {
             <button
               key={i}
               onClick={() => setActive(on ? null : i)}
-              aria-label={`Spout ${i + 1}`}
+              aria-label={`${t("components.spouts.ariaLabel", "Spout")} ${i + 1}`}
               aria-pressed={on}
               className="group relative flex h-16 flex-col items-center"
             >
@@ -51,16 +53,14 @@ export default function SpoutGrid() {
             className="rounded-2xl bg-cream p-4 text-wood"
           >
             {active === null ? (
-              <p className="text-[15px]">
-                Twenty-two stone spouts line the complex. Pick any one to see what reports say about who built them.
-              </p>
+              <p className="text-[15px]">{t("components.spouts.idle")}</p>
             ) : (
               <div className="space-y-2">
                 <Stamp type="reported" />
                 <p className="text-[15px]">
-                  News reports say <strong>21</strong> of the 22 spouts were built by King Jaya Prakash Malla, and{" "}
-                  <strong>one</strong> was added later by King Rana Bahadur Shah (1855 BS). The sources reviewed do not say
-                  which spout that is, and they do not confirm this with an inscription or archive record.
+                  {t("components.spouts.report.s1")} <strong>{t("components.spouts.report.n1")}</strong>{" "}
+                  {t("components.spouts.report.s2")} <strong>{t("components.spouts.report.n2")}</strong>{" "}
+                  {t("components.spouts.report.s3")}
                 </p>
               </div>
             )}

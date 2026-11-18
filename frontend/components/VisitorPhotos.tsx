@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Notice } from "./ui";
 import { photoUrl, placeLabel, type Post } from "@/lib/posts";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 /** Photos from visitors. Only admin-approved posts are ever returned by the API. */
 export default function VisitorPhotos() {
+  const { t } = useLanguage();
   const [posts, setPosts] = useState<Post[] | null>(null);
 
   useEffect(() => {
@@ -25,7 +27,9 @@ export default function VisitorPhotos() {
   if (!photos.length) {
     return (
       <div className="mt-4">
-        <Notice title="No visitor photos yet">Approved photos from visitors will appear here.</Notice>
+        <Notice title={t("components.visitorPhotos.emptyTitle")}>
+          {t("components.visitorPhotos.emptyBody")}
+        </Notice>
       </div>
     );
   }
@@ -35,12 +39,12 @@ export default function VisitorPhotos() {
         <Link key={id} href="/reviews" className="wood-frame group block overflow-hidden rounded-2xl bg-cream">
           <img
             src={photoUrl(id)}
-            alt={"Visitor photo, " + placeLabel[post.place]}
+            alt={t("components.visitorPhotos.altPrefix", "Visitor photo, ") + t(`postCopy.place.${post.place}`, placeLabel[post.place])}
             loading="lazy"
             className="aspect-square w-full object-cover transition duration-500 group-hover:scale-105"
           />
           <span className="block px-3 py-2 text-xs text-wood/70">
-            {post.author} · {placeLabel[post.place]}
+            {post.author} · {t(`postCopy.place.${post.place}`, placeLabel[post.place])}
           </span>
         </Link>
       ))}

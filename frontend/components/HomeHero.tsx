@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
 import HeroScene from "./HeroScene";
 import AskButton from "./AskButton";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.14, delayChildren: 0.1 } } };
 const item = {
@@ -15,6 +16,7 @@ export default function HomeHero() {
   const { scrollY } = useScroll();
   const sceneY = useTransform(scrollY, [0, 500], [0, 60]);
   const glow = useTransform(scrollY, [0, 400], [1, 0.3]);
+  const { t } = useLanguage();
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-wood via-brick-deep to-brick text-cream">
@@ -25,27 +27,28 @@ export default function HomeHero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto grid max-w-5xl items-center gap-8 px-5 pb-16 pt-10 md:grid-cols-2 md:py-20">
+      <div className="relative mx-auto grid max-w-5xl items-center gap-8 px-5 pb-16 pt-24 md:grid-cols-2 md:py-20">
         <motion.div variants={container} initial="hidden" animate="show" className="text-center md:text-left">
           <motion.p variants={item} className="font-deva text-base font-semibold tracking-wide text-marigold">
-            बैसधारा · प्याः थ्वँ अजिमा
+            {t("home.hero.eyebrow")}
           </motion.p>
           <motion.h1 variants={item} className="font-display mt-2 text-[2.5rem] leading-[1.08] sm:text-5xl">
-            Where <span className="gold-shine">water</span>, worship and memory meet
+            {t("home.hero.titleLead")}{" "}
+            <span className="gold-shine">{t("home.hero.titleHighlight")}</span>
+            {t("home.hero.titleTail")}
           </motion.h1>
           <motion.p variants={item} className="mx-auto mt-4 max-w-md text-[17px] text-cream/85 md:mx-0">
-            A living archive of two heritage places in Balaju, Kathmandu, kept alive by the Newar communities who
-            bathe, pray, paint and gather there.
+            {t("home.hero.subtitle")}
           </motion.p>
           <motion.div variants={item} className="mt-7 flex flex-col items-center gap-3 sm:flex-row md:justify-start">
             <Link
               href="/places"
               className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full bg-marigold px-7 font-semibold text-wood shadow-lg shadow-black/30 transition active:scale-95 sm:w-auto"
             >
-              Explore the places
+              {t("home.hero.exploreCta")}
             </Link>
             <AskButton className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full border-2 border-marigold/70 px-7 font-semibold text-cream transition active:scale-95 sm:w-auto">
-              Ask the guide
+              {t("home.hero.askCta")}
             </AskButton>
           </motion.div>
         </motion.div>

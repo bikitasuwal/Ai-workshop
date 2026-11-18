@@ -1,16 +1,21 @@
 import { TiltCard } from "./ui";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const N = 22;
 const xs = Array.from({ length: N }, (_, i) => 24 + (i * 252) / (N - 1));
 
 /** An arch-shaped "peacock window" opening onto the 22 spouts, with a pagoda skyline and rising lamps. */
 export default function HeroScene({ className = "" }: { className?: string }) {
+  const { t } = useLanguage();
   return (
     <TiltCard className={className} max={7}>
       <svg
         viewBox="0 0 300 390"
         role="img"
-        aria-label="Illustration: twenty-two stone spouts pouring water beneath a pagoda skyline at dawn, with butter lamps floating up"
+        aria-label={t(
+          "nav.heroIllo",
+          "Illustration: twenty-two stone spouts pouring water beneath a pagoda skyline at dawn, with butter lamps floating up",
+        )}
         className="mx-auto h-auto w-full max-w-[340px] drop-shadow-[0_18px_30px_rgba(0,0,0,0.45)]"
       >
         <defs>

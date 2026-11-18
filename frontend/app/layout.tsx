@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Yatra_One, Noto_Sans, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
-import Nav from "@/components/Nav";
+import Navbar from "@/components/layout/Navbar";
 import ChatWidget from "@/components/ChatWidget";
 import Footer from "@/components/Footer";
+import SkipLink from "@/components/SkipLink";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 
 const yatra = Yatra_One({
   weight: "400",
@@ -34,10 +36,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${yatra.variable} ${body.variable} ${deva.variable}`}>
       <body>
-        <Nav />
-        <main className="pb-24 md:pb-0">{children}</main>
-        <Footer />
-        <ChatWidget />
+        <LanguageProvider>
+          {/* Accessibility: skip the navbar and land on the page content */}
+          <SkipLink />
+          <Navbar />
+          <main id="main-content" tabIndex={-1} className="outline-none">
+            {children}
+          </main>
+          <Footer />
+          <ChatWidget />
+        </LanguageProvider>
       </body>
     </html>
   );

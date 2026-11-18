@@ -1,7 +1,12 @@
+"use client";
+
 import { video } from "@/lib/places";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 /** Lightweight video: nothing downloads until the visitor presses play (kind to mobile data). */
 export default function VideoWalk() {
+  const { t } = useLanguage();
+
   return (
     <figure>
       <div className="wood-frame overflow-hidden rounded-3xl bg-wood">
@@ -12,13 +17,15 @@ export default function VideoWalk() {
           preload="none"
           poster={video.poster}
           className="aspect-video w-full object-cover"
-          aria-label={video.title}
+          aria-label={t("videoCopy.title", video.title)}
         >
           <source src={video.src} type="video/mp4" />
-          Your browser can&apos;t play this video.
+          {t("components.video.unsupported", "Your browser can't play this video.")}
         </video>
       </div>
-      <figcaption className="mt-3 text-center text-sm text-wood/70">{video.caption}</figcaption>
+      <figcaption className="mt-3 text-center text-sm text-wood/70">
+        {t("videoCopy.caption", video.caption)}
+      </figcaption>
     </figure>
   );
 }

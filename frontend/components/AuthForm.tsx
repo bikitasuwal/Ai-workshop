@@ -4,9 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { announceAuthChange } from "@/lib/useUser";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
   const router = useRouter();
+  const { t } = useLanguage();
   const signup = mode === "signup";
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -27,14 +29,14 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
       });
       const d = await r.json();
       if (!r.ok) {
-        setError(d.error ?? "Something went wrong. Please try again.");
+        setError(d.error ?? t("components.auth.errorFallback", "Something went wrong. Please try again."));
         return;
       }
       announceAuthChange();
       router.push(d.user?.role === "admin" ? "/admin" : "/reviews");
       router.refresh();
     } catch {
-      setError("Couldn't connect. Check your network and try again.");
+      setError(t("components.auth.netError", "Couldn't connect. Check your network and try again."));
     } finally {
       setBusy(false);
     }
@@ -48,20 +50,20 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
       <div className="space-y-4">
         {signup && (
           <label className="block">
-            <span className="mb-1 block text-sm font-semibold text-wood">Display name</span>
+            <span className="mb-1 block text-sm font-semibold text-wood">{t("components.auth.displayName", "Display name")}</span>
             <input
               className={input}
               value={name}
               onChange={(e) => setName(e.target.value)}
               autoComplete="nickname"
               maxLength={40}
-              placeholder="Shown on your posts"
+              placeholder={t("components.auth.namePlaceholder", "Shown on your posts")}
               required
             />
           </label>
         )}
         <label className="block">
-          <span className="mb-1 block text-sm font-semibold text-wood">Email</span>
+          <span className="mb-1 block text-sm font-semibold text-wood">{t("components.auth.email", "Email")}</span>
           <input
             className={input}
             type="email"
@@ -69,13 +71,13 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
             autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@example.com"
+            placeholder={t("components.auth.emailPlaceholder", "you@example.com")}
             required
           />
-          {signup && <span className="mt-1 block text-xs text-wood/60">Never shown publicly.</span>}
+          {signup && <span className="mt-1 block text-xs text-wood/60">{t("components.auth.neverPublic", "Never shown publicly.")}</span>}
         </label>
         <label className="block">
-          <span className="mb-1 block text-sm font-semibold text-wood">Password</span>
+          <span className="mb-1 block text-sm font-semibold text-wood">{t("components.auth.password", "Password")}</span>
           <div className="relative">
             <input
               className={`${input} pr-20`}
@@ -83,7 +85,11 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
               autoComplete={signup ? "new-password" : "current-password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder={signup ? "At least 8 characters" : "Your password"}
+              placeholder={
+                signup
+                  ? t("components.auth.passwordSignup", "At least 8 characters")
+                  : t("components.auth.passwordLogin", "Your password")
+              }
               required
             />
             <button
@@ -91,7 +97,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
               onClick={() => setShow((s) => !s)}
               className="absolute right-2 top-1/2 min-h-[40px] -translate-y-1/2 rounded-lg px-3 text-sm font-semibold text-brick"
             >
-              {show ? "Hide" : "Show"}
+              {show ? t("components.auth.hide", "Hide") : t("components.auth.show", "Show")}
             </button>
           </div>
         </label>
@@ -108,22 +114,26 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
         disabled={busy}
         className="mt-6 min-h-[54px] w-full rounded-full bg-brick font-semibold text-cream shadow-lg transition active:scale-95 disabled:opacity-60"
       >
-        {busy ? "Please wait…" : signup ? "Create account" : "Sign in"}
+        {busy
+          ? t("components.auth.wait", "Please wait…")
+          : signup
+            ? t("components.auth.createAccount", "Create account")
+            : t("components.auth.signIn", "Sign in")}
       </button>
 
       <p className="mt-4 text-center text-sm text-wood/80">
         {signup ? (
           <>
-            Already have an account?{" "}
+            {t("components.auth.haveAccount", "Already have an account?")}{" "}
             <Link href="/login" className="font-semibold text-brick underline underline-offset-4">
-              Sign in
+              {t("components.auth.signIn", "Sign in")}
             </Link>
           </>
         ) : (
           <>
-            New here?{" "}
+            {t("components.auth.newHere", "New here?")}{" "}
             <Link href="/signup" className="font-semibold text-brick underline underline-offset-4">
-              Create an account
+              {t("components.auth.createLink", "Create an account")}
             </Link>
           </>
         )}

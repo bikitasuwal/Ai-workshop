@@ -31,8 +31,8 @@ export const placeLabel: Record<PlaceKey, string> = {
 
 export const photoUrl = (id: string) => `/api/posts/photos/${id}`;
 
-export const when = (iso: string) =>
-  new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+export const when = (iso: string, locale = "en-GB") =>
+  new Date(iso).toLocaleDateString(locale, { day: "numeric", month: "short", year: "numeric" });
 
 /** Shrinks a phone photo before upload (keeps data use low and stays under the size limit). */
 export async function shrinkImage(file: File, max = 1600): Promise<File> {
