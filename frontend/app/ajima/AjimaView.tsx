@@ -14,9 +14,11 @@ import { scenes } from "@/lib/places";
 import { Reveal, SectionTitle } from "@/components/ui";
 import { byPlace } from "@/lib/content";
 import { useLanguage } from "@/i18n/LanguageContext";
+import PlaceInteractive from "@/components/ui/PlaceInteractive";
+import StreetViewEmbed from "@/components/StreetViewEmbed";
 
 export default function AjimaView() {
-  const { t } = useLanguage();
+  const { t, language: lang } = useLanguage();
 
   return (
     <>
@@ -71,6 +73,9 @@ export default function AjimaView() {
           <Reveal className="mt-6" delay={0.1}>
             <PanoramaViewer scenes={scenes.filter((s) => s.placeId === "ajima")} />
           </Reveal>
+           <Reveal className="mt-6" delay={0.2}>
+            <StreetViewEmbed place="ajima" />
+          </Reveal>
         </div>
       </section>
 
@@ -86,7 +91,12 @@ export default function AjimaView() {
             <FactAccordion items={byPlace("ajima")} accent="brick" />
           </div>
         </PageLayout.Section>
-
+        
+      <PageLayout.Section>
+          <Reveal>
+            <PlaceInteractive place="ajima" lang={lang} />
+          </Reveal>
+        </PageLayout.Section>
         <PageLayout.Section>
           <Reveal>
             <div className="wood-frame rounded-3xl bg-teal-deep p-6 text-center text-cream">

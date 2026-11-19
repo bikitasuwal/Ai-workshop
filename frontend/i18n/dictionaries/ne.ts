@@ -30,6 +30,7 @@ export const ne: Dictionary = {
     places: "स्थानहरू",
     gallery: "ग्यालरी",
     festival: "पर्व",
+    quiz: "प्रश्नोत्तरी",
     voices: "आवाजहरू",
     sources: "स्रोतहरू",
     language: "भाषा",

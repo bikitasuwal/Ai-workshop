@@ -16,9 +16,11 @@ import { scenes } from "@/lib/places";
 import { Reveal, SectionTitle } from "@/components/ui";
 import { byPlace } from "@/lib/content";
 import { useLanguage } from "@/i18n/LanguageContext";
+import PlaceInteractive from "@/components/ui/PlaceInteractive";
+import StreetViewEmbed from "@/components/StreetViewEmbed";
 
 export default function DharaView() {
-  const { t } = useLanguage();
+const { t, isNepali, language } = useLanguage();
 
   return (
     <>
@@ -71,6 +73,9 @@ export default function DharaView() {
           <Reveal className="mt-6" delay={0.1}>
             <PanoramaViewer scenes={scenes.filter((s) => s.placeId === "dhara")} />
           </Reveal>
+           <Reveal className="mt-6" delay={0.2}>
+            <StreetViewEmbed place="dhara" />
+          </Reveal>
         </div>
       </section>
 
@@ -85,6 +90,12 @@ export default function DharaView() {
           </div>
         </PageLayout.Section>
 
+       <PageLayout.Section>
+          <Reveal>
+            <PlaceInteractive place="dhara" lang={language} />
+          </Reveal>
+        </PageLayout.Section>
+
         <PageLayout.Section>
           <Reveal>
             <div className="wood-frame rounded-3xl bg-brick p-6 text-center text-cream">
@@ -93,6 +104,9 @@ export default function DharaView() {
               <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
                 <Link href="/ajima" className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-marigold px-6 font-semibold text-wood active:scale-95">
                   {t("pages.dhara.visitCta")}
+                </Link>
+                <Link href="/quiz" className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-teal px-6 font-semibold text-cream active:scale-95 hover:bg-teal-deep">
+                  {isNepali ? "🎓 धारा प्रश्नोत्तरी" : "🎓 Test Your Knowledge"}
                 </Link>
                 <AskButton
                   question={t("chatSuggestions.0", "What is 22 Dhara?")}

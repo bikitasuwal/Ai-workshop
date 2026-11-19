@@ -31,7 +31,7 @@ export type NavLink = {
 };
 
 /** Routes whose first screen is a dark hero, so the navbar may start transparent. */
-const DARK_HERO_ROUTES = ["/", "/dhara", "/ajima", "/festival"];
+const DARK_HERO_ROUTES = ["/", "/dhara", "/ajima", "/festival", "/quiz"];
 
 export default function NavbarShell({ links }: { links: NavLink[] }) {
   const pathname = usePathname();

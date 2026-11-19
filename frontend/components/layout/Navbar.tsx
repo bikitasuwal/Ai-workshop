@@ -19,6 +19,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Places", href: "/places", key: "places" },
   { label: "Gallery", href: "/gallery", key: "gallery" },
   { label: "Festival", href: "/festival", key: "festival" },
+  { label: "Quiz", href: "/quiz", key: "quiz" },
   { label: "Voices", href: "/reviews", key: "voices" },
   { label: "Sources", href: "/sources", key: "sources" },
 ];
