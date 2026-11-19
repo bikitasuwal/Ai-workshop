@@ -194,6 +194,20 @@ export const en = {
         "Every item carries its place, date and a consent note. Restricted rituals and identifiable worshippers are not published without permission.",
       shareCta: "Share a photo of your visit",
     },
+    albums: {
+      back: "All albums",
+      all: "All",
+      photosOnly: "Photos",
+      videosOnly: "Videos",
+      filter: "Filter",
+      items: "{n} items",
+      open: "Open {caption}",
+      close: "Close",
+      prev: "Previous",
+      next: "Next",
+      sample: "Sample picture. Real photographs will replace it.",
+      emptyFilter: "Nothing here yet.",
+    },
     reviews: {
       intro: "Tell us about your visit, share a photo, or report a problem that needs care.",
       steps: [
