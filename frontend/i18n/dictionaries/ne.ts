@@ -27,7 +27,9 @@ export const ne: Dictionary = {
 
   nav: {
     ...en.nav,
+    home: "गृहपृष्ठ",
     places: "स्थानहरू",
+    stories: "कथाहरू",
     gallery: "ग्यालरी",
     festival: "पर्व",
     quiz: "प्रश्नोत्तरी",
