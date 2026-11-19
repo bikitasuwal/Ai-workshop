@@ -2,7 +2,7 @@
 
 /**
  * app/ajima/AjimaView.tsx — client body of /ajima.
- * The server wrapper (page.tsx) owns the `metadata` export.
+ * Comprehensive living heritage archive for Pyatho Ajima Temple.
  */
 
 import Link from "next/link";
@@ -10,18 +10,30 @@ import FactAccordion from "@/components/FactAccordion";
 import AskButton from "@/components/AskButton";
 import PanoramaViewer from "@/components/PanoramaViewer";
 import PageLayout from "@/components/ui/PageLayout";
+import InteractiveSuite from "@/components/interactive/InteractiveSuite";
+import HistoricalTimeline from "@/components/heritage/HistoricalTimeline";
+import ArchitectureDeepDive from "@/components/heritage/ArchitectureDeepDive";
+import StoryCard from "@/components/archive/StoryCard";
+import StreetViewEmbed from "@/components/StreetViewEmbed";
 import { scenes } from "@/lib/places";
 import { Reveal, SectionTitle } from "@/components/ui";
 import { byPlace } from "@/lib/content";
+import { HERITAGE_SITES_DATA } from "@/lib/heritageDetailData";
+import { INITIAL_APPROVED_STORIES } from "@/lib/communityStories";
 import { useLanguage } from "@/i18n/LanguageContext";
-import PlaceInteractive from "@/components/ui/PlaceInteractive";
-import StreetViewEmbed from "@/components/StreetViewEmbed";
 
 export default function AjimaView() {
-  const { t, language: lang } = useLanguage();
+  const { t, isNepali } = useLanguage();
+  const siteData = HERITAGE_SITES_DATA["pyatho-ajima"];
+
+  // Stories specifically linked to Pyatho Ajima
+  const ajimaStories = INITIAL_APPROVED_STORIES.filter(
+    (s) => s.heritageLocation.id === "pyatho-ajima"
+  );
 
   return (
     <>
+      {/* Hero Header */}
       <section className="relative overflow-hidden bg-gradient-to-b from-wood via-brick-deep to-brick px-5 pb-20 pt-24 text-center text-cream">
         <div className="lattice absolute inset-0 opacity-[0.07]" aria-hidden />
         <Reveal className="relative mx-auto max-w-xl">
@@ -38,48 +50,192 @@ export default function AjimaView() {
           </p>
         </Reveal>
         <svg viewBox="0 0 400 24" preserveAspectRatio="none" className="absolute inset-x-0 bottom-0 block h-6 w-full text-cream" aria-hidden>
-          <path d="M0 24V12l25-10 25 10 25-10 25 10 25-10 25 10 25-10 25 10 25-10 25 10 25-10 25 10 25-10 25 10 25-10 25 10V24Z" fill="currentColor" />
+          <path d="M0 24V12l25-10 25 10 25-10 25 10 25-10 25 10 25-10 25 10 25-10 25 10 25-10 25 10 25-10 25 10V24Z" fill="currentColor" />
         </svg>
       </section>
 
-      {/* Respect note */}
-      <PageLayout variant="narrow" underHero>
+      {/* Respect Note */}
+      <PageLayout variant="wide" underHero>
         <PageLayout.Section>
           <Reveal>
-            <aside className="flex gap-4 rounded-2xl border-2 border-dashed border-marigold bg-paper/80 p-5">
-              <svg viewBox="0 0 40 40" className="h-10 w-10 shrink-0" aria-hidden>
+            <aside className="wood-frame flex gap-4 rounded-3xl bg-paper/90 p-5 sm:p-6 text-wood">
+              <svg viewBox="0 0 40 40" className="h-10 w-10 shrink-0 text-marigold" aria-hidden>
                 <path d="M20 4c4 4 5 7 0 11-5-4-4-7 0-11Z" fill="#e8a317" className="flame" />
                 <path d="M6 21h28c0 7-6 12-14 12S6 28 6 21Z" fill="#8b2e1f" />
               </svg>
-              <p className="text-[15px] text-wood/90">
-                <strong>{t("pages.ajima.respectStrong", "Please be respectful.")}</strong>{" "}
+              <div className="text-[15px] leading-relaxed text-wood/90">
+                <strong className="text-brick font-display">{t("pages.ajima.respectStrong", "Please be respectful.")}</strong>{" "}
                 {t(
                   "pages.ajima.respectBody",
                   "This is a living place of worship. Some rituals may be private or restricted, so ask the Guthi before photographing or recording.",
                 )}
-              </p>
+              </div>
             </aside>
           </Reveal>
         </PageLayout.Section>
       </PageLayout>
 
-      {/* Full-bleed panorama band */}
+      {/* Full-bleed 360 panorama band */}
       <section className="relative overflow-hidden bg-gradient-to-b from-wood to-brick-deep px-5 py-14 text-cream">
         <div className="lattice absolute inset-0 opacity-[0.06]" aria-hidden />
-        <div className="relative mx-auto max-w-2xl">
+        <div className="relative mx-auto max-w-3xl">
           <Reveal>
             <SectionTitle titleKey="lookAroundShrine" light />
+            <p className="mx-auto mt-2 max-w-md text-center text-sm text-cream/80">
+              {isNepali
+                ? "प्याठो अजिमा मन्दिर परिसर र आँगनको ३६० डिग्री भर्चुअल अवलोकन गर्नुहोस्।"
+                : "Explore 360-degree panoramic views of the temple courtyard and sacred sanctum."}
+            </p>
           </Reveal>
           <Reveal className="mt-6" delay={0.1}>
             <PanoramaViewer scenes={scenes.filter((s) => s.placeId === "ajima")} />
           </Reveal>
-           <Reveal className="mt-6" delay={0.2}>
+          <Reveal className="mt-6" delay={0.2}>
             <StreetViewEmbed place="ajima" />
           </Reveal>
         </div>
       </section>
 
-      <PageLayout variant="narrow" underHero>
+      {/* Interactive Suite: Hotspots, Then & Now comparison, Spoken Audio Narration, Quiz (with friend's quiz) */}
+      <PageLayout variant="wide" underHero>
+        <PageLayout.Section>
+          <Reveal>
+            <InteractiveSuite siteData={siteData} />
+          </Reveal>
+        </PageLayout.Section>
+
+        {/* Sacred History & Guardian Origins */}
+        <PageLayout.Section>
+          <Reveal>
+            <div className="space-y-6">
+              <div className="text-center space-y-2">
+                <p className="font-deva text-xs font-semibold uppercase tracking-wider text-vermilion">
+                  {isNepali ? "टोल संरक्षण तथा गुठी इतिहास" : "Neighborhood Protection & Guthi Lineage"}
+                </p>
+                <h3 className="font-display text-2xl font-bold text-brick sm:text-3xl">
+                  {isNepali ? "अजिमाको इतिहास र उत्पत्ति" : "Sacred History & Guardian Foundations"}
+                </h3>
+                <p className="mx-auto max-w-2xl text-sm leading-relaxed text-wood/80">
+                  {isNepali ? siteData.history.summary.ne : siteData.history.summary.en}
+                </p>
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-3 pt-2">
+                {siteData.history.chronicles.map((ch, idx) => (
+                  <div
+                    key={idx}
+                    className="wood-frame rounded-2xl bg-paper p-5 sm:p-6 text-wood shadow-sm flex flex-col justify-between"
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between border-b border-wood/10 pb-2">
+                        <span className="font-mono text-xs text-marigold-deep text-vermilion font-semibold">
+                          0{idx + 1}
+                        </span>
+                        <span className="rounded-full bg-wood/10 px-2 py-0.5 text-[10px] font-mono font-semibold uppercase text-wood">
+                          Documented
+                        </span>
+                      </div>
+                      <h4 className="font-display text-base font-bold text-brick">
+                        {isNepali ? ch.heading.ne : ch.heading.en}
+                      </h4>
+                      <p className="text-sm leading-relaxed text-wood/85">
+                        {isNepali ? ch.text.ne : ch.text.en}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </PageLayout.Section>
+
+        {/* Chronological Timeline */}
+        <PageLayout.Section>
+          <Reveal>
+            <HistoricalTimeline timeline={siteData.timeline} />
+          </Reveal>
+        </PageLayout.Section>
+
+        {/* Vernacular Sacred Architecture & Struts */}
+        <PageLayout.Section>
+          <Reveal>
+            <ArchitectureDeepDive
+              introduction={siteData.architecture.introduction}
+              features={siteData.architecture.features}
+              eyebrow={isNepali ? "नेवारी मन्दिर शिल्पकला" : "Vernacular Newar Temple Architecture"}
+              title={isNepali ? "प्याठो अजिमाको वास्तुकला र काष्ठकला" : "Sacred Architecture & Woodcraft"}
+            />
+          </Reveal>
+        </PageLayout.Section>
+
+        {/* Living Cultural Significance & Rituals */}
+        <PageLayout.Section>
+          <Reveal>
+            <div className="space-y-6">
+              <div className="text-center space-y-2">
+                <p className="font-deva text-xs font-semibold uppercase tracking-wider text-vermilion">
+                  {isNepali ? "जीवन्त अनुष्ठान र मातृका पूजा" : "Living Traditions & Guthi Rituals"}
+                </p>
+                <h3 className="font-display text-2xl font-bold text-brick sm:text-3xl">
+                  {isNepali ? "धार्मिक तथा सांस्कृतिक परम्परा" : "Religious & Cultural Significance"}
+                </h3>
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-3">
+                {siteData.culturalSignificance.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="wood-frame rounded-2xl bg-cream p-5 sm:p-6 text-wood shadow-sm"
+                  >
+                    <span className="rounded-full bg-marigold/30 px-2.5 py-0.5 text-[11px] font-mono font-semibold text-wood uppercase">
+                      {item.traditionType}
+                    </span>
+                    <h4 className="font-display text-lg font-bold text-brick mt-2">
+                      {isNepali ? item.title.ne : item.title.en}
+                    </h4>
+                    <p className="mt-2 text-sm leading-relaxed text-wood/85">
+                      {isNepali ? item.description.ne : item.description.en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </PageLayout.Section>
+
+        {/* Community Stories on Pyatho Ajima with Form CTA */}
+        <PageLayout.Section>
+          <Reveal>
+            <div className="space-y-6">
+              <div className="flex flex-wrap items-center justify-between gap-4 border-b border-wood/15 pb-4">
+                <div>
+                  <p className="font-deva text-xs font-semibold uppercase tracking-wider text-vermilion">
+                    {isNepali ? "वडा १६ का स्वरहरू" : "Community Voices & Devotional Memories"}
+                  </p>
+                  <h3 className="font-display text-2xl font-bold text-brick sm:text-3xl">
+                    {isNepali ? "प्याठो अजिमाका सामुदायिक सम्झनाहरू" : "Stories of Pyatho Ajima"}
+                  </h3>
+                </div>
+
+                <Link
+                  href="/stories/submit?location=pyatho-ajima"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-brick px-5 py-2.5 text-xs font-semibold text-cream shadow-sm hover:bg-brick-deep active:scale-95"
+                >
+                  <span>+</span>
+                  <span>{isNepali ? "अजिमाबारे कथा थप्नुहोस्" : "Share an Ajima Story"}</span>
+                </Link>
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+                {ajimaStories.map((story) => (
+                  <StoryCard key={story.id} story={story} />
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </PageLayout.Section>
+
+        {/* Fact Accordion */}
         <PageLayout.Section>
           <Reveal>
             <SectionTitle titleKey="ajimaStory" />
@@ -87,16 +243,28 @@ export default function AjimaView() {
               {t("pages.ajima.storyIntro")}
             </p>
           </Reveal>
-          <div className="mt-6">
+          <div className="mt-6 max-w-3xl mx-auto">
             <FactAccordion items={byPlace("ajima")} accent="brick" />
           </div>
         </PageLayout.Section>
-        
-      <PageLayout.Section>
+
+        {/* Sources & Citations */}
+        <PageLayout.Section>
           <Reveal>
-            <PlaceInteractive place="ajima" lang={lang} />
+            <div className="rounded-2xl border border-wood/15 bg-paper/60 p-6 text-xs text-wood/75 space-y-2">
+              <p className="font-semibold text-brick font-display text-sm">
+                {isNepali ? "प्रमाणित ऐतिहासिक स्रोत तथा सन्दर्भ सामग्री:" : "Archival Sources & References:"}
+              </p>
+              <ul className="list-disc pl-5 space-y-1 font-mono text-[11px]">
+                {siteData.sources.map((s, idx) => (
+                  <li key={idx}>{s}</li>
+                ))}
+              </ul>
+            </div>
           </Reveal>
         </PageLayout.Section>
+
+        {/* Continue to 22 Dhara CTA */}
         <PageLayout.Section>
           <Reveal>
             <div className="wood-frame rounded-3xl bg-teal-deep p-6 text-center text-cream">
