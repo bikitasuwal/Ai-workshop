@@ -16,11 +16,11 @@ import NavbarShell, { type NavLink } from "./NavbarShell";
  * English fallback shown if the key is ever missing.
  */
 export const NAV_LINKS: NavLink[] = [
+  { label: "Home", href: "/", key: "home" },
   { label: "Places", href: "/places", key: "places" },
+  { label: "Stories", href: "/stories", key: "stories" },
   { label: "Gallery", href: "/gallery", key: "gallery" },
   { label: "Festival", href: "/festival", key: "festival" },
-  { label: "Quiz", href: "/quiz", key: "quiz" },
-  { label: "Voices", href: "/reviews", key: "voices" },
   { label: "Sources", href: "/sources", key: "sources" },
 ];
 

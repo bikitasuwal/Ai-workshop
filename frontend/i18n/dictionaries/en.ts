@@ -36,7 +36,9 @@ export const en = {
   },
 
   nav: {
+    home: "Home",
     places: "Places",
+    stories: "Stories",
     gallery: "Gallery",
     festival: "Festival",
     quiz: "Quiz",
@@ -74,6 +76,7 @@ export const en = {
     festivalAbout: { ne: "पर्वको बारेमा", en: "About the festival" },
     heritageQuiz: { ne: "सम्पदा प्रश्नोत्तरी", en: "Heritage Quiz & Challenges" },
     voices: { ne: "तपाईंको आवाज", en: "Voices of visitors" },
+    communityStories: { ne: "सामुदायिक कथाहरू", en: "Community Stories & Memories" },
     sources: { ne: "स्रोतहरू", en: "Sources & open questions" },
     signIn: { ne: "प्रवेश", en: "Sign in" },
     join: { ne: "खाता खोल्नुहोस्", en: "Join the community" },
