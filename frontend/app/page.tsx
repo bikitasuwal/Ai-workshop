@@ -5,6 +5,7 @@ import HomeHero from "@/components/HomeHero";
 import PanoramaViewer from "@/components/PanoramaViewer";
 import HeritageMap from "@/components/HeritageMap";
 import PlaceCard from "@/components/PlaceCard";
+import QuizTeaser from "@/components/QuizTeaser";
 import { places, scenes } from "@/lib/places";
 import AskButton from "@/components/AskButton";
 import { Reveal, SectionTitle, Stamp, PagodaDivider } from "@/components/ui";
@@ -140,6 +141,11 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Interactive Quiz Teaser */}
+      <Reveal>
+        <QuizTeaser />
+      </Reveal>
 
       {/* Ask CTA */}
       <section className="mx-auto max-w-2xl px-5 pb-6">
