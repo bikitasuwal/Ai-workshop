@@ -28,7 +28,7 @@ export default function QuizView() {
           </h1>
           <p className="mx-auto mt-4 max-w-md text-base sm:text-lg text-cream/85">
             {isNepali
-              ? "२२ धारा, प्याः थ्वँ अजिमा र ल्हुति पुन्हिबारे आफ्नो ज्ञान जाँच्नुहोस्, र इतिहास र धार्मिक आस्था छुट्याउन सिक्नुहोस्।"
+              ? "२२ धारा, प्याठो अजिमा र ल्हुति पुन्हिबारे आफ्नो ज्ञान जाँच्नुहोस्, र इतिहास र धार्मिक आस्था छुट्याउन सिक्नुहोस्।"
               : "Test your understanding of Balaju's 22 spouts, sacred shrines, and festivals while learning to distinguish history from living belief."}
           </p>
         </Reveal>
@@ -78,7 +78,7 @@ export default function QuizView() {
                   href="/ajima"
                   className="min-h-[44px] inline-flex items-center rounded-full bg-brick px-5 text-sm font-semibold text-cream transition active:scale-95 hover:bg-brick-deep"
                 >
-                  {isNepali ? "प्याः थ्वँ अजिमा" : "Pyah Thwam Ajima"}
+                  {isNepali ? "प्याठो अजिमा" : "Pyatho Ajima"}
                 </Link>
                 <Link
                   href="/sources"

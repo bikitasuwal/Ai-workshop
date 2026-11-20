@@ -274,7 +274,7 @@ function MultipleChoiceQuiz({
             {[
               { id: "all", label: isNepali ? "सम्पूर्ण" : "All Topics" },
               { id: "dhara", label: isNepali ? "२२ धारा" : "22 Dhara" },
-              { id: "ajima", label: isNepali ? "प्याः थ्वँ अजिमा" : "Pyah Thwam Ajima" },
+              { id: "ajima", label: isNepali ? "प्याठो अजिमा" : "Pyatho Ajima" },
               { id: "festival", label: isNepali ? "पर्व (ल्हुति पुन्हि)" : "Lhuti Festival" },
             ].map((cat) => (
               <button

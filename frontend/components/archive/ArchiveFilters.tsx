@@ -66,7 +66,7 @@ export default function ArchiveFilters({
         >
           <option value="all">{isNepali ? "सबै स्थान" : "All places"}</option>
           <option value="22-dhara">{isNepali ? "२२ धारा" : "22 Dhara"}</option>
-          <option value="pyatho-ajima">{isNepali ? "प्याः थ्वँ अजिमा" : "Pyah Thwam Ajima"}</option>
+          <option value="pyatho-ajima">{isNepali ? "प्याठो अजिमा" : "Pyatho Ajima"}</option>
           <option value="ward-16">{isNepali ? "वडा १६" : "Ward 16"}</option>
         </select>
 

@@ -21,9 +21,9 @@ const deva = Noto_Sans_Devanagari({
 });
 
 export const metadata: Metadata = {
-  title: "Balaju Living Heritage | 22 Dhara & Pyah Thwam Ajima",
+  title: "Balaju Living Heritage | 22 Dhara & Pyatho Ajima",
   description:
-    "A living archive of 22 Dhara (Baisdhara) and Pyah Thwam Ajima in Balaju, Kathmandu: water, worship, Newar art and community.",
+    "A living archive of 22 Dhara (Baisdhara) and Pyatho Ajima in Balaju, Kathmandu: water, worship, Newar art and community.",
 };
 
 export const viewport: Viewport = {

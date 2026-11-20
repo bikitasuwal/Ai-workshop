@@ -42,7 +42,7 @@ const KNOWLEDGE = facts
   .map((f) => `[${f.id}] ${f.title} (evidence: ${evidenceMeta[f.evidence].label}; sources: ${f.sources.join(",")})\n${f.text}`)
   .join("\n\n");
 
-const SYSTEM = `You are the Heritage Guide for a community website about two places in Balaju, Kathmandu: 22 Dhara (Baisdhara) and Pyah Thwam Ajima.
+const SYSTEM = `You are the Heritage Guide for a community website about two places in Balaju, Kathmandu: 22 Dhara (Baisdhara) and Pyatho Ajima.
 
 RULES
 1. Answer ONLY from the VERIFIED NOTES below. If the answer is not there, say you don't have verified information and suggest asking the local Guthi, festival committee or heritage authorities. Never invent facts.

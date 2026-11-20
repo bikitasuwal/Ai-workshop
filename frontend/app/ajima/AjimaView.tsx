@@ -13,6 +13,7 @@ import PageLayout from "@/components/ui/PageLayout";
 import InteractiveSuite from "@/components/interactive/InteractiveSuite";
 import HistoricalTimeline from "@/components/heritage/HistoricalTimeline";
 import ArchitectureDeepDive from "@/components/heritage/ArchitectureDeepDive";
+import AjimaDescription from "@/components/heritage/AjimaDescription";
 import StreetViewEmbed from "@/components/StreetViewEmbed";
 import { scenes } from "@/lib/places";
 import { Reveal, SectionTitle } from "@/components/ui";
@@ -37,8 +38,8 @@ export default function AjimaView() {
             <path d="M60 58c-7-8-1-14 0-21 1 7 7 13 0 21Z" fill="#e8a317" className="flame" style={{ transformOrigin: "60px 58px" }} />
             <ellipse cx="60" cy="60" rx="14" ry="4" fill="#faf3e3" opacity=".9" />
           </svg>
-          <p className="font-deva text-lg font-semibold text-marigold">प्याः थ्वँ अजिमा</p>
-          <h1 className="font-display mt-1 text-4xl sm:text-5xl">Pyah Thwam Ajima</h1>
+          <p className="font-deva text-lg font-semibold text-marigold">प्याठो अजिमा</p>
+          <h1 className="font-display mt-1 text-4xl sm:text-5xl">Pyatho Ajima</h1>
           <p className="mx-auto mt-4 max-w-md text-lg text-cream/85">
             {t("pages.ajima.subtitle", "A protective mother-goddess shrine inside Balaju Baisdhara Park, also known as Shitala Mai.")}
           </p>
@@ -48,8 +49,12 @@ export default function AjimaView() {
         </svg>
       </section>
 
-      {/* Respect Note */}
+      {/* Description card (like the Ward 16 card on /dhara) and the respect note */}
       <PageLayout variant="default" underHero>
+        <PageLayout.Section>
+          <AjimaDescription />
+        </PageLayout.Section>
+
         <PageLayout.Section>
           <Reveal>
             <aside className="wood-frame flex gap-4 rounded-3xl bg-paper/90 p-5 sm:p-6 text-wood">

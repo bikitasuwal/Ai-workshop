@@ -2,7 +2,7 @@
 
 /**
  * components/HomeHero.tsx: the full-screen opening of the home page.
- * A real photograph under a dark overlay, a small gold eyebrow, a two-line headline,
+ * A real photograph (public/media/hero.jpeg) under a dark overlay, a small gold eyebrow, a two-line headline,
  * a thin divider, one paragraph and two buttons, then a "scroll" cue.
  * The navbar sits transparent over it until the page scrolls.
  */
@@ -24,7 +24,7 @@ export default function HomeHero() {
 
   return (
     <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-wood text-cream">
-      <Image src="/media/spouts.jpg" alt="" fill priority sizes="100vw" className="object-cover object-center" />
+      <Image src="/media/hero.jpeg" alt="" fill priority sizes="100vw" className="object-cover object-center" />
       <div className="absolute inset-0 bg-gradient-to-b from-wood/85 via-wood/60 to-wood/95" aria-hidden />
       <div
         className="absolute inset-0"
@@ -42,21 +42,19 @@ export default function HomeHero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 mx-auto max-w-4xl px-5 pb-28 pt-28 text-center sm:px-8"
+        className="relative z-10 mx-auto max-w-4xl px-5 pb-32 pt-28 text-center sm:px-8"
       >
         <motion.p variants={item} className="text-[11px] font-semibold uppercase tracking-[0.3em] text-marigold sm:text-xs">
           {t("home.hero.eyebrow")}
         </motion.p>
-        <motion.h1 variants={item} className="font-display mt-5 text-[2.5rem] leading-[1.12] sm:text-6xl lg:text-7xl">
+        <motion.h1 variants={item} className="font-display mt-6 text-[1.45rem] leading-[1.15] sm:mt-7 sm:text-5xl lg:text-6xl">
           {t("home.hero.line1")}
-          <br />
-          <span className="gold-shine">{t("home.hero.line2")}</span>
+          <span className="block">
+            <span className="gold-shine inline-block whitespace-nowrap text-[1.45rem] min-[400px]:text-[1.7rem] sm:text-5xl lg:text-6xl">{t("home.hero.line2")}</span>
+          </span>
         </motion.h1>
-        <motion.div variants={item} className="mx-auto my-7 h-px w-16 bg-marigold" aria-hidden />
-        <motion.p variants={item} className="mx-auto max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">
-          {t("home.hero.subtitle")}
-        </motion.p>
-        <motion.div variants={item} className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <motion.div variants={item} className="mx-auto mb-9 mt-8 h-px w-16 bg-marigold sm:mb-10 sm:mt-9" aria-hidden />
+        <motion.div variants={item} className="mx-auto flex max-w-xs flex-col items-center justify-center gap-3 sm:max-w-none sm:flex-row sm:gap-4">
           <Link
             href="#landmarks"
             className="inline-flex min-h-[52px] w-full items-center justify-center border border-brick bg-brick px-8 text-[13px] font-semibold uppercase tracking-[0.15em] text-cream transition hover:bg-brick-deep active:scale-95 sm:w-auto"
