@@ -40,22 +40,6 @@ export interface ComparisonData {
   historicalNotes: { en: string; ne: string };
 }
 
-export interface AudioChapter {
-  time: number;
-  title: string;
-}
-
-export interface AudioData {
-  title: { en: string; ne: string };
-  subtitle: { en: string; ne: string };
-  duration: string;
-  durationSeconds: number;
-  audioSrc: string;
-  speaker: { en: string; ne: string };
-  transcript: { en: string; ne: string };
-  chapters: AudioChapter[];
-}
-
 export interface QuizOption {
   id: string;
   text: { en: string; ne: string };
@@ -125,7 +109,6 @@ export interface HeritageSiteDetail {
     items: HotspotItem[];
   };
   comparison: ComparisonData;
-  audio: AudioData;
   quiz: QuizData;
 }
 
@@ -482,33 +465,6 @@ export const HERITAGE_SITES_DATA: Record<"22-dhara" | "pyatho-ajima", HeritageSi
         en: "While the forested background of Nagarjun hill remains intact, urban development in the outer perimeter has heightened the importance of protecting the underground spring recharge zone.",
         ne: "नागार्जुनको वनक्षेत्र जोगाइए तापनि आसपासको तीव्र सहरीकरणका कारण पानीको मूल रिचार्ज हुने क्षेत्रको संरक्षण अझ संवेदनशील बनेको छ।",
       },
-    },
-    audio: {
-      title: {
-        en: "The Living Springs of Balaju",
-        ne: "बालाजुको जीवन्त जल सम्पदा",
-      },
-      subtitle: {
-        en: "A spoken audio tour detailing the engineering, royal history and annual Baisdhara Mela.",
-        ne: "बाइसधाराको इतिहास, प्रविधि र चैते पूर्णिमा मेलाको मौखिक वृत्तान्त।",
-      },
-      duration: "03:15",
-      durationSeconds: 195,
-      audioSrc: "/audio/22-dhara-narration.mp3",
-      speaker: {
-        en: "Ward 16 Cultural Heritage Documentation Initiative",
-        ne: "वडा नं. १६ सांस्कृतिक सम्पदा संरक्षण समिति",
-      },
-      transcript: {
-        en: "Welcome to 22 Dhara, also known throughout Nepal as Balaju Baisdhara. Standing before these stone spouts, you are witnessing nearly three centuries of living water heritage.\n\nIn the mid-eighteenth century, King Jaya Prakash Malla brought water from the high forest springs of Nagarjun hill through underground clay pipes to feed twenty-one sculpted spouts. A few decades later, King Rana Bahadur Shah added the twenty-second spout, completing the sacred count of twenty-two.\n\nEvery year on the full moon of Chaitra, thousands of pilgrims arrive before dawn. They bathe under each of the twenty-two spouts in sequence, trusting in the healing minerals of Nagarjun and seeking spiritual renewal.",
-        ne: "२२ धारा अर्थात् बालाजु बाइसधारामा यहाँलाई स्वागत छ। यी ढुङ्गेधाराहरू अगाडि उभिँदा तपाईं झण्डै तीन शताब्दी पुरानो जीवित जल सम्पदाको प्रत्यक्षदर्शी बन्नुहुन्छ।\n\n१८ औँ शताब्दीको मध्यतिर राजा जयप्रकाश मल्लले नागार्जुन डाँडाको मुहानबाट पानी ल्याएर सुरुमा २१ वटा धारा बनाएका थिए। पछि राजा रणबहादुर शाहले बाइसौँ धारा थप गरी बाइसधाराको पूर्ण स्वरूप दिए।\n\nप्रत्येक वर्ष चैते पूर्णिमामा हजारौँ श्रद्धालुहरू बिहान सबेरै आएर बाइसै धारामा क्रमैसँग स्नान गर्दछन् र नयाँ आध्यात्मिक ऊर्जा प्राप्त गर्दछन्।",
-      },
-      chapters: [
-        { time: 0, title: "1. Origins & Royal Chronicles" },
-        { time: 55, title: "2. The Makara Spout Architecture" },
-        { time: 110, title: "3. Lhuti Punhi Sacred Bathing" },
-        { time: 155, title: "4. Protecting the Nagarjun Watershed" },
-      ],
     },
     quiz: {
       title: {
@@ -965,33 +921,6 @@ export const HERITAGE_SITES_DATA: Record<"22-dhara" | "pyatho-ajima", HeritageSi
         en: "Following the 2015 tremors, community members and ward authorities collaborated to reinforce the timber joinery and re-lay the courtyard stone without disturbing the ancient core sanctum stone.",
         ne: "२०७२ को भूकम्पपछि स्थानीय गुठी र वडाको पहलमा गर्भगृहको प्राचीन शिला यथावत् राखी छाना र काठका जोर्नीहरूको परम्परागत विधिबाट मर्मत गरियो।",
       },
-    },
-    audio: {
-      title: {
-        en: "The Grandmother's Guardian Sanctuary",
-        ne: "हाम्रो टोलको ममतामयी छहारी",
-      },
-      subtitle: {
-        en: "A spoken cultural audio tour exploring maternal deity worship, guthi stewardship and community music.",
-        ne: "अजिमाको महत्त्व, गुठी परम्परा र साँझको भजन संस्कृतिको मौखिक वृत्तान्त।",
-      },
-      duration: "02:50",
-      durationSeconds: 170,
-      audioSrc: "/audio/pyatho-ajima-narration.mp3",
-      speaker: {
-        en: "Ward 16 Cultural Heritage Documentation Initiative",
-        ne: "वडा नं. १६ सांस्कृतिक सम्पदा संरक्षण समिति",
-      },
-      transcript: {
-        en: "Step into the courtyard of Pyatho Ajima Temple, where centuries of maternal devotion greet every visitor. In the Newar language, 'Ajima' literally translates to 'Grandmother'.\n\nUnlike formidable warrior deities, Ajima is an intimate maternal protector. For generations, whenever young children in this tole suffered from fevers, viral ailments, or sleepless nights, mothers brought them here at daybreak. An offering of vermilion, sweet water, and mustard-oil lamps was lit with faith that maternal warmth could heal all vulnerabilities.\n\nEvery evening, this quiet courtyard awakens with the rhythm of the Dafa bhajan—local elders gathering in the adjacent open pavilion to play cymbals and hand drums. This temple is not merely historic masonry: it is the living heart of neighbourly solidarity in Ward 16.",
-        ne: "प्याठो अजिमा मन्दिरको यो शान्त चोकमा यहाँलाई स्वागत छ। नेपाल भाषामा 'अजिमा' को अर्थ 'हजुरआमा' हुन्छ।\n\nअजिमा कुनै टाढाको वा डरलाग्दो देवता हुनुहुन्न; उहाँ बालबालिकालाई माया गर्ने ममतामयी हजुरआमा हुनुहुन्छ। पुस्तौँदेखि यस टोलका बालबच्चा बिरामी पर्दा आमाहरू यहाँ आएर दियो बाल्ने र रक्षाको कामना गर्ने गर्दथे।\n\nसाँझ परेपछि मन्दिरसँगैको पाटीमा बज्ने भजनका धुनहरूले टोलवासीहरूलाई एकताबद्ध बनाउँछ। यो मन्दिर इँटा र काठको संरचना मात्र नभई वडा नं. १६ को आपसी सद्भाव र जीवन्त संस्कृतिको धरोहर हो।",
-      },
-      chapters: [
-        { time: 0, title: "1. The Maternal Spirit of Ajima" },
-        { time: 45, title: "2. The Aniconic Stone Sanctum" },
-        { time: 105, title: "3. Evening Bhajan in the Pati" },
-        { time: 145, title: "4. Intergenerational Community Care" },
-      ],
     },
     quiz: {
       title: {
