@@ -72,11 +72,11 @@ export default function AjimaView() {
         </div>
       </section>
 
-      {/* Interactive Suite: Hotspots, Then & Now comparison, Spoken Audio Narration, Quiz (with friend's quiz) */}
+      {/* Interactive Suite: Hotspots, Then & Now comparison, Quiz (with friend's quiz) */}
       <PageLayout variant="default" underHero>
         <PageLayout.Section>
           <Reveal>
-            <InteractiveSuite siteData={siteData} showAudio={false} showComparisonNotes={false} />
+            <InteractiveSuite siteData={siteData} showComparisonNotes={false} />
           </Reveal>
         </PageLayout.Section>
 

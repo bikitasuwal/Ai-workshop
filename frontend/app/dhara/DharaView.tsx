@@ -48,14 +48,10 @@ export default function DharaView() {
         </svg>
       </section>
 
-      {/* Ward 16 overview */}
+      {/* Description card (same format as the card on /ajima) */}
       <PageLayout variant="default" underHero>
-
-        {/* Ward 16 Description */}
         <PageLayout.Section>
-          <Reveal>
-            <Ward16Description variant="dhara" />
-          </Reveal>
+          <Ward16Description variant="dhara" />
         </PageLayout.Section>
       </PageLayout>
 
@@ -75,7 +71,7 @@ export default function DharaView() {
         </div>
       </section>
 
-      {/* Interactive Suite: Hotspots, Comparison Slider, Spoken Audio Narration, Quiz (with friend's quiz) */}
+      {/* Interactive Suite: Hotspots, Then & Now comparison, Quiz (with friend's quiz) */}
       <PageLayout variant="default" underHero>
         <PageLayout.Section>
           <Reveal>
