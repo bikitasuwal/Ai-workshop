@@ -17,7 +17,6 @@ import NavbarShell, { type NavLink } from "./NavbarShell";
  */
 export const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/", key: "home" },
-  { label: "Places", href: "/places", key: "places" },
   { label: "Stories", href: "/stories", key: "stories" },
   { label: "Gallery", href: "/gallery", key: "gallery" },
   { label: "Festival", href: "/festival", key: "festival" },
