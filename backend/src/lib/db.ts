@@ -6,6 +6,7 @@ export type Row = Record<string, unknown>;
 export type Query = (text: string, params?: unknown[]) => Promise<{ rows: Row[] }>;
 
 export const SCHEMA = `
+-- Admin accounts only. Visitors do not sign up.
 CREATE TABLE IF NOT EXISTS users (
   id            uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   email         text UNIQUE NOT NULL,
@@ -16,31 +17,36 @@ CREATE TABLE IF NOT EXISTS users (
   created_at    timestamptz NOT NULL DEFAULT now()
 );
 
--- Reviews, photos and complaints. Nothing is public until an admin sets status = 'approved'.
-CREATE TABLE IF NOT EXISTS posts (
+-- Visitor submissions (no account needed). Nothing is public until an admin sets status = 'approved'.
+--   type 'story' -> shown on the Stories page;  type 'photo' -> shown in the Gallery album of its place.
+CREATE TABLE IF NOT EXISTS submissions (
   id            uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id       uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-  kind          text NOT NULL CHECK (kind IN ('review','photo','complaint')),
-  place         text NOT NULL CHECK (place IN ('dhara','ajima','general')),
-  rating        smallint CHECK (rating BETWEEN 1 AND 5),
+  type          text NOT NULL CHECK (type IN ('story','photo')),
+  place         text NOT NULL CHECK (place IN ('22-dhara','pyatho-ajima','ward-16')),
+  author_name   text NOT NULL,
+  author_role   text,
+  author_email  text,
+  author_age    text,
+  attribution   text NOT NULL DEFAULT 'real_name' CHECK (attribution IN ('real_name','anonymous','representative')),
+  category      text,
+  era           text,
   title         text,
-  body          text NOT NULL,
+  body          text NOT NULL DEFAULT '',
   status        text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','approved','rejected')),
   reject_reason text,
   reviewed_by   uuid REFERENCES users(id) ON DELETE SET NULL,
   reviewed_at   timestamptz,
   created_at    timestamptz NOT NULL DEFAULT now()
 );
-CREATE INDEX IF NOT EXISTS posts_status_idx ON posts (status, created_at DESC);
-CREATE INDEX IF NOT EXISTS posts_user_idx ON posts (user_id);
+CREATE INDEX IF NOT EXISTS submissions_status_idx ON submissions (status, created_at DESC);
 
-CREATE TABLE IF NOT EXISTS post_photos (
-  id         uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  post_id    uuid NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
-  file       text NOT NULL,
-  created_at timestamptz NOT NULL DEFAULT now()
+CREATE TABLE IF NOT EXISTS submission_photos (
+  id            uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  submission_id uuid NOT NULL REFERENCES submissions(id) ON DELETE CASCADE,
+  file          text NOT NULL,
+  created_at    timestamptz NOT NULL DEFAULT now()
 );
-CREATE INDEX IF NOT EXISTS post_photos_post_idx ON post_photos (post_id);
+CREATE INDEX IF NOT EXISTS submission_photos_idx ON submission_photos (submission_id);
 `;
 
 let ready: Promise<Query> | null = null;

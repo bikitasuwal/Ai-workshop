@@ -4,53 +4,18 @@ import {
   checkPassword,
   currentUser,
   endSession,
-  hashPassword,
   sameOrigin,
   startSession,
   tooMany,
-  validEmail,
 } from "../lib/auth.js";
 import { fail } from "../lib/http.js";
 
+// There is no public sign-up: visitors share without an account. Only the admin signs in here.
 const router = Router();
 
 // Compared against when the email is unknown, so response time doesn't reveal which emails exist.
-let dummy: Promise<string> | null = null;
-const dummyHash = () => (dummy ??= hashPassword("not-a-real-password"));
-
-router.post("/signup", async (req, res) => {
-  if (!sameOrigin(req)) return fail(res, 403, "Request blocked.");
-  if (tooMany(`signup:${req.ip}`, 5)) return fail(res, 429, "Too many attempts. Please try again in a few minutes.");
-
-  const email = String(req.body?.email ?? "").trim().toLowerCase();
-  const name = String(req.body?.name ?? "").trim().replace(/\s+/g, " ");
-  const password = String(req.body?.password ?? "");
-
-  if (!validEmail(email)) return fail(res, 400, "Please enter a valid email address.");
-  if (name.length < 2 || name.length > 40) return fail(res, 400, "Display name must be 2–40 characters.");
-  if (password.length < 8) return fail(res, 400, "Password must be at least 8 characters.");
-  if (Buffer.byteLength(password) > 72) return fail(res, 400, "Password is too long (max 72 bytes).");
-
-  const q = await db();
-  const exists = await q("SELECT 1 FROM users WHERE email = $1", [email]);
-  if (exists.rows.length) return fail(res, 409, "An account with this email already exists. Try signing in.");
-
-  // The very first account matching ADMIN_EMAIL becomes the admin (only while no admin exists).
-  let role: "user" | "admin" = "user";
-  const adminEmail = process.env.ADMIN_EMAIL?.trim().toLowerCase();
-  if (adminEmail && adminEmail === email) {
-    const admins = await q("SELECT 1 FROM users WHERE role = 'admin' LIMIT 1");
-    if (!admins.rows.length) role = "admin";
-  }
-
-  const hash = await hashPassword(password);
-  const { rows } = await q(
-    "INSERT INTO users (email, display_name, password_hash, role) VALUES ($1,$2,$3,$4) RETURNING id",
-    [email, name, hash, role],
-  );
-  await startSession(res, { id: String(rows[0].id), email, name, role });
-  res.status(201).json({ user: { name, email, role } });
-});
+// (A real bcrypt hash of a throwaway string.)
+const DUMMY_HASH = "$2b$12$KfPrHNUVzS2GVgthY6cDpO06LV2Mbv2W7ztsBMZl3T9KnjLCsSbrS";
 
 router.post("/login", async (req, res) => {
   if (!sameOrigin(req)) return fail(res, 403, "Request blocked.");
@@ -66,7 +31,7 @@ router.post("/login", async (req, res) => {
     [email],
   );
   const u = rows[0];
-  const ok = await checkPassword(password, u ? String(u.password_hash) : await dummyHash());
+  const ok = await checkPassword(password, u ? String(u.password_hash) : DUMMY_HASH);
   if (!u || !ok) return fail(res, 401, "Incorrect email or password.");
   if (u.banned) return fail(res, 403, "This account has been suspended.");
 

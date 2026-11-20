@@ -1,7 +1,7 @@
 # Balaju Living Heritage
 
 A mobile-first website that preserves the heritage of **22 Dhara (Baisdhara)** and **Pyah Thwam Ajima** in Balaju, Kathmandu.
-Visitors can explore the places, ask a chatbot, and post reviews, photos and complaints that an admin approves before anyone sees them.
+Visitors can explore the places, ask a chatbot, and share a story or photos **without an account**. An admin approves every submission before anyone sees it: stories appear on the Stories page, photos in the Gallery of their place.
 
 - `frontend/` Next.js website, http://localhost:3000
 - `backend/` Node.js API with PostgreSQL (database `hoc`), http://localhost:4000
@@ -29,7 +29,7 @@ npm run dev        # starts the API and the website
 
 Open **http://localhost:3000**.
 
-**Admin:** sign up on the site, then run `npm run make-admin -- your@email.com`. Admins review posts at `/admin`.
+**Admin:** visitors never sign up. Create the one admin account with `npm run make-admin -- you@example.com "a strong password"`, then sign in at `/login`. The admin reviews submissions at `/admin`.
 
 ## Common problems
 
@@ -47,7 +47,7 @@ Open **http://localhost:3000**.
 | `npm run setup` | First-time install and `.env` files |
 | `npm run db:setup` | Create the database and tables (safe to repeat) |
 | `npm run dev` | Run the API and the website |
-| `npm run make-admin -- email` | Make an account the admin |
+| `npm run make-admin -- email password` | Create (or reset) the admin account |
 | `npm run check` | Type-check and lint |
 
 ## Editing content
