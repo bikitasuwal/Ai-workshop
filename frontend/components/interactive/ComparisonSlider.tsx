@@ -7,9 +7,11 @@ import { useLanguage } from "@/i18n/LanguageContext";
 
 interface ComparisonSliderProps {
   comparisonData: ComparisonData;
+  /** Show the "Historical Context Notes" box under the slider. */
+  showNotes?: boolean;
 }
 
-export default function ComparisonSlider({ comparisonData }: ComparisonSliderProps) {
+export default function ComparisonSlider({ comparisonData, showNotes = true }: ComparisonSliderProps) {
   const { isNepali } = useLanguage();
   const [sliderPosition, setSliderPosition] = useState(50); // percentage 0 - 100
   const [isDragging, setIsDragging] = useState(false);
@@ -133,6 +135,7 @@ export default function ComparisonSlider({ comparisonData }: ComparisonSliderPro
       </div>
 
       {/* Historical Context Notes */}
+      {showNotes && (
       <div className="rounded-2xl border border-marigold/40 bg-paper/90 p-5 text-wood sm:p-6">
         <div className="flex items-start gap-3">
           <span className="text-xl text-marigold font-display">◈</span>
@@ -151,6 +154,7 @@ export default function ComparisonSlider({ comparisonData }: ComparisonSliderPro
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 }

@@ -49,28 +49,10 @@ export default function AjimaView() {
         </svg>
       </section>
 
-      {/* Description card (like the Ward 16 card on /dhara) and the respect note */}
+      {/* Description card (like the Ward 16 card on /dhara) */}
       <PageLayout variant="default" underHero>
         <PageLayout.Section>
           <AjimaDescription />
-        </PageLayout.Section>
-
-        <PageLayout.Section>
-          <Reveal>
-            <aside className="wood-frame flex gap-4 rounded-3xl bg-paper/90 p-5 sm:p-6 text-wood">
-              <svg viewBox="0 0 40 40" className="h-10 w-10 shrink-0 text-marigold" aria-hidden>
-                <path d="M20 4c4 4 5 7 0 11-5-4-4-7 0-11Z" fill="#e8a317" className="flame" />
-                <path d="M6 21h28c0 7-6 12-14 12S6 28 6 21Z" fill="#8b2e1f" />
-              </svg>
-              <div className="text-[15px] leading-relaxed text-wood/90">
-                <strong className="text-brick font-display">{t("pages.ajima.respectStrong", "Please be respectful.")}</strong>{" "}
-                {t(
-                  "pages.ajima.respectBody",
-                  "This is a living place of worship. Some rituals may be private or restricted, so ask the Guthi before photographing or recording.",
-                )}
-              </div>
-            </aside>
-          </Reveal>
         </PageLayout.Section>
       </PageLayout>
 
@@ -94,7 +76,7 @@ export default function AjimaView() {
       <PageLayout variant="default" underHero>
         <PageLayout.Section>
           <Reveal>
-            <InteractiveSuite siteData={siteData} />
+            <InteractiveSuite siteData={siteData} showAudio={false} showComparisonNotes={false} />
           </Reveal>
         </PageLayout.Section>
 
