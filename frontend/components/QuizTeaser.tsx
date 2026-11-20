@@ -15,8 +15,8 @@ export default function QuizTeaser() {
   // Fast interactive teaser question:
   const teaser = {
     question: {
-      en: "Quick Heritage Check: Who is Pyah Thwam Ajima inside Balaju Park?",
-      ne: "द्रुत ज्ञान परीक्षण: बालाजु पार्कभित्र रहेको प्याः थ्वँ अजिमा को हुन्?",
+      en: "Quick Heritage Check: Who is Pyatho Ajima inside Balaju Park?",
+      ne: "द्रुत ज्ञान परीक्षण: बालाजु पार्कभित्र रहेको प्याठो अजिमा को हुन्?",
     },
     options: {
       en: [
@@ -66,7 +66,7 @@ export default function QuizTeaser() {
           </h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-wood/80 sm:text-base">
             {isNepali
-              ? "२२ धारा, प्याः थ्वँ अजिमा र ल्हुति पुन्हिबारे अन्तरक्रियात्मक प्रश्नोत्तरी मार्फत आफ्नो ज्ञान जाँच्नुहोस्।"
+              ? "२२ धारा, प्याठो अजिमा र ल्हुति पुन्हिबारे अन्तरक्रियात्मक प्रश्नोत्तरी मार्फत आफ्नो ज्ञान जाँच्नुहोस्।"
               : "Challenge yourself with interactive quizzes and discover how historians separate facts from folk traditions."}
           </p>
         </div>

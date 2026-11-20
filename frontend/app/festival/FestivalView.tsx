@@ -235,7 +235,7 @@ export default function FestivalView() {
                 {isNepali ? "सम्पदा चाडपर्व सङ्ग्रह" : "All Associated Heritage Observances"}
               </span>
               <h2 className="font-display text-2xl sm:text-3xl font-bold text-wood mt-1">
-                {isNepali ? "२२ धारा, प्याः थ्वँ अजिमा र वडा १६ का चाडपर्व" : "22 Dhara, Pyah Thwam Ajima & Ward 16 Festivals"}
+                {isNepali ? "२२ धारा, प्याठो अजिमा र वडा १६ का चाडपर्व" : "22 Dhara, Pyatho Ajima & Ward 16 Festivals"}
               </h2>
               <p className="mx-auto mt-2 max-w-md text-sm text-wood/75">
                 {isNepali

@@ -327,7 +327,7 @@ export const quizzes: QuizQuestion[] = [
   {
     id: "ajima-shrine",
     place: "ajima",
-    question: L("How is Pyah Thwam Ajima described?", "प्याः थ्वँ अजिमालाई कसरी वर्णन गरिन्छ?"),
+    question: L("How is Pyatho Ajima described?", "प्याठो अजिमालाई कसरी वर्णन गरिन्छ?"),
     options: [
       L("A protective mother-goddess shrine", "रक्षक मातृदेवीको मन्दिर"),
       L("A royal palace", "राजदरबार"),
@@ -335,8 +335,8 @@ export const quizzes: QuizQuestion[] = [
       L("A school for monks", "भिक्षुहरूको विद्यालय"),
     ],
     answer: 0,
-    explanation: L("Pyah Thwam Ajima is described as a protective mother-goddess shrine.", "प्याः थ्वँ अजिमालाई रक्षक मातृदेवीको मन्दिरका रूपमा वर्णन गरिन्छ।"),
-    source: "Places page, Pyah Thwam Ajima",
+    explanation: L("Pyatho Ajima is described as a protective mother-goddess shrine.", "प्याठो अजिमालाई रक्षक मातृदेवीको मन्दिरका रूपमा वर्णन गरिन्छ।"),
+    source: "Places page, Pyatho Ajima",
   },
    {
     id: "ajima-word",
@@ -392,7 +392,7 @@ export const quizzes: QuizQuestion[] = [
   {
     id: "ajima-ritual",
     place: "ajima",
-    question: L("Which ritual is connected with Pyah Thwam Ajima?", "प्याः थ्वँ अजिमासँग कुन अनुष्ठान जोडिएको छ?"),
+    question: L("Which ritual is connected with Pyatho Ajima?", "प्याठो अजिमासँग कुन अनुष्ठान जोडिएको छ?"),
     options: [
       L("Dristi Lekhan, an eye-painting ritual", "दृष्टि लेखन, आँखा रंगाउने अनुष्ठान"),
       L("A kite-flying contest", "चंगा उडाउने प्रतियोगिता"),
@@ -401,12 +401,12 @@ export const quizzes: QuizQuestion[] = [
     ],
     answer: 0,
     explanation: L("The shrine is the home of the Dristi Lekhan eye-painting ritual.", "यो मन्दिर दृष्टि लेखन आँखा रंगाउने अनुष्ठानको थलो हो।"),
-    source: "Places page, Pyah Thwam Ajima",
+    source: "Places page, Pyatho Ajima",
   },
   {
     id: "ajima-sanctum-stone",
     place: "ajima",
-    question: L("What serves as the sacred core deity inside the inner sanctum of Pyah Thwam Ajima?", "प्याः थ्वँ अजिमाको गर्भगृहभित्र मूल देवताको रूपमा के स्थापित छ?"),
+    question: L("What serves as the sacred core deity inside the inner sanctum of Pyatho Ajima?", "प्याठो अजिमाको गर्भगृहभित्र मूल देवताको रूपमा के स्थापित छ?"),
     options: [
       L("An aniconic natural river rock (pith stone)", "प्राकृतिक शिला (पीठ ढुङ्गा)"),
       L("A large gold-plated standing idol", "ठूलो सुनौलो उभिएको मूर्ति"),
@@ -436,7 +436,7 @@ export const quizzes: QuizQuestion[] = [
   {
     id: "ajima-dristi-artisans",
     place: "ajima",
-    question: L("Which traditional artisan community conducts the sacred Dristi Lekhan (eye-painting) rite at Pyah Thwam Ajima?", "प्याः थ्वँ अजिमामा परम्परागत 'दृष्टि लेखन' (आँखा रंगाउने) विधि कुन समुदायका कलाकारले सम्पन्न गर्छन्?"),
+    question: L("Which traditional artisan community conducts the sacred Dristi Lekhan (eye-painting) rite at Pyatho Ajima?", "प्याठो अजिमामा परम्परागत 'दृष्टि लेखन' (आँखा रंगाउने) विधि कुन समुदायका कलाकारले सम्पन्न गर्छन्?"),
     options: [
       L("Pũ (Chitrakar) artisan lineage", "पुँ (चित्रकार) समुदाय"),
       L("Tamrakar copper smiths", "ताम्राकार तामा कालिगड"),
@@ -466,7 +466,7 @@ export const quizzes: QuizQuestion[] = [
   {
     id: "ajima-guthi-stewardship",
     place: "ajima",
-    question: L("How have the daily rituals and annual festivals of Pyah Thwam Ajima been sustained for generations?", "प्याः थ्वँ अजिमाको दैनिक नित्यपूजा र वार्षिक जात्रा पुस्तान्तरण गर्न कुन संस्थाले भूमिका खेलेको छ?"),
+    question: L("How have the daily rituals and annual festivals of Pyatho Ajima been sustained for generations?", "प्याठो अजिमाको दैनिक नित्यपूजा र वार्षिक जात्रा पुस्तान्तरण गर्न कुन संस्थाले भूमिका खेलेको छ?"),
     options: [
       L("Community-based Guthi trust system", "समुदायमा आधारित गुठी प्रणाली"),
       L("Commercial sponsorship contracts", "व्यापारिक प्रायोजन सम्झौता"),
@@ -481,7 +481,7 @@ export const quizzes: QuizQuestion[] = [
   {
     id: "ajima-brickwork-style",
     place: "ajima",
-    question: L("What type of traditional brick is used in the exterior masonry of classical Newar shrines like Pyah Thwam Ajima?", "प्याः थ्वँ अजिमा जस्ता परम्परागत नेवार मन्दिरको बाहिरी गारोमा कुन प्रकारको इँटा प्रयोग गरिन्छ?"),
+    question: L("What type of traditional brick is used in the exterior masonry of classical Newar shrines like Pyatho Ajima?", "प्याठो अजिमा जस्ता परम्परागत नेवार मन्दिरको बाहिरी गारोमा कुन प्रकारको इँटा प्रयोग गरिन्छ?"),
     options: [
       L("Dachi Appa (fine wedge-shaped polished bricks)", "दाची अप्पा (चिल्लो र चोसो परेको इँटा)"),
       L("Modern hollow cement blocks", "आधुनिक सिमेन्ट ब्लक"),
@@ -572,7 +572,7 @@ const ajimaPairs: MatchPair[] = [
   },
   {
     id: "aj-pyah",
-    term: L("Pyah Thwam Ajima", "प्याः थ्वँ अजिमा"),
+    term: L("Pyatho Ajima", "प्याठो अजिमा"),
     meaning: L("A protective mother-goddess shrine in Balaju Baisdhara Park", "बालाजु बैसधारा पार्कभित्रको रक्षक मातृदेवीको मन्दिर"),
     detail: L("Local reporting describes it as a shrine inside the historic park. Written sources about this shrine are limited, so this site marks what is still being confirmed.", "स्थानीय प्रतिवेदनहरूले यसलाई ऐतिहासिक पार्कभित्रको मन्दिरका रूपमा वर्णन गर्छन्। यस मन्दिरबारे लिखित स्रोत सीमित छन्, त्यसैले यो साइटले अझै पुष्टि हुँदै गरेका कुरा चिन्ह लगाउँछ।"),
     evidence: "community",

@@ -172,8 +172,8 @@ export const QUIZ_QUESTIONS: Question[] = [
     id: "q-who-is-ajima",
     topic: "ajima",
     question: {
-      en: "In Newar cultural tradition, who is Pyah Thwam Ajima (Shitala Mai)?",
-      ne: "नेवार सांस्कृतिक परम्परामा प्याः थ्वँ अजिमा (शीतला माई) को हुन्?",
+      en: "In Newar cultural tradition, who is Pyatho Ajima (Shitala Mai)?",
+      ne: "नेवार सांस्कृतिक परम्परामा प्याठो अजिमा (शीतला माई) को हुन्?",
     },
     options: {
       en: [
@@ -472,8 +472,8 @@ export const SPOUT_GROUPS: SpoutGroup[] = [
       ne: "२२ औँ धाराले यस परिसरलाई पूर्णता दिई 'बैसधारा' को प्रख्यात नाम स्थापित गर्‍यो।",
     },
     note: {
-      en: "After completing the bath at spout 22, pilgrims proceed to Pyah Thwam Ajima shrine nearby.",
-      ne: "२२ औँ धारामा स्नान सम्पन्न गरेपछि भक्तजनहरू नजिकै रहेको प्याः थ्वँ अजिमाको दर्शन गर्न जान्छन्।",
+      en: "After completing the bath at spout 22, pilgrims proceed to Pyatho Ajima shrine nearby.",
+      ne: "२२ औँ धारामा स्नान सम्पन्न गरेपछि भक्तजनहरू नजिकै रहेको प्याठो अजिमाको दर्शन गर्न जान्छन्।",
     },
   },
 ];

@@ -945,7 +945,7 @@ export const HERITAGE_SITES_DATA: Record<"22-dhara" | "pyatho-ajima", HeritageSi
         label: "Pre-Restoration Setting",
         date: "Pre-2015 Documentation",
         source: "Community Heritage Archive",
-        src: "/media/shrine.jpg",
+        src: "/media/shrine1.jpg",
         caption: {
           en: "Pyatho Ajima Temple before seismic stabilization and courtyard restoration.",
           ne: "२०७२ को भूकम्पअघिको मन्दिर तथा परिसरको दृश्य।",

@@ -61,7 +61,6 @@ export const en = {
   /** SectionTitle pairs — { ne, en } shown together on every page. */
   titles: {
     twoPlaces: { ne: "दुई स्थान", en: "Two places, one story" },
-    lookAroundCourtyards: { ne: "चारैतिर हेर्नुहोस्", en: "Look around the courtyards" },
     wardMap: { ne: "वडा नं. १६ · नक्सा", en: "Find them in Ward 16" },
     livingHeritage: { ne: "जीवित सम्पदा", en: "Living heritage" },
     howWeLabel: { ne: "हामी कसरी लेख्छौँ", en: "How we label what we know" },
@@ -80,21 +79,18 @@ export const en = {
     signIn: { ne: "प्रवेश", en: "Sign in" },
     adminPosts: { ne: "पोस्टहरू", en: "Submissions to review" },
     homeLandmarks: { ne: "विशेष सम्पदा स्थलहरू", en: "Featured heritage landmarks" },
-    homeTraditions: { ne: "जीवित परम्परा र सामुदायिक अनुष्ठान", en: "Living traditions and community rituals" },
 
   },
 
   home: {
     hero: {
       eyebrow: "Balaju, Kathmandu · Ward 16",
-      line1: "Where water, worship",
-      line2: "and memory meet.",
+      line1: "Cultural City,",
+      line2: "Kathmandu Metropolitan City",
       // The h1 is split around the gold-shine span: lead + highlighted word + tail.
       titleLead: "Where",
       titleHighlight: "water",
       titleTail: ", worship and memory meet",
-      subtitle:
-        "A living archive of two heritage places in Balaju, Kathmandu, kept alive by the Newar communities who bathe, pray, paint and gather there.",
       exploreCta: "Explore our heritage",
       askCta: "Ask the guide",
       tagline: "A living archive, with every fact labelled",
@@ -106,14 +102,11 @@ export const en = {
         "This site records two places in Balaju and the living traditions around them, clearly separating what is documented from what is belief or oral tradition.",
     },
     overview: {
-      num: "01",
       eyebrow: "Overview",
-      headingLead: "More than a place.",
-      headingAccent: "A living heritage.",
-      p1: "Two places inside the Balaju Baisdhara Park complex, beside the Nagarjun forest in Kathmandu: a line of 22 stone water spouts, and a shrine to a protective mother goddess.",
-      p2: "Heritage is not only stone. It is what people keep doing: bathing, worshipping, painting and gathering each year. This site records both places, and clearly separates what is documented from what is belief or oral tradition.",
+      headingLead: "More than a ward.",
+      headingAccent: "A living story of culture, community, and heritage.",
+      p1: "Ward 16 of Kathmandu Metropolitan City is located in the northern-central part of Kathmandu and includes areas such as Balaju, Sorakhutte, and Mhepi. The ward is home to several culturally and historically significant sites, including Mhepi Temple, Siddhi Ganesh Temple, Balaju Baisdhara (22 Dhara), and other traditional religious and community spaces. Its heritage reflects the cultural, religious, and social traditions of the Kathmandu Valley, particularly Newar culture. Alongside its historical identity, Ward 16 is a growing urban area where heritage conservation, urban development, and community participation are important concerns.",
       place: "Balaju · Kathmandu",
-      caption: "The stone spouts of 22 Dhara, Balaju",
     },
     landmarks: {
       sub: "The water and the shrine are two parts of one tradition. Each page separates what is documented from what is belief.",
@@ -122,10 +115,6 @@ export const en = {
       dharaSub: "Balaju Baisdhara",
       ajimaTag: "Shrine",
       ajimaSub: "Mother-goddess shrine, Shitala Mai",
-    },
-    traditions: {
-      sub: "The rituals, festivals and skills that keep these places alive across generations.",
-      open: "Open",
     },
     cta: {
       eyebrow: "Preserving our heritage together",
@@ -136,37 +125,13 @@ export const en = {
       ask: "Ask the guide",
     },
 
-    lookAroundBody:
-      "Step into the two places from your phone. Drag to look around, pinch to zoom.",
     mapBody:
       "Both places lie inside the Balaju Baisdhara Park complex. Tap a landmark to open its page.",
-    pillars: {
-      water: {
-        ne: "जल",
-        en: "Water",
-        text: "Stone spouts that serve as public water points and places of ritual bathing.",
-      },
-      worship: {
-        ne: "पूजा",
-        en: "Worship",
-        text: "Shrines, offerings and the tradition of a protective mother goddess.",
-      },
-      art: {
-        ne: "कला",
-        en: "Art",
-        text: "Pũ (Chitrakar) artists paint the goddess's eyes in a community ritual.",
-      },
-      community: {
-        ne: "गुठी",
-        en: "Community",
-        text: "Guthi groups carry rituals, duties and skills from one generation to the next.",
-      },
-    },
     festival: {
       eyebrow: "ल्हुति पुन्हि · बैसधारा मेला",
       title: "The festival of lamps and water",
       body:
-        "Each year devotees bathe at the spouts, some light lamps for relatives who have passed, and many then worship Pyah Thwam Ajima.",
+        "Each year devotees bathe at the spouts, some light lamps for relatives who have passed, and many then worship Pyatho Ajima.",
       note: "Reports give different dates. Please confirm with the local committee.",
       cta: "About the festival",
     },
@@ -191,7 +156,7 @@ export const en = {
         "Twenty-two stone spouts beside the Nagarjun forest in Balaju: public water, ritual bathing and a yearly festival.",
       badges: ["22 stone spouts", "Balaju, Kathmandu", "Lhuti Punhi festival"],
       storyIntro: "Tap a title to open it. The seal above each piece tells you how well it is documented.",
-      continueTitle: "Continue to Pyah Thwam Ajima",
+      continueTitle: "Continue to Pyatho Ajima",
       continueBody: "After bathing, many devotees worship at the nearby Ajima shrine.",
       visitCta: "Visit the shrine page",
       askCta: "Ask the guide",
@@ -252,7 +217,7 @@ export const en = {
   components: {
     footer: {
       intro:
-        "A community archive of 22 Dhara and Pyah Thwam Ajima. Built to record, respect and pass on what Balaju's people already keep alive.",
+        "A community archive of 22 Dhara and Pyatho Ajima. Built to record, respect and pass on what Balaju's people already keep alive.",
       respect:
         "Please do not photograph or share restricted rituals without the permission of the Guthi and the community. Beliefs on this site are recorded as beliefs, not as medical or historical fact.",
       sourcesLink: "Sources & what still needs confirming",
@@ -294,7 +259,7 @@ export const en = {
     },
     chat: {
       welcome:
-        "Namaste! I'm the Heritage Guide. Ask me about 22 Dhara, Pyah Thwam Ajima, or the Lhuti Punhi festival. I answer only from the verified notes on this site.",
+        "Namaste! I'm the Heritage Guide. Ask me about 22 Dhara, Pyatho Ajima, or the Lhuti Punhi festival. I answer only from the verified notes on this site.",
       errorFallback: "Sorry, something went wrong.",
       netError: "I couldn't connect. Please check your network and try again.",
       openLabel: "Ask the Heritage Guide",

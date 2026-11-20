@@ -26,7 +26,7 @@ export type Submission = {
 
 export const placeName: Record<PlaceId, { en: string; ne: string }> = {
   "22-dhara": { en: "22 Dhara (Balaju Baisdhara)", ne: "बाइस धारा (बालाजु बाइसधारा)" },
-  "pyatho-ajima": { en: "Pyah Thwam Ajima", ne: "प्याः थ्वँ अजिमा" },
+  "pyatho-ajima": { en: "Pyatho Ajima", ne: "प्याठो अजिमा" },
   "ward-16": { en: "Balaju Ward 16 Heritage", ne: "बालाजु वडा १६ सम्पदा" },
 };
 

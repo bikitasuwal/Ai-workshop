@@ -197,7 +197,7 @@ export default function ContributionForm({ initialLocation = "22-dhara", initial
 
   const placeOptions: [PlaceId, string][] = [
     ["22-dhara", tr("22 Dhara (Balaju Baisdhara)", "२२ धारा (बालाजु बाइसधारा)")],
-    ["pyatho-ajima", tr("Pyah Thwam Ajima", "प्याः थ्वँ अजिमा")],
+    ["pyatho-ajima", tr("Pyatho Ajima", "प्याठो अजिमा")],
     ["ward-16", tr("Ward 16 (general living heritage)", "बालाजु वडा १६ (समग्र सम्पदा)")],
   ];
 
