@@ -13,7 +13,11 @@ const nextConfig: NextConfig = {
     return [{ source: "/places", destination: "/", permanent: true }];
   },
   async rewrites() {
-    return [{ source: "/api/:path*", destination: `${BACKEND_URL}/api/:path*` }];
+    return {
+      beforeFiles: [],
+      afterFiles: [],
+      fallback: [{ source: "/api/:path*", destination: `${BACKEND_URL}/api/:path*` }],
+    };
   },
   turbopack: {
     rules: {

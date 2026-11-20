@@ -20,6 +20,7 @@ import MobileMenu from "./MobileMenu";
 import { useUser } from "@/lib/useUser";
 import LanguageSwitcher from "@/i18n/LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
+import PagodaLogo from "@/components/ui/PagodaLogo";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 
 export type NavLink = {
@@ -64,18 +65,23 @@ export default function NavbarShell({ links }: { links: NavLink[] }) {
         aria-label={t("nav.mainNav", "Main")}
         className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
       >
-        {/* Wordmark: Devanagari name over the English eyebrow */}
+        {/* Wordmark: Devanagari name over the English eyebrow with small Pagoda Logo */}
         <Link
           href="/"
           aria-label={t("nav.homeLink", "Balaju Living Heritage — go to the homepage")}
-          className="group flex shrink-0 flex-col leading-none"
+          className="group flex shrink-0 items-center gap-2.5 leading-none"
         >
-          <span className="font-display text-xl text-marigold transition-colors duration-200 group-hover:text-cream">
-            बालाजु सम्पदा
-          </span>
-          <span className="mt-1 text-[10px] font-medium uppercase tracking-[0.2em] text-cream/75 transition-colors duration-200 group-hover:text-cream">
-            Balaju Living Heritage
-          </span>
+          <div className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-wood/40 border border-marigold/40 shadow-inner transition-all duration-200 group-hover:border-marigold group-hover:bg-wood/60">
+            <PagodaLogo className="h-6 w-6 transition-transform duration-200 group-hover:scale-105" />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-display text-xl text-marigold transition-colors duration-200 group-hover:text-cream">
+              बालाजु सम्पदा
+            </span>
+            <span className="mt-1 text-[10px] font-medium uppercase tracking-[0.2em] text-cream/75 transition-colors duration-200 group-hover:text-cream">
+              Balaju Living Heritage
+            </span>
+          </div>
         </Link>
 
         {/* Desktop links */}
