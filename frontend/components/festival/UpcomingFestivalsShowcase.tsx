@@ -123,70 +123,9 @@ export default function UpcomingFestivalsShowcase({
                   {isNepali ? fest.description.ne : fest.description.en}
                 </p>
 
-                {/* Expandable Rituals section */}
-                {isExpanded && (
-                  <div className="mt-4 space-y-3 rounded-2xl bg-paper/60 p-4 border border-wood/10 text-xs">
-                    <div>
-                      <p className="font-display font-semibold text-wood flex items-center gap-1.5">
-                        <span className="text-marigold">✦</span>
-                        {isNepali ? "मुख्य विधि तथा अनुष्ठानहरू" : "Core Rituals & Observances"}
-                      </p>
-                      <ul className="mt-2 space-y-1.5 pl-2">
-                        {fest.rituals.map((r, i) => (
-                          <li key={i} className="flex items-start gap-2 text-wood/80">
-                            <span className="font-bold text-brick mt-0.5">•</span>
-                            <span>{isNepali ? r.ne : r.en}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
 
-                    <div className="border-t border-wood/10 pt-2.5">
-                      <p className="font-display font-semibold text-brick flex items-center gap-1.5">
-                        <span className="text-marigold">☸</span>
-                        {isNepali ? "सांस्कृतिक तथा धार्मिक महत्त्व" : "Cultural Significance"}
-                      </p>
-                      <p className="mt-1 text-wood/75 leading-relaxed">
-                        {isNepali ? fest.significance.ne : fest.significance.en}
-                      </p>
-                    </div>
-                  </div>
-                )}
               </div>
 
-              {/* Action buttons footer */}
-              <div className="mt-5 flex items-center justify-between border-t border-wood/10 pt-4 text-xs">
-                <button
-                  type="button"
-                  onClick={() => toggleExpand(fest.id)}
-                  className="font-semibold text-brick hover:underline flex items-center gap-1"
-                >
-                  {isExpanded
-                    ? isNepali ? "कम विवरण देखाउनुहोस् ▲" : "Show less ▲"
-                    : isNepali ? "विधि तथा महत्त्व हेर्नुहोस् ▼" : "View rituals & details ▼"}
-                </button>
-
-                <div className="flex items-center gap-2">
-                  {fest.link && (
-                    <Link
-                      href={fest.link}
-                      className="rounded-full bg-wood/10 px-3 py-1 font-semibold text-wood hover:bg-wood hover:text-cream transition-colors"
-                    >
-                      {isNepali ? "स्थल अन्वेषण" : "Explore"}
-                    </Link>
-                  )}
-                  <AskButton
-                    question={
-                      isNepali
-                        ? `${fest.name.ne} को ऐतिहासिक तथा सांस्कृतिक महत्त्व के हो?`
-                        : `What is the historical and cultural significance of ${fest.name.en}?`
-                    }
-                    className="rounded-full bg-brick px-3 py-1 font-semibold text-cream hover:bg-brick/90"
-                  >
-                    {isNepali ? "सोध्नुहोस्" : "Ask AI"}
-                  </AskButton>
-                </div>
-              </div>
             </article>
           );
         })}

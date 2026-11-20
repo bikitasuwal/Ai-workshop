@@ -65,16 +65,14 @@ export const FESTIVAL_CATEGORIES: { id: FestivalCategory | "all"; label: Bi }[] 
   { id: "all", label: { en: "All Festivals", ne: "सबै चाडपर्वहरू" } },
   { id: "dhara", label: { en: "22 Dhara (Baisdhara)", ne: "२२ धारा (बाइसधारा)" } },
   { id: "ajima", label: { en: "Pyatho Ajima", ne: "प्याठो अजिमा" } },
-  { id: "ward16", label: { en: "Ward 16 Heritage", ne: "वडा १६ सम्पदा" } },
-  { id: "cultural", label: { en: "Wider Valley Cultural", ne: "उपत्यकाव्यापी सांस्कृतिक" } },
 ];
 
 export const FESTIVALS_DATA: FestivalEvent[] = [
   {
     id: "bala-chaturdashi",
     name: {
-      en: "Bala Chaturdashi Satbij Sowing",
-      ne: "बाला चतुर्दशी (सद्बिज छर्ने पर्व)",
+      en: "Festival of Ward 16",
+      ne: "वडा नं. १६ का चाडपर्व",
     },
     category: "cultural",
     placeName: { en: "Balaju Forest Trail & Nagarjun Shrines", ne: "बालाजु वन मार्ग तथा नागार्जुन देवालय" },
