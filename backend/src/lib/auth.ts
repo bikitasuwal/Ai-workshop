@@ -21,7 +21,6 @@ export const assertConfigured = () => void secret();
 
 export type SessionUser = { id: string; email: string; name: string; role: "user" | "admin" };
 
-export const hashPassword = (pw: string) => bcrypt.hash(pw, 12);
 export const checkPassword = (pw: string, hash: string) => bcrypt.compare(pw, hash);
 
 export async function startSession(res: Response, u: SessionUser) {

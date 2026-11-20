@@ -2,7 +2,6 @@
 
 import { TimelineEvent } from "@/lib/heritageDetailData";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { Stamp } from "@/components/ui";
 
 interface HistoricalTimelineProps {
   timeline: TimelineEvent[];
@@ -14,9 +13,6 @@ export default function HistoricalTimeline({ timeline }: HistoricalTimelineProps
   return (
     <section className="space-y-8">
       <div className="text-center space-y-2">
-        <p className="font-deva text-xs font-semibold uppercase tracking-wider text-vermilion">
-          {isNepali ? "कालक्रम अभिलेख" : "Documented Chronology"}
-        </p>
         <h3 className="font-display text-2xl font-bold text-brick sm:text-3xl">
           {isNepali ? "ऐतिहासिक कालक्रम" : "Historical Timeline"}
         </h3>
@@ -59,11 +55,7 @@ export default function HistoricalTimeline({ timeline }: HistoricalTimelineProps
                         <span className="font-display text-lg font-bold text-brick">
                           {isNepali ? event.yearNepali : event.year}
                         </span>
-                        <span className="rounded-full bg-wood/10 px-2 py-0.5 text-[11px] font-mono text-wood/75">
-                          {isNepali ? event.era.ne : event.era.en}
-                        </span>
                       </div>
-                      <Stamp type={event.status === "verified" ? "documented" : "oral"} size="sm" />
                     </div>
 
                     <h4 className="font-display text-base font-bold text-brick mt-3">

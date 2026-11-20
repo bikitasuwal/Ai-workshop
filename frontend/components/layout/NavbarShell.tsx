@@ -17,7 +17,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileMenu from "./MobileMenu";
-import AccountMenu from "@/components/AccountMenu";
 import { useUser } from "@/lib/useUser";
 import LanguageSwitcher from "@/i18n/LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -102,7 +101,6 @@ export default function NavbarShell({ links }: { links: NavLink[] }) {
           {/* Bilingual language selector — hidden on the smallest screens,
               where the mobile drawer offers it instead */}
           <LanguageSwitcher scrolled={isSolid} className="hidden sm:flex" />
-          <AccountMenu />
           <div className="lg:hidden">
             <MobileMenu links={links} />
           </div>

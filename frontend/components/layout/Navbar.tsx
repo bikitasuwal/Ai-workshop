@@ -20,7 +20,6 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Stories", href: "/stories", key: "stories" },
   { label: "Gallery", href: "/gallery", key: "gallery" },
   { label: "Festival", href: "/festival", key: "festival" },
-  { label: "Sources", href: "/sources", key: "sources" },
 ];
 
 export default function Navbar() {

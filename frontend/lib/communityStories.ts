@@ -48,56 +48,20 @@ export interface CommunityStory {
 
 export const ARCHIVE_CATEGORIES: ArchiveCategory[] = [
   {
-    id: "oral_histories",
-    label: { en: "Oral Histories", ne: "मौखिक इतिहास" },
+    id: "user",
+    label: { en: "Submitted by users", ne: "प्रयोगकर्ताद्वारा पठाइएको" },
     description: {
-      en: "First-hand spoken testimonies and elder recollections of past eras in Balaju Ward 16.",
-      ne: "बालाजु वडा नं. १६ का विगतका कालखण्डबारे अग्रजहरूका प्रत्यक्ष भनाइ तथा संस्मरण।",
-    },
-    icon: "microphone",
-  },
-  {
-    id: "community_memories",
-    label: { en: "Community Memories", ne: "सामुदायिक संस्मरण" },
-    description: {
-      en: "Shared experiences of neighbourhood gatherings, festivals, and changing landscapes.",
-      ne: "स्थानीय बस्ती, सामूहिक चाडपर्व र फेरिँदो परिवेशका साझा अनुभूतिहरू।",
-    },
-    icon: "book-open",
-  },
-  {
-    id: "traditional_practices",
-    label: { en: "Traditional Practices", ne: "परम्परागत अभ्यास" },
-    description: {
-      en: "Documentation of Guthi rituals, Dafa devotional singing, and Newar crafts.",
-      ne: "गुठी परम्परा, दाफा भजन, पूजाविधि र परम्परागत सीपको अभिलेखीकरण।",
-    },
-    icon: "sparkles",
-  },
-  {
-    id: "historical_photographs",
-    label: { en: "Historical Photographs", ne: "ऐतिहासिक तस्बिरहरू" },
-    description: {
-      en: "Family album snapshots and archival photos documenting monuments over the decades.",
-      ne: "पारिवारिक एल्बम तथा पुराना संकलनबाट प्राप्त ऐतिहासिक सम्पदा तस्बिरहरू।",
-    },
-    icon: "camera",
-  },
-  {
-    id: "personal_experiences",
-    label: { en: "Personal Experiences", ne: "व्यक्तिगत अनुभव" },
-    description: {
-      en: "Reflections from pilgrims, residents, and visitors on their connection to sacred sites.",
-      ne: "तीर्थालु, स्थानीय बासिन्दा र आगन्तुकहरूको व्यक्तिगत आध्यात्मिक तथा भावनात्मक सम्बन्ध।",
+      en: "Stories and memories sent in by visitors and approved by an admin.",
+      ne: "आगन्तुकले पठाएका र एडमिनले स्वीकृत गरेका कथा तथा सम्झना।",
     },
     icon: "heart",
   },
   {
-    id: "heritage_documentation",
-    label: { en: "Local Heritage Documentation", ne: "स्थानीय सम्पदा अभिलेख" },
+    id: "documentation",
+    label: { en: "Documentation", ne: "अभिलेख" },
     description: {
-      en: "Citizen-led field notes on stone spouts, inscriptions, and vernacular structures.",
-      ne: "ढुङ्गेधारा, शिलालेख र स्थानीय वास्तुकलाबारे नागरिक स्तरबाट संकलित अध्ययन टिपोट।",
+      en: "Researched and documented accounts of the places, their traditions and history.",
+      ne: "स्थान, परम्परा र इतिहासबारे अनुसन्धान गरी तयार पारिएका अभिलेख।",
     },
     icon: "document-text",
   },
@@ -123,7 +87,7 @@ export const INITIAL_APPROVED_STORIES: CommunityStory[] = [
       name: { en: "22 Dhara (Balaju Baisdhara)", ne: "बाइस धारा (बालाजु बाइसधारा)" },
       slug: "22-dhara",
     },
-    category: "oral_histories",
+    category: "documentation",
     era: "1950s - 1970s",
     publicationDate: "2024-03-12",
     featured: true,
@@ -175,7 +139,7 @@ Over the last forty years, many paved roads and concrete homes have been built a
       name: { en: "Pyatho Ajima Temple", ne: "प्याठो अजिमा मन्दिर" },
       slug: "pyatho-ajima",
     },
-    category: "traditional_practices",
+    category: "documentation",
     era: "Generational Tradition",
     publicationDate: "2024-02-18",
     featured: false,
@@ -227,7 +191,7 @@ When the pandemic hit a few years ago, we were not allowed to gather in the pati
       name: { en: "22 Dhara (Balaju Baisdhara)", ne: "बाइस धारा (बालाजु बाइसधारा)" },
       slug: "22-dhara",
     },
-    category: "historical_photographs",
+    category: "documentation",
     era: "1970s",
     publicationDate: "2024-01-28",
     featured: false,
@@ -279,7 +243,7 @@ What strikes me most is the absence of modern fencing and plastic packaging. Peo
       name: { en: "Pyatho Ajima Temple", ne: "प्याठो अजिमा मन्दिर" },
       slug: "pyatho-ajima",
     },
-    category: "heritage_documentation",
+    category: "documentation",
     era: "1980s Restoration",
     publicationDate: "2024-04-05",
     featured: false,
@@ -331,7 +295,7 @@ Before we made the first cut with our chisels, the temple priest conducted a rit
       name: { en: "22 Dhara (Balaju Baisdhara)", ne: "बाइस धारा (बालाजु बाइसधारा)" },
       slug: "22-dhara",
     },
-    category: "community_memories",
+    category: "documentation",
     era: "1980s",
     publicationDate: "2024-05-14",
     featured: false,
@@ -365,36 +329,3 @@ The elders watched us from the surrounding patis. If any child misbehaved, an el
     status: "approved",
   },
 ];
-
-const LOCAL_STORAGE_KEY = "balaju_community_stories_submissions_v1";
-
-export function getStoredStories(): CommunityStory[] {
-  if (typeof window === "undefined") {
-    return INITIAL_APPROVED_STORIES;
-  }
-  try {
-    const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
-    if (!raw) return INITIAL_APPROVED_STORIES;
-    const custom: CommunityStory[] = JSON.parse(raw);
-    return [...custom, ...INITIAL_APPROVED_STORIES];
-  } catch {
-    return INITIAL_APPROVED_STORIES;
-  }
-}
-
-export function saveCommunityStory(story: CommunityStory): void {
-  if (typeof window === "undefined") return;
-  try {
-    const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
-    const existing: CommunityStory[] = raw ? JSON.parse(raw) : [];
-    existing.unshift(story);
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(existing));
-  } catch (e) {
-    console.error("Failed to save story to localStorage", e);
-  }
-}
-
-export function getStoryBySlug(slug: string): CommunityStory | undefined {
-  const all = getStoredStories();
-  return all.find((s) => s.slug === slug || s.id === slug);
-}

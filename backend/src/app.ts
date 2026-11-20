@@ -4,7 +4,7 @@ import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.js";
 import chatRoutes from "./routes/chat.js";
-import postRoutes, { adminRouter } from "./routes/posts.js";
+import submissionRoutes, { adminRouter } from "./routes/submissions.js";
 import { allowedOrigins } from "./lib/auth.js";
 
 export function createApp() {
@@ -20,7 +20,7 @@ export function createApp() {
   app.get("/api/health", (_req, res) => res.json({ ok: true }));
   app.use("/api/auth", authRoutes);
   app.use("/api/chat", chatRoutes);
-  app.use("/api/posts", postRoutes);
+  app.use("/api/submissions", submissionRoutes);
   app.use("/api/admin", adminRouter);
 
   app.use("/api", (_req, res) => res.status(404).json({ error: "Not found" }));

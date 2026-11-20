@@ -19,7 +19,7 @@ export default function LoginView() {
         <p className="mx-auto mt-3 text-center text-wood/80">{t("pages.login.intro")}</p>
       </Reveal>
       <Reveal className="mt-8" delay={0.1}>
-        <AuthForm mode="login" />
+        <AuthForm />
       </Reveal>
     </section>
   );

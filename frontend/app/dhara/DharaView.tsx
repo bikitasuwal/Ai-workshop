@@ -6,32 +6,25 @@
  */
 
 import Link from "next/link";
-import FactAccordion from "@/components/FactAccordion";
 import AskButton from "@/components/AskButton";
+import FactAccordion from "@/components/FactAccordion";
 import PanoramaViewer from "@/components/PanoramaViewer";
-import VideoWalk from "@/components/VideoWalk";
 import PageLayout from "@/components/ui/PageLayout";
 import InteractiveSuite from "@/components/interactive/InteractiveSuite";
 import HistoricalTimeline from "@/components/heritage/HistoricalTimeline";
 import ArchitectureDeepDive from "@/components/heritage/ArchitectureDeepDive";
 import Ward16Description from "@/components/heritage/Ward16Description";
-import StoryCard from "@/components/archive/StoryCard";
 import StreetViewEmbed from "@/components/StreetViewEmbed";
 import { scenes } from "@/lib/places";
 import { Reveal, SectionTitle } from "@/components/ui";
 import { byPlace } from "@/lib/content";
 import { HERITAGE_SITES_DATA } from "@/lib/heritageDetailData";
-import { INITIAL_APPROVED_STORIES } from "@/lib/communityStories";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function DharaView() {
   const { t, isNepali } = useLanguage();
   const siteData = HERITAGE_SITES_DATA["22-dhara"];
 
-  // Stories specifically linked to 22 Dhara
-  const dharaStories = INITIAL_APPROVED_STORIES.filter(
-    (s) => s.heritageLocation.id === "22-dhara"
-  );
 
   return (
     <>
@@ -55,16 +48,8 @@ export default function DharaView() {
         </svg>
       </section>
 
-      {/* Video Tour & Ward 16 Overview */}
-      <PageLayout variant="wide" underHero>
-        <PageLayout.Section>
-          <Reveal>
-            <SectionTitle titleKey="dharaWalk" />
-          </Reveal>
-          <Reveal className="mt-6">
-            <VideoWalk />
-          </Reveal>
-        </PageLayout.Section>
+      {/* Ward 16 overview */}
+      <PageLayout variant="default" underHero>
 
         {/* Ward 16 Description */}
         <PageLayout.Section>
@@ -80,11 +65,6 @@ export default function DharaView() {
         <div className="relative mx-auto max-w-3xl">
           <Reveal>
             <SectionTitle titleKey="lookAround" light />
-            <p className="mx-auto mt-2 max-w-md text-center text-sm text-cream/80">
-              {isNepali
-                ? "बाइसधारा परिसरको ३६० डिग्री भर्चुअल दृश्य अवलोकन गर्नुहोस्।"
-                : "Explore 360-degree panoramic views of the water spouts and surrounding promenade."}
-            </p>
           </Reveal>
           <Reveal className="mt-6" delay={0.1}>
             <PanoramaViewer scenes={scenes.filter((s) => s.placeId === "dhara")} />
@@ -96,57 +76,13 @@ export default function DharaView() {
       </section>
 
       {/* Interactive Suite: Hotspots, Comparison Slider, Spoken Audio Narration, Quiz (with friend's quiz) */}
-      <PageLayout variant="wide" underHero>
+      <PageLayout variant="default" underHero>
         <PageLayout.Section>
           <Reveal>
             <InteractiveSuite siteData={siteData} />
           </Reveal>
         </PageLayout.Section>
 
-        {/* Historical Chronicles */}
-        <PageLayout.Section>
-          <Reveal>
-            <div className="space-y-6">
-              <div className="text-center space-y-2">
-                <p className="font-deva text-xs font-semibold uppercase tracking-wider text-vermilion">
-                  {isNepali ? "शाही वंशावली तथा अभिलेख" : "Royal Chronicles & Historical Inception"}
-                </p>
-                <h3 className="font-display text-2xl font-bold text-brick sm:text-3xl">
-                  {isNepali ? "इतिहास र निर्माण पृष्ठभूमि" : "Chronicle of the 22 Spouts"}
-                </h3>
-                <p className="mx-auto max-w-2xl text-sm leading-relaxed text-wood/80">
-                  {isNepali ? siteData.history.summary.ne : siteData.history.summary.en}
-                </p>
-              </div>
-
-              <div className="grid gap-6 md:grid-cols-3 pt-2">
-                {siteData.history.chronicles.map((ch, idx) => (
-                  <div
-                    key={idx}
-                    className="wood-frame rounded-2xl bg-paper p-5 sm:p-6 text-wood shadow-sm flex flex-col justify-between"
-                  >
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between border-b border-wood/10 pb-2">
-                        <span className="font-mono text-xs text-marigold-deep text-vermilion font-semibold">
-                          0{idx + 1}
-                        </span>
-                        <span className="rounded-full bg-wood/10 px-2 py-0.5 text-[10px] font-mono font-semibold uppercase text-wood">
-                          Documented
-                        </span>
-                      </div>
-                      <h4 className="font-display text-base font-bold text-brick">
-                        {isNepali ? ch.heading.ne : ch.heading.en}
-                      </h4>
-                      <p className="text-sm leading-relaxed text-wood/85">
-                        {isNepali ? ch.text.ne : ch.text.en}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        </PageLayout.Section>
 
         {/* Chronological Timeline */}
         <PageLayout.Section>
@@ -161,7 +97,6 @@ export default function DharaView() {
             <ArchitectureDeepDive
               introduction={siteData.architecture.introduction}
               features={siteData.architecture.features}
-              eyebrow={isNepali ? "नेवारी जल इन्जिनियरिङ" : "Hydraulic Engineering & Stone Craft"}
               title={isNepali ? "२२ धाराको वास्तुकला र जलप्रणाली" : "Hydraulic Architecture & Masonry"}
             />
           </Reveal>
@@ -172,9 +107,6 @@ export default function DharaView() {
           <Reveal>
             <div className="space-y-6">
               <div className="text-center space-y-2">
-                <p className="font-deva text-xs font-semibold uppercase tracking-wider text-vermilion">
-                  {isNepali ? "जीवन्त परम्परा र आस्था" : "Living Traditions & Pilgrimage"}
-                </p>
                 <h3 className="font-display text-2xl font-bold text-brick sm:text-3xl">
                   {isNepali ? "सांस्कृतिक महत्त्व र जनविश्वास" : "Cultural & Spiritual Significance"}
                 </h3>
@@ -186,10 +118,7 @@ export default function DharaView() {
                     key={idx}
                     className="wood-frame rounded-2xl bg-cream p-5 sm:p-6 text-wood shadow-sm"
                   >
-                    <span className="rounded-full bg-marigold/30 px-2.5 py-0.5 text-[11px] font-mono font-semibold text-wood uppercase">
-                      {item.traditionType}
-                    </span>
-                    <h4 className="font-display text-lg font-bold text-brick mt-2">
+                    <h4 className="font-display text-lg font-bold text-brick">
                       {isNepali ? item.title.ne : item.title.en}
                     </h4>
                     <p className="mt-2 text-sm leading-relaxed text-wood/85">
@@ -202,39 +131,9 @@ export default function DharaView() {
           </Reveal>
         </PageLayout.Section>
 
-        {/* Community Stories on 22 Dhara with Form CTA */}
-        <PageLayout.Section>
-          <Reveal>
-            <div className="space-y-6">
-              <div className="flex flex-wrap items-center justify-between gap-4 border-b border-wood/15 pb-4">
-                <div>
-                  <p className="font-deva text-xs font-semibold uppercase tracking-wider text-vermilion">
-                    {isNepali ? "वडा १६ का स्वरहरू" : "Community Voices & Lived Memories"}
-                  </p>
-                  <h3 className="font-display text-2xl font-bold text-brick sm:text-3xl">
-                    {isNepali ? "२२ धाराका सामुदायिक सम्झनाहरू" : "Memories of the 22 Waters"}
-                  </h3>
-                </div>
 
-                <Link
-                  href="/stories/submit?location=22-dhara"
-                  className="inline-flex items-center gap-1.5 rounded-full bg-brick px-5 py-2.5 text-xs font-semibold text-cream shadow-sm hover:bg-brick-deep active:scale-95"
-                >
-                  <span>+</span>
-                  <span>{isNepali ? "२२ धाराबारे कथा थप्नुहोस्" : "Share a 22 Dhara Story"}</span>
-                </Link>
-              </div>
 
-              <div className="grid gap-6 md:grid-cols-3">
-                {dharaStories.map((story) => (
-                  <StoryCard key={story.id} story={story} />
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        </PageLayout.Section>
-
-        {/* Fact Accordion */}
+        {/* The story, in short pieces */}
         <PageLayout.Section>
           <Reveal>
             <SectionTitle titleKey="dharaStory" />
@@ -244,7 +143,6 @@ export default function DharaView() {
             <FactAccordion items={byPlace("dhara")} accent="teal" />
           </div>
         </PageLayout.Section>
-
         {/* Sources & Citations */}
         <PageLayout.Section>
           <Reveal>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { Stamp } from "@/components/ui";
@@ -512,7 +512,6 @@ function HeritageDetective({ isNepali }: { isNepali: boolean }) {
   const [cardIndex, setCardIndex] = useState(0);
   const [selectedEvidence, setSelectedEvidence] = useState<Evidence | null>(null);
   const [isClassified, setIsClassified] = useState(false);
-  const [correctCount, setCorrectCount] = useState(0);
 
   const card = DETECTIVE_CARDS[cardIndex] || DETECTIVE_CARDS[0];
 
@@ -523,7 +522,6 @@ function HeritageDetective({ isNepali }: { isNepali: boolean }) {
 
     if (choice === card.correctEvidence) {
       soundEffects.playCorrect();
-      setCorrectCount((c) => c + 1);
     } else {
       soundEffects.playIncorrect();
     }
@@ -539,7 +537,6 @@ function HeritageDetective({ isNepali }: { isNepali: boolean }) {
       setCardIndex(0);
       setSelectedEvidence(null);
       setIsClassified(false);
-      setCorrectCount(0);
     }
   };
 
@@ -673,7 +670,6 @@ function HeritageDetective({ isNepali }: { isNepali: boolean }) {
 function SpoutsExplorer({ isNepali }: { isNepali: boolean }) {
   const [selectedSpout, setSelectedSpout] = useState<number>(1);
   const [isWaterFlowing, setIsWaterFlowing] = useState<boolean>(false);
-  const [activeGroupIndex, setActiveGroupIndex] = useState<number>(0);
 
   // Find which group holds the currently selected spout
   const currentGroup =

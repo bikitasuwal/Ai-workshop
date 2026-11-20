@@ -96,6 +96,7 @@ export default function StoryDetailModal({ story, onClose }: StoryDetailModalPro
             <div className="wood-frame relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-wood">
               <Image
                 src={story.photographs[0].url}
+                unoptimized={story.photographs[0].url.startsWith("/api/")}
                 alt={story.photographs[0].caption ? (isNepali ? story.photographs[0].caption.ne : story.photographs[0].caption.en) : title}
                 fill
                 className="object-cover"
