@@ -46,7 +46,7 @@ export const albums: Album[] = [
   },
   {
     id: "ajima",
-    title: { en: "Pyah Thwam Ajima", ne: "प्याः थ्वँ अजिमा" },
+    title: { en: "Pyatho Ajima", ne: "प्याठो अजिमा" },
     blurb: { en: "The shrine", ne: "मन्दिर" },
     cover: "/media/shrine.jpg",
     tone: "brick",
@@ -119,7 +119,7 @@ function clips(album: AlbumId, count: number, name: Bi): MediaItem[] {
 }
 
 const dharaName: Bi = { en: "22 Dhara", ne: "२२ धारा" };
-const ajimaName: Bi = { en: "Pyah Thwam Ajima", ne: "प्याः थ्वँ अजिमा" };
+const ajimaName: Bi = { en: "Pyatho Ajima", ne: "प्याठो अजिमा" };
 
 /** Photos and clips shown in an album, newest first. Visitor photos are loaded live, not listed here. */
 export const media: MediaItem[] = [

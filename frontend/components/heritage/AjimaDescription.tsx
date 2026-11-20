@@ -119,7 +119,7 @@ export default function AjimaDescription() {
         </div>
 
         {/* Right: a small photo, and the way into the album */}
-        <div className="lg:col-span-5">
+        <div className="lg:sticky lg:top-24 lg:col-span-5">
           <Reveal delay={0.1}>
             <figure className="mx-auto w-full max-w-sm lg:max-w-none">
               <div className="wood-frame relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-wood shadow-md">
