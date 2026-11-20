@@ -34,7 +34,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${yatra.variable} ${body.variable} ${deva.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${yatra.variable} ${body.variable} ${deva.variable}`}>
       <body>
         <LanguageProvider>
           {/* Accessibility: skip the navbar and land on the page content */}

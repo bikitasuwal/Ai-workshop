@@ -76,18 +76,23 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* Floating lamp button, centred over the bottom bar on phones */}
+      {/* Floating guide button, bottom right: a lamp, plus a label from the sm breakpoint up */}
       <button
         aria-label={t("components.chat.openLabel", "Ask the Heritage Guide")}
         onClick={() => setOpen(true)}
-        className="safe-bottom fixed bottom-[26px] left-1/2 z-50 flex h-[68px] w-[68px] -translate-x-1/2 items-center justify-center rounded-full border-[3px] border-marigold bg-brick shadow-[0_8px_24px_rgba(0,0,0,0.5)] transition active:scale-90 md:bottom-6 md:left-auto md:right-6 md:translate-x-0"
+        className="safe-bottom group fixed bottom-4 right-4 z-50 flex h-14 items-center gap-2 rounded-full border-2 border-marigold bg-brick pl-2 pr-2 text-cream shadow-[0_8px_24px_rgba(0,0,0,0.45)] transition hover:bg-brick-deep active:scale-95 sm:bottom-6 sm:right-6 sm:pr-5"
       >
-        <span className="absolute inset-0 animate-ping rounded-full bg-marigold/30 [animation-duration:3s]" aria-hidden />
-        <svg viewBox="0 0 40 40" className="relative h-9 w-9" aria-hidden>
-          <path d="M20 5c4 4 5 7 0 11-5-4-4-7 0-11Z" fill="#E8A317" className="flame" />
-          <path d="M6 22h28c0 7-6 12-14 12S6 29 6 22Z" fill="#FAF3E3" />
-          <path d="M6 22h28" stroke="#E8A317" strokeWidth="2" />
-        </svg>
+        <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-wood/40">
+          <span className="absolute inset-0 animate-ping rounded-full bg-marigold/30 [animation-duration:3s]" aria-hidden />
+          <svg viewBox="0 0 40 40" className="relative h-7 w-7" aria-hidden>
+            <path d="M20 5c4 4 5 7 0 11-5-4-4-7 0-11Z" fill="#E8A317" className="flame" />
+            <path d="M6 22h28c0 7-6 12-14 12S6 29 6 22Z" fill="#FAF3E3" />
+            <path d="M6 22h28" stroke="#E8A317" strokeWidth="2" />
+          </svg>
+        </span>
+        <span className="hidden text-[12px] font-semibold uppercase tracking-[0.15em] text-marigold sm:inline">
+          {t("components.chat.openLabel", "Ask the Heritage Guide")}
+        </span>
       </button>
 
       <AnimatePresence>

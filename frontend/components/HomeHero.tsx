@@ -1,8 +1,15 @@
 "use client";
 
+/**
+ * components/HomeHero.tsx: the full-screen opening of the home page.
+ * A real photograph under a dark overlay, a small gold eyebrow, a two-line headline,
+ * a thin divider, one paragraph and two buttons, then a "scroll" cue.
+ * The navbar sits transparent over it until the page scrolls.
+ */
+
+import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "motion/react";
-import HeroScene from "./HeroScene";
+import { motion } from "motion/react";
 import AskButton from "./AskButton";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -13,55 +20,66 @@ const item = {
 };
 
 export default function HomeHero() {
-  const { scrollY } = useScroll();
-  const sceneY = useTransform(scrollY, [0, 500], [0, 60]);
-  const glow = useTransform(scrollY, [0, 400], [1, 0.3]);
   const { t } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-wood via-brick-deep to-brick text-cream">
-      <div className="lattice absolute inset-0 opacity-[0.07]" aria-hidden />
-      <motion.div
-        style={{ opacity: glow }}
-        className="pointer-events-none absolute left-1/2 top-1/3 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-marigold/25 blur-3xl"
+    <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-wood text-cream">
+      <Image src="/media/spouts.jpg" alt="" fill priority sizes="100vw" className="object-cover object-center" />
+      <div className="absolute inset-0 bg-gradient-to-b from-wood/85 via-wood/60 to-wood/95" aria-hidden />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(ellipse at 28% 62%, rgba(139,46,31,0.45), transparent 55%), radial-gradient(ellipse at 78% 28%, rgba(232,163,23,0.16), transparent 50%)",
+        }}
         aria-hidden
       />
+      <div className="lattice absolute inset-0 opacity-[0.06]" aria-hidden />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-marigold/50 to-transparent" aria-hidden />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-marigold/30 to-transparent" aria-hidden />
 
-      <div className="relative mx-auto grid max-w-5xl items-center gap-8 px-5 pb-16 pt-24 md:grid-cols-2 md:py-20">
-        <motion.div variants={container} initial="hidden" animate="show" className="text-center md:text-left">
-          <motion.p variants={item} className="font-deva text-base font-semibold tracking-wide text-marigold">
-            {t("home.hero.eyebrow")}
-          </motion.p>
-          <motion.h1 variants={item} className="font-display mt-2 text-[2.5rem] leading-[1.08] sm:text-5xl">
-            {t("home.hero.titleLead")}{" "}
-            <span className="gold-shine">{t("home.hero.titleHighlight")}</span>
-            {t("home.hero.titleTail")}
-          </motion.h1>
-          <motion.p variants={item} className="mx-auto mt-4 max-w-md text-[17px] text-cream/85 md:mx-0">
-            {t("home.hero.subtitle")}
-          </motion.p>
-          <motion.div variants={item} className="mt-7 flex flex-col items-center gap-3 sm:flex-row md:justify-start">
-            <Link
-              href="/places"
-              className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full bg-marigold px-7 font-semibold text-wood shadow-lg shadow-black/30 transition active:scale-95 sm:w-auto"
-            >
-              {t("home.hero.exploreCta")}
-            </Link>
-            <AskButton className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full border-2 border-marigold/70 px-7 font-semibold text-cream transition active:scale-95 sm:w-auto">
-              {t("home.hero.askCta")}
-            </AskButton>
-          </motion.div>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="relative z-10 mx-auto max-w-4xl px-5 pb-28 pt-28 text-center sm:px-8"
+      >
+        <motion.p variants={item} className="text-[11px] font-semibold uppercase tracking-[0.3em] text-marigold sm:text-xs">
+          {t("home.hero.eyebrow")}
+        </motion.p>
+        <motion.h1 variants={item} className="font-display mt-5 text-[2.5rem] leading-[1.12] sm:text-6xl lg:text-7xl">
+          {t("home.hero.line1")}
+          <br />
+          <span className="gold-shine">{t("home.hero.line2")}</span>
+        </motion.h1>
+        <motion.div variants={item} className="mx-auto my-7 h-px w-16 bg-marigold" aria-hidden />
+        <motion.p variants={item} className="mx-auto max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">
+          {t("home.hero.subtitle")}
+        </motion.p>
+        <motion.div variants={item} className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Link
+            href="#landmarks"
+            className="inline-flex min-h-[52px] w-full items-center justify-center border border-brick bg-brick px-8 text-[13px] font-semibold uppercase tracking-[0.15em] text-cream transition hover:bg-brick-deep active:scale-95 sm:w-auto"
+          >
+            {t("home.hero.exploreCta")}
+          </Link>
+          <AskButton className="inline-flex min-h-[52px] w-full items-center justify-center border border-marigold/70 px-8 text-[13px] font-semibold uppercase tracking-[0.15em] text-marigold transition hover:bg-marigold hover:text-wood active:scale-95 sm:w-auto">
+            {t("home.hero.askCta")}
+          </AskButton>
         </motion.div>
+      </motion.div>
 
-        <motion.div style={{ y: sceneY }} initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.3 }}>
-          <HeroScene />
-        </motion.div>
+      <div className="absolute inset-x-0 bottom-6 z-10 flex flex-col items-center gap-3 px-5 text-center text-[10px] uppercase tracking-[0.3em] text-cream/60">
+        <span className="hidden sm:block">{t("home.hero.tagline")}</span>
+        <span>{t("home.hero.scroll")}</span>
+        <motion.span
+          className="block h-8 w-px bg-marigold/70"
+          animate={{ scaleY: [0.4, 1, 0.4], opacity: [0.4, 1, 0.4] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          style={{ transformOrigin: "top" }}
+          aria-hidden
+        />
       </div>
-
-      {/* roofline into page */}
-      <svg viewBox="0 0 400 24" preserveAspectRatio="none" className="block h-6 w-full text-cream" aria-hidden>
-        <path d="M0 24V12l25-10 25 10 25-10 25 10 25-10 25 10 25-10 25 10 25-10 25 10 25-10 25 10 25-10 25 10 25-10 25 10V24Z" fill="currentColor" />
-      </svg>
     </section>
   );
 }

@@ -82,25 +82,63 @@ export const en = {
     join: { ne: "खाता खोल्नुहोस्", en: "Join the community" },
     adminPosts: { ne: "पोस्टहरू", en: "Posts to review" },
     adminMembers: { ne: "सदस्यहरू", en: "Members" },
+    homeLandmarks: { ne: "विशेष सम्पदा स्थलहरू", en: "Featured heritage landmarks" },
+    homeTraditions: { ne: "जीवित परम्परा र सामुदायिक अनुष्ठान", en: "Living traditions and community rituals" },
+
   },
 
   home: {
     hero: {
-      eyebrow: "बैसधारा · प्याः थ्वँ अजिमा",
+      eyebrow: "Balaju, Kathmandu · Ward 16",
+      line1: "Where water, worship",
+      line2: "and memory meet.",
       // The h1 is split around the gold-shine span: lead + highlighted word + tail.
       titleLead: "Where",
       titleHighlight: "water",
       titleTail: ", worship and memory meet",
       subtitle:
         "A living archive of two heritage places in Balaju, Kathmandu, kept alive by the Newar communities who bathe, pray, paint and gather there.",
-      exploreCta: "Explore the places",
+      exploreCta: "Explore our heritage",
       askCta: "Ask the guide",
+      tagline: "A living archive, with every fact labelled",
+      scroll: "Scroll",
     },
     intro: {
       quote: "Heritage is not only stone. It is what people keep doing.",
       body:
         "This site records two places in Balaju and the living traditions around them, clearly separating what is documented from what is belief or oral tradition.",
     },
+    overview: {
+      num: "01",
+      eyebrow: "Overview",
+      headingLead: "More than a place.",
+      headingAccent: "A living heritage.",
+      p1: "Two places inside the Balaju Baisdhara Park complex, beside the Nagarjun forest in Kathmandu: a line of 22 stone water spouts, and a shrine to a protective mother goddess.",
+      p2: "Heritage is not only stone. It is what people keep doing: bathing, worshipping, painting and gathering each year. This site records both places, and clearly separates what is documented from what is belief or oral tradition.",
+      place: "Balaju · Kathmandu",
+      caption: "The stone spouts of 22 Dhara, Balaju",
+    },
+    landmarks: {
+      sub: "The water and the shrine are two parts of one tradition. Each page separates what is documented from what is belief.",
+      explore: "Explore",
+      dharaTag: "Water heritage",
+      dharaSub: "Balaju Baisdhara",
+      ajimaTag: "Shrine",
+      ajimaSub: "Mother-goddess shrine, Shitala Mai",
+    },
+    traditions: {
+      sub: "The rituals, festivals and skills that keep these places alive across generations.",
+      open: "Open",
+    },
+    cta: {
+      eyebrow: "Preserving our heritage together",
+      lead: "Every place has a story.",
+      accent: "Every story deserves to be kept.",
+      body: "Share a memory, a photograph or a concern to help safeguard these places for the next generation. An admin reads everything before it is published.",
+      share: "Share your memory",
+      ask: "Ask the guide",
+    },
+
     lookAroundBody:
       "Step into the two places from your phone. Drag to look around, pinch to zoom.",
     mapBody:
@@ -194,6 +232,20 @@ export const en = {
         "Every item carries its place, date and a consent note. Restricted rituals and identifiable worshippers are not published without permission.",
       shareCta: "Share a photo of your visit",
     },
+    albums: {
+      back: "All albums",
+      all: "All",
+      photosOnly: "Photos",
+      videosOnly: "Videos",
+      filter: "Filter",
+      items: "{n} items",
+      open: "Open {caption}",
+      close: "Close",
+      prev: "Previous",
+      next: "Next",
+      sample: "Sample picture. Real photographs will replace it.",
+      emptyFilter: "Nothing here yet.",
+    },
     reviews: {
       intro: "Tell us about your visit, share a photo, or report a problem that needs care.",
       steps: [
@@ -226,6 +278,13 @@ export const en = {
       respect:
         "Please do not photograph or share restricted rituals without the permission of the Guthi and the community. Beliefs on this site are recorded as beliefs, not as medical or historical fact.",
       sourcesLink: "Sources & what still needs confirming",
+      explore: "Explore",
+      sites: "Heritage sites",
+      aboutCol: "About",
+      allPhotos: "All photographs",
+      copyright: "© Balaju Living Heritage. A community archive.",
+      backToTop: "Back to top",
+
     },
     account: {
       signIn: "Sign in",

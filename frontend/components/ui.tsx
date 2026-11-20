@@ -183,7 +183,9 @@ export function SectionTitle({
   return (
     <div className={center ? "text-center" : ""}>
       <p className={`font-deva text-sm font-semibold tracking-wide ${light ? "text-marigold" : "text-vermilion"}`}>{eyebrow}</p>
-      <h2 className={`font-display text-3xl leading-tight sm:text-4xl ${light ? "text-cream" : "text-brick"}`}>{heading}</h2>
+       <h2 className={`font-display mt-1 text-3xl leading-tight sm:text-4xl lg:text-5xl ${light ? "text-cream" : "text-wood"}`}>{heading}</h2>
+      {/* thin gold rule under the heading */}
+      <div className={`mt-4 h-px w-12 bg-marigold ${center ? "mx-auto" : ""}`} aria-hidden />
     </div>
   );
 }
