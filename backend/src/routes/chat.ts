@@ -116,7 +116,7 @@ const INTENT_RULES: [RegExp, number][] = [
   [/\b(bal narayan|sleeping vishnu|budhanilkantha|jal bhairav|shital mai|shrine)\b|बाल नारायण|नारायण|बूढानीलकण्ठ|भैरव|मन्दिरहरू/i, 4],
   // Section 5: Baisdhara Mela & Ritual Bathing
   [/\b(mela|festival|lhuti punhi|purnima|chaitra|bath|bathing|skin|cure|disease|safe|drink|water quality)\b|मेला|ल्हुति|पुन्हि|पूर्णिमा|स्नान|रोग|छाला|पिउन/i, 5],
-  // Section 6: Pyah Thwam Ajima Sacred Identity & Meaning
+  // Section 6: Pyatho Ajima Sacred Identity & Meaning
   [/\b(pyah|thwam|pyatho|ajima|grandmother|shitala|pith|stone|sanctum|mother goddess|matrika|meaning)\b|प्याः|थ्वँ|प्याठो|अजिमा|शीतला|मातृका|शिला|अर्थ/i, 6],
   // Section 7: Pagoda Architecture & Struts
   [/\b(strut|struts|tunal|tundal|dachi appa|wood|carving|pagoda|roof|brick)\b|टुँडाल|दाची अप्पा|काष्ठकला|छाना|पागोडा/i, 7],
@@ -240,7 +240,7 @@ router.post("/", async (req, res) => {
         )
         .join("\n\n---\n\n");
 
-      const systemInstruction = `You are the official Heritage Guide AI for Balaju Ward 16, Kathmandu, specializing in 22 Dhara (Balaju Baisdhara) and Pyah Thwam Ajima.
+      const systemInstruction = `You are the official Heritage Guide AI for Balaju Ward 16, Kathmandu, specializing in 22 Dhara (Balaju Baisdhara) and Pyatho Ajima.
 
 GROUNDING & RAG INSTRUCTIONS:
 1. Answer strictly using ONLY the information provided in the VERIFIED ARCHIVAL PASSAGES below. Never invent outside facts, dates, kings, or folklore.

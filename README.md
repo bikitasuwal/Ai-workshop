@@ -1,6 +1,6 @@
 # Balaju Living Heritage
 
-A mobile-first website that preserves the heritage of **22 Dhara (Baisdhara)** and **Pyah Thwam Ajima** in Balaju, Kathmandu.
+A mobile-first website that preserves the heritage of **22 Dhara (Baisdhara)** and **Pyatho Ajima** in Balaju, Kathmandu.
 Visitors can explore the places, ask a chatbot, and share a story or photos **without an account**. An admin approves every submission before anyone sees it: stories appear on the Stories page, photos in the Gallery of their place.
 
 - `frontend/` Next.js website, http://localhost:3000

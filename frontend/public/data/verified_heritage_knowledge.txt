@@ -1,7 +1,7 @@
 ================================================================================
 BALAJU WARD 16 DIGITAL HERITAGE ARCHIVE — OFFICIAL KNOWLEDGE BASE DOCUMENT
 Authoritative Reference for AI Heritage Guide, RAG Ingestion, and Cultural Documentation
-Sites: 22 Dhara (Balaju Baisdhara) & Pyah Thwam Ajima (Pyatho Ajima)
+Sites: 22 Dhara (Balaju Baisdhara) & Pyatho Ajima (also written Pyah Thwam Ajima)
 Kathmandu Metropolitan City, Ward No. 16, Nepal
 ================================================================================
 
@@ -109,29 +109,29 @@ Nepali:
 ४. वैज्ञानिक तथा अभिलेखीय स्पष्टोक्ति: धारामुनि नुहाउँदा छालाको रोग निको हुने विषयलाई केवल सांस्कृतिक तथा धार्मिक आस्थाका रूपमा लिइएको छ, यसलाई चिकित्सकीय तथ्य मान्न सकिँदैन। ढुङ्गेधाराको जलप्रणाली जोगाउन धारामुनि सिधै रासायनिक साबुन वा स्याम्पु प्रयोग गर्न कडा प्रतिबन्ध लगाइएको छ।
 
 --------------------------------------------------------------------------------
-SECTION 6: PYAH THWAM AJIMA (PYATHO AJIMA) - IDENTITY & MATRIKA COSMOLOGY
+SECTION 6: PYATHO AJIMA (PYAH THWAM AJIMA) - IDENTITY & MATRIKA COSMOLOGY
 --------------------------------------------------------------------------------
-Topic: Pyah Thwam Ajima Sacred Identity
+Topic: Pyatho Ajima Sacred Identity
 Keywords: pyah thwam ajima, pyatho ajima, shitala mai, mother goddess, matrika, pith, sacred stone, animism, प्याः थ्वँ अजिमा, प्याठो अजिमा, शीतला माई, मातृका, शक्तिपीठ, प्राकृतिक शिला, परिचय
 Evidence: Documented (Newar Tantric & Matrika Traditions)
 Sources: Gérard Toffin (Cult of Mātṛkā/Ajimā Goddesses), Ward 16 Cultural Registry
 
 English:
-Pyah Thwam Ajima (also spelled Pyatho Ajima and revered locally as Shitala Mai) is a historic mother-goddess sanctuary in Ward 16:
+Pyatho Ajima (also spelled Pyah Thwam Ajima and revered locally as Shitala Mai) is a historic mother-goddess sanctuary in Ward 16:
 1. Maternal Protector (Ajima): In the indigenous Newar language, "Ajima" literally translates to grandmother, embodying primordial maternal protectresses stationed around human settlements. In valley cosmology, Ajimas are linked with the Ashta Matrika (Eight Mother Goddesses) who protect communities against pestilence, fever, and childhood illnesses.
-2. Aniconic River Stone (Pith): Unlike later classical Hindu temples that venerate anthropomorphic cast-bronze or marble idols, the sanctum of Pyah Thwam Ajima enshrines an aniconic natural river stone (Pith stone). This natural rock embodies the unmanifested, raw cosmic power of the earth and divine maternal presence.
+2. Aniconic River Stone (Pith): Unlike later classical Hindu temples that venerate anthropomorphic cast-bronze or marble idols, the sanctum of Pyatho Ajima enshrines an aniconic natural river stone (Pith stone). This natural rock embodies the unmanifested, raw cosmic power of the earth and divine maternal presence.
 3. Name Etymology: Traditional oral analysis parses "Pyah" as extreme thirst or drought, and "Thwam" as indigenous Newar fermented rice beverage. Oral legends recall an era when ancestral settlers suffered drought and epidemic, seeking refuge and offering rice beverage to the mother goddess, who brought rain and restored vitality.
 
 Nepali:
-प्याः थ्वँ अजिमा (प्याठो अजिमा वा स्थानीय रूपमा शीतला माई) वडा नं. १६ को एक ऐतिहासिक मातृशक्ति पीठ हो:
+प्याठो अजिमा (प्याठो अजिमा वा स्थानीय रूपमा शीतला माई) वडा नं. १६ को एक ऐतिहासिक मातृशक्ति पीठ हो:
 १. मातृ संरक्षक (अजिमा): नेपाल भाषामा 'अजिमा' को शाब्दिक अर्थ 'हजुरआमा' वा मातृका स्वरूप हो। नेवार सभ्यतामा उपत्यका र बस्तीको सुरक्षाका लागि अष्टमातृकाका रूपमा अजिमाहरूको स्थापना गरिएको हुन्छ, जसले टोलवासीलाई बिफर, ठेउला, ज्वरो र बालबच्चाका रोगव्याधिबाट बचाउने विश्वास गरिन्छ।
 २. प्राकृतिक शिला (पीठ): मानव आकारको धातु वा प्रस्तर मूर्तिको सट्टा यस मन्दिरको गर्भगृहभित्र एक पवित्र प्राकृतिक नदी शिला (पीठ ढुङ्गा) स्थापित छ, जसले प्रकृतिको अनादि शक्तिलाई प्रतिनिधित्व गर्दछ।
 ३. नामको व्युत्पत्ति: स्थानीय मौखिक परम्परा अनुसार 'प्याः' को अर्थ प्यास वा खडेरी र 'थ्वँ' को अर्थ नेवारी परम्परागत जाँड (चामलको पेय) हो। प्राचीन कालमा खडेरी र महामारी पर्दा मातृदेवीलाई थ्वँ चढाएर आराधना गर्दा पानी परेको र रोग शान्त भएको लोककथा यससँग जोडिएको छ।
 
 --------------------------------------------------------------------------------
-SECTION 7: PYAH THWAM AJIMA - PAGODA ARCHITECTURE & WOODCRAFT
+SECTION 7: PYATHO AJIMA - PAGODA ARCHITECTURE & WOODCRAFT
 --------------------------------------------------------------------------------
-Topic: Pyah Thwam Ajima Architecture
+Topic: Pyatho Ajima Architecture
 Keywords: architecture of ajima, pagoda, dachi appa, sal timber, tundal, struts, woodcarving, torana, वास्तुकला, पागोडा, दाची अप्पा, काष्ठकला, टुँडाल, तोरण
 Evidence: Documented (Architectural Field Survey)
 Sources: Newar Architectural Heritage Survey (Gutschow), Lalitpur & Kathmandu Strut Documentation
@@ -143,7 +143,7 @@ The shrine showcases exquisite late medieval Newar pagoda craft:
 3. Entrance & Threshold: The doorway is crowned by a finely chased repoussé brass Torana depicting protective tantric guardians, flanked by sculpted stone guardian lions.
 
 Nepali:
-प्याः थ्वँ अजिमा मन्दिर परम्परागत मल्लकालीन नेवारी पागोडा शैलीको अनुपम उदाहरण हो:
+प्याठो अजिमा मन्दिर परम्परागत मल्लकालीन नेवारी पागोडा शैलीको अनुपम उदाहरण हो:
 १. गारो र इँटा: मन्दिरको बाहिरी गारो परम्परागत 'दाची अप्पा' (विशेष चिल्लो र चोसो परेको रातो इँटा) ले माटोको मसिनो जोडाइमा निर्माण गरिएको छ।
 २. काठका टुँडालहरू: झिँगटीको भारी छानालाई थाम्ने सालका काठका टुँडालहरूमा कलात्मक बहुभुजाधारी मातृका देवीहरू आ-आफ्नो वाहनमाथि उभिएको स्वरूपमा कुँदिएका छन्।
 ३. प्रवेशद्वार र तोरण: मन्दिरको मुख्य ढोकामाथि धातुको कलात्मक तोरण र ढोकाको दायाँबायाँ ढुङ्गाका रक्षक सिंहहरू स्थापित छन्।
@@ -157,12 +157,12 @@ Evidence: Documented & Oral Tradition (Living Heritage Custodians)
 Sources: Balaju Chitrakar Guthi Archives, Ward 16 Living Heritage Field Documentation
 
 English:
-1. Sacred Ritual: During the annual Lhuti Purnima festival cycle, a secret consecration ceremony called Dristi Lekhan (literally "Eye Painting / Eye Awakening") is performed at Pyah Thwam Ajima.
+1. Sacred Ritual: During the annual Lhuti Purnima festival cycle, a secret consecration ceremony called Dristi Lekhan (literally "Eye Painting / Eye Awakening") is performed at Pyatho Ajima.
 2. Hereditary Artisans: The ceremony is executed exclusively by initiated members of the hereditary Pũ (Chitrakar) artisan lineage. Using mineral pigments mixed with sacred binders, the Chitrakar master paints the stylized eyes, eyebrows, and third eye upon the deity's visage, awakening the divine presence (Prana Pratishtha).
 3. Sacred Secrecy & Protocol: Dristi Lekhan is an esoteric tantric rite, NOT a public art exhibition. While the ritual is underway, visual access to the sanctum is shielded. Photography and video recording of the unfinished deity or the eye-painting process are strictly prohibited by Guthi rules to preserve sanctity.
 
 Nepali:
-१. दृष्टि लेखन अनुष्ठान: वार्षिक ल्हुति पूर्णिमाको अवसरमा प्याः थ्वँ अजिमा मन्दिरमा 'दृष्टि लेखन' (आँखा रंगाउने तथा प्राणप्रतिष्ठा गर्ने) अत्यन्तै पवित्र र तान्त्रिक विधि सम्पन्न गरिन्छ।
+१. दृष्टि लेखन अनुष्ठान: वार्षिक ल्हुति पूर्णिमाको अवसरमा प्याठो अजिमा मन्दिरमा 'दृष्टि लेखन' (आँखा रंगाउने तथा प्राणप्रतिष्ठा गर्ने) अत्यन्तै पवित्र र तान्त्रिक विधि सम्पन्न गरिन्छ।
 २. वंशानुगत चित्रकार (पुँ) समुदाय: यो अनुष्ठान परम्परागत पुँ (चित्रकार) समुदायका दीक्षित कालिगडहरूद्वारा मात्र सम्पन्न गरिन्छ। प्राकृतिक खनिज रंगहरूको प्रयोग गरेर देवीको आँखा र दृष्टि कोरेपछि मात्र मन्दिरमा देवीको प्रत्यक्ष उपस्थिति भएको मानिन्छ।
 ३. गोपनीयता र मर्यादा: दृष्टि लेखन सर्वसाधारणको मनोरञ्जनका लागि गरिने चित्रकला नभई एक गोप्य तान्त्रिक पूजा हो। यो विधि भइरहँदा मन्दिरमा पर्दा लगाइन्छ र गुठीको नियम अनुसार यसको तस्बिर वा भिडियो खिच्न कडा निषेध गरिएको छ।
 
@@ -175,13 +175,13 @@ Evidence: Documented & Active Living Heritage
 Sources: Ward 16 Intangible Cultural Heritage Registry, Community Elders Oral Documentation
 
 English:
-Pyah Thwam Ajima is sustained by living devotional music:
+Pyatho Ajima is sustained by living devotional music:
 1. Evening Dafa Bhajan: At dusk, local elders and musicians of the Dafa Khala assemble at the adjoining temple colonnade (Phalecha/Pati). They chant centuries-old classical devotional ragas and stotras in the Nepal Bhasa language.
 2. Sacred Instrumentation: The singing is rhythmic and disciplined, accompanied by the double-headed Khin drum (which symbolizes primordial rhythm), hand brass cymbals (Taa and Babhu), and harmonium.
 3. Gunla Observance: Throughout the sacred monsoon month of Gunla, traditional musical processions honor the Ajima to invoke wellness and ward off seasonal diseases.
 
 Nepali:
-प्याः थ्वँ अजिमा जीवन्त सांस्कृतिक संगीतले सधैं गुञ्जायमान रहन्छ:
+प्याठो अजिमा जीवन्त सांस्कृतिक संगीतले सधैं गुञ्जायमान रहन्छ:
 १. साँझको दाफा भजन: हरेक साँझ स्थानीय दाफा खलः (भजन मण्डली) का अग्रज तथा गायकहरू मन्दिरसँगै रहेको फलेचा (पाटी) मा भेला भई नेपाल भाषाका प्राचीन राग तथा भजनहरू गाउँछन्।
 २. परम्परागत बाजाहरू: भजन गायनमा माटो वा काठले बनेको दुईमुखे 'खिं' बाजा, काँसको सानो 'ताः' र 'बभु' (झ्याली) बजाएर ताल दिइन्छ।
 ३. गुँला पर्व: विशेषगरी वर्षायामको पवित्र गुँला महिनाभरि बिहानीपख बाजागाजासहित मन्दिर परिक्रमा गरी नगरको सुस्वास्थ्यको कामना गरिन्छ।
@@ -195,11 +195,11 @@ Evidence: Documented (Nepal Guthi Sansthan Archives & Community Lineages)
 Sources: Nepal Guthi Sansthan Archives, Ward 16 Heritage Committee
 
 English:
-1. The Guthi Stewardship: The day-to-day upkeep, festival financing, and ritual cycles of Pyah Thwam Ajima are managed autonomously by lineage Guthis (traditional socio-religious endowments). The Guthi system ensures intergenerational transmission of duties without state dependency.
+1. The Guthi Stewardship: The day-to-day upkeep, festival financing, and ritual cycles of Pyatho Ajima are managed autonomously by lineage Guthis (traditional socio-religious endowments). The Guthi system ensures intergenerational transmission of duties without state dependency.
 2. Traditional Offerings: Devotees present traditional Newar ritual items to the mother goddess, including Thwam (fermented rice beer), Aila (distilled liquor), vermilion powder (abir, sindoor), fresh marigolds, and Samay Baji (ceremonial platter containing beaten rice, roasted black soybeans, ginger, and choila). For non-meat offerings, squash (kubhindo) or eggplant is substituted symbolically.
 
 Nepali:
-१. गुठी संरक्षण प्रणाली: प्याः थ्वँ अजिमाको नित्यपूजा, वार्षिक पर्व र मर्मत-सम्भार स्थानीय नेवार गुठीयार परिवारहरूले पुर्ख्यौली जिम्मेवारीका रूपमा सञ्चालन गर्दै आएका छन्। गुठी व्यवस्थाले राज्यको मुख नताकी समुदायकै सहभागितामा सम्पदा जोगाउन मद्दत गरेको छ।
+१. गुठी संरक्षण प्रणाली: प्याठो अजिमाको नित्यपूजा, वार्षिक पर्व र मर्मत-सम्भार स्थानीय नेवार गुठीयार परिवारहरूले पुर्ख्यौली जिम्मेवारीका रूपमा सञ्चालन गर्दै आएका छन्। गुठी व्यवस्थाले राज्यको मुख नताकी समुदायकै सहभागितामा सम्पदा जोगाउन मद्दत गरेको छ।
 २. परम्परागत पूजा सामग्री: देवीलाई पूजा गर्दा थ्वँ (जाँड), अय्लाः (रक्सी), अबीर, सिन्दूर, सयपत्री फूल तथा परम्परागत 'समय् बजि' (चिउरा, भटमास, अदुवा, छोइला) चढाउने गरिन्छ। बलि नदिनेहरूले कुभिन्डो वा भन्टालाई प्रतिकात्मक रूपमा चढाउने गर्दछन्।
 
 --------------------------------------------------------------------------------

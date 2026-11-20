@@ -11,7 +11,7 @@ type Ref = { id: string; title: string; evidence: Evidence; sources: { key: stri
 type Msg = { role: "user" | "bot"; text: string; refs?: Ref[] };
 
 const WELCOME_TEXT =
-  "Namaste! I'm the Heritage Guide. Ask me about 22 Dhara, Pyah Thwam Ajima, or the Lhuti Punhi festival. I answer only from the verified notes on this site.";
+  "Namaste! I'm the Heritage Guide. Ask me about 22 Dhara, Pyatho Ajima, or the Lhuti Punhi festival. I answer only from the verified notes on this site.";
 
 export default function ChatWidget() {
   const path = usePathname();

@@ -158,12 +158,12 @@ export const facts: Fact[] = [
     sources: ["A", "B", "C"],
   },
 
-  // ---------- PYAH THWAM AJIMA ----------
+  // ---------- PYATHO AJIMA ----------
   {
     id: "ajima-who",
     place: "ajima",
-    title: "Who is Pyah Thwam Ajima?",
-    text: "Pyah Thwam Ajima (प्याः थ्वँ अजिमा), also written Pyatho Ajima and locally called Shitala Mai, is described in local reporting as a shrine inside the historic Balaju Baisdhara Park. 'Ajima' broadly means a divine, protective mother figure in Newar religion. Ajima / Matrika goddesses are worshipped by different Newar communities, Hindu and Buddhist, and their shrines and forms vary across the Kathmandu Valley. The academic source listed gives this general context only; it is not a study of this shrine.",
+    title: "Who is Pyatho Ajima?",
+    text: "Pyatho Ajima (प्याठो अजिमा), also written Pyah Thwam Ajima and locally called Shitala Mai, is described in local reporting as a shrine inside the historic Balaju Baisdhara Park. 'Ajima' broadly means a divine, protective mother figure in Newar religion. Ajima / Matrika goddesses are worshipped by different Newar communities, Hindu and Buddhist, and their shrines and forms vary across the Kathmandu Valley. The academic source listed gives this general context only; it is not a study of this shrine.",
     evidence: "documented",
     sources: ["D", "E"],
   },
@@ -211,7 +211,7 @@ export const facts: Fact[] = [
     id: "ajima-link",
     place: "ajima",
     title: "Connection to 22 Dhara",
-    text: "Local reporting describes devotees bathing at the 22 Dhara spouts and then worshipping Pyah Thwam Ajima during the Baisdhara / Lhuti Punhi observance. Balaju's heritage is therefore not only stone spouts. It is the relationship between water, worship, seasonal festivals, traditional art, community participation and Guthi responsibility.",
+    text: "Local reporting describes devotees bathing at the 22 Dhara spouts and then worshipping Pyatho Ajima during the Baisdhara / Lhuti Punhi observance. Balaju's heritage is therefore not only stone spouts. It is the relationship between water, worship, seasonal festivals, traditional art, community participation and Guthi responsibility.",
     evidence: "documented",
     sources: ["D", "A"],
   },

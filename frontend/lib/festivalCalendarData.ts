@@ -2,7 +2,7 @@
  * lib/festivalCalendarData.ts
  *
  * Rich festival calendar and Hamro Patro-style Bikram Sambat (BS) lunar/solar data
- * featuring Ward 16, 22 Dhara, Pyah Thwam Ajima, and broader Newar festivals.
+ * featuring Ward 16, 22 Dhara, Pyatho Ajima, and broader Newar festivals.
  * Arranged accurately according to current date.
  */
 
@@ -64,7 +64,7 @@ export const TODAY_BS = {
 export const FESTIVAL_CATEGORIES: { id: FestivalCategory | "all"; label: Bi }[] = [
   { id: "all", label: { en: "All Festivals", ne: "सबै चाडपर्वहरू" } },
   { id: "dhara", label: { en: "22 Dhara (Baisdhara)", ne: "२२ धारा (बाइसधारा)" } },
-  { id: "ajima", label: { en: "Pyah Thwam Ajima", ne: "प्याः थ्वँ अजिमा" } },
+  { id: "ajima", label: { en: "Pyatho Ajima", ne: "प्याठो अजिमा" } },
   { id: "ward16", label: { en: "Ward 16 Heritage", ne: "वडा १६ सम्पदा" } },
   { id: "cultural", label: { en: "Wider Valley Cultural", ne: "उपत्यकाव्यापी सांस्कृतिक" } },
 ];
@@ -187,11 +187,11 @@ export const FESTIVALS_DATA: FestivalEvent[] = [
   {
     id: "dristi-lekhan",
     name: {
-      en: "Pyah Thwam Ajima Dristi Lekhan & Jatra",
-      ne: "प्याः थ्वँ अजिमा दृष्टि लेखन तथा जात्रा",
+      en: "Pyatho Ajima Dristi Lekhan & Jatra",
+      ne: "प्याठो अजिमा दृष्टि लेखन तथा जात्रा",
     },
     category: "ajima",
-    placeName: { en: "Pyah Thwam Ajima Temple Courtyard", ne: "प्याः थ्वँ अजिमा मन्दिर परिसर" },
+    placeName: { en: "Pyatho Ajima Temple Courtyard", ne: "प्याठो अजिमा मन्दिर परिसर" },
     bsDate: { en: "Chaitra 27, 2081 - Baisakh 1, 2082", ne: "चैत २७, २०८१ - वैशाख १, २०८२" },
     gregorianDate: "April 10-14, 2025",
     tithi: { en: "Paha Charhe to Navavarsha", ne: "पाँहाचह्रे देखि नयाँ वर्ष" },
@@ -325,7 +325,7 @@ export const FESTIVALS_DATA: FestivalEvent[] = [
     isUpcoming: false,
     tag: { en: "Sacred Month of Music", ne: "महिनाभरिको भजन-कीर्तन" },
     description: {
-      en: "A month-long sacred monsoon observance when early morning devotional guilds traverse Ward 16 playing Dha and Gunla Bajan, culminating in blessings at Pyah Thwam Ajima and nearby stupas.",
+      en: "A month-long sacred monsoon observance when early morning devotional guilds traverse Ward 16 playing Dha and Gunla Bajan, culminating in blessings at Pyatho Ajima and nearby stupas.",
       ne: "नेवार समुदायको एक महिना लामो सांस्कृतिक पर्व, जहाँ बिहानै गुँला बाजा, धाः बाजा र बाँसुरी बजाउँदै स्थानीय मन्दिर तथा चैत्यहरूको परिक्रमा गरिन्छ।",
     },
     rituals: [

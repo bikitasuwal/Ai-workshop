@@ -45,7 +45,7 @@ export const albums: Album[] = [
   },
   {
     id: "ajima",
-    title: { en: "Pyah Thwam Ajima", ne: "प्याः थ्वँ अजिमा" },
+    title: { en: "Pyatho Ajima", ne: "प्याठो अजिमा" },
     blurb: { en: "The mother-goddess shrine and courtyard", ne: "मातृदेवी मन्दिर र प्रांगण" },
     cover: "/images/pyatho-ajima/hero.jpg",
     tone: "brick",
@@ -248,7 +248,7 @@ const dharaMedia: MediaItem[] = [
   },
 ];
 
-// ---- Pyah Thwam Ajima authentic media ------------------------------------------------------
+// ---- Pyatho Ajima authentic media ------------------------------------------------------
 const ajimaMedia: MediaItem[] = [
   {
     id: "ajima-hero",
@@ -256,8 +256,8 @@ const ajimaMedia: MediaItem[] = [
     type: "photo",
     src: "/images/pyatho-ajima/hero.jpg",
     caption: {
-      en: "Pyah Thwam Ajima shrine and pagoda facade",
-      ne: "प्याः थ्वँ अजिमा मन्दिरको मुख्य स्वरूप",
+      en: "Pyatho Ajima shrine and pagoda facade",
+      ne: "प्याठो अजिमा मन्दिरको मुख्य स्वरूप",
     },
     crop: centerCrop,
     natural: true,

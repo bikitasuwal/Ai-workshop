@@ -219,7 +219,7 @@ export async function POST(req: NextRequest) {
         )
         .join("\n\n---\n\n");
 
-      const systemInstruction = `You are the official Heritage Guide AI for Balaju Ward 16, Kathmandu, specializing in 22 Dhara (Balaju Baisdhara) and Pyah Thwam Ajima.
+      const systemInstruction = `You are the official Heritage Guide AI for Balaju Ward 16, Kathmandu, specializing in 22 Dhara (Balaju Baisdhara) and Pyatho Ajima.
 
 GROUNDING & RAG INSTRUCTIONS:
 1. Answer strictly using ONLY the information provided in the VERIFIED ARCHIVAL PASSAGES below. Never invent outside facts, dates, kings, or folklore.
