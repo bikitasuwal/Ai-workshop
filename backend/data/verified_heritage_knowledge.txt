@@ -1,0 +1,264 @@
+================================================================================
+BALAJU WARD 16 DIGITAL HERITAGE ARCHIVE — OFFICIAL KNOWLEDGE BASE DOCUMENT
+Authoritative Reference for AI Heritage Guide, RAG Ingestion, and Cultural Documentation
+Sites: 22 Dhara (Balaju Baisdhara) & Pyah Thwam Ajima (Pyatho Ajima)
+Kathmandu Metropolitan City, Ward No. 16, Nepal
+================================================================================
+
+[DOCUMENT METADATA]
+Version: 2.0.0
+Classification: Public Cultural Heritage Knowledge Base
+Jurisdiction: Kathmandu Metropolitan City, Ward No. 16
+Status: Officially Verified by Field Studies, DoA Inscriptions, and Cultural Archives
+Languages: English & Nepali (Bilingual Canonical Records)
+
+--------------------------------------------------------------------------------
+SECTION 1: WARD 16 OVERVIEW & GEOGRAPHICAL SETTING
+--------------------------------------------------------------------------------
+Topic: Ward 16 Overview & Geography
+Keywords: ward 16, kathmandu, balaju, location, geography, sorhakhutte, nayabazar, nagarjun, वडा १६, काठमाडौँ, बालाजु, भूगोल, अवस्थिति
+Evidence: Documented (DoA & KMC Municipal Cadastral Survey)
+Sources: Kathmandu Metropolitan City Cadastral Survey, Ward 16 Municipal Profile
+
+English:
+Ward No. 16 is one of the most historically significant and culturally vital municipal wards of Kathmandu Metropolitan City, situated in the northwestern corridor of the Kathmandu Valley. The ward spans from the historic Newar market towns and commercial avenues of Sorhakhutte and Nayabazar up into the verdant slopes and foothills of the protected Nagarjun Forest (part of Shivapuri-Nagarjun National Park). Key settlements encompassed within its borders include the ancient Balaju Baisdhara complex, Machhapokhari, Banasthali, Sorhakhutte, and the foothills of Raniban. The ward forms a vital ecological, hydrological, and ritual gateway between the urban core of historic Kathmandu and the surrounding sacred hills.
+
+Nepali:
+काठमाडौँ महानगरपालिका वडा नं. १६ उपत्यकाको उत्तर-पश्चिमी रणनीतिक प्रवेशद्वार र ऐतिहासिक सम्पदाले भरिपूर्ण महत्वपूर्ण क्षेत्र हो। यो वडा सोह्रखुट्टे र नयाँबजारका पुराना नेवार व्यापारिक बस्तीदेखि लिएर संरक्षित नागार्जुन वन (शिवपुरी-नागार्जुन राष्ट्रिय निकुञ्ज) को हरियाली फेदीसम्म फैलिएको छ। यस वडाभित्र प्रसिद्ध बालाजु बाइसधारा जल परिसर, माछापोखरी, वनस्थली, सोह्रखुट्टे र रानीवन फेदी जस्ता प्रमुख क्षेत्रहरू पर्दछन्। यो वडा काठमाडौँको ऐतिहासिक सहरी केन्द्र र वरपरका पवित्र पहाडहरूबीचको महत्त्वपूर्ण पर्यावरणीय, जलस्रोत र सांस्कृतिक सेतुका रूपमा रहेको छ।
+
+--------------------------------------------------------------------------------
+SECTION 2: 22 DHARA (BALAJU BAISDHARA) - HISTORICAL ORIGIN & ROYAL PATRONAGE
+--------------------------------------------------------------------------------
+Topic: 22 Dhara History & Commissioning
+Keywords: 22 dhara, baisdhara, history, who built 22 dhara, king jaya prakash malla, rana bahadur shah, 1774, 1789, nepal sambat, २२ धारा, बाइसधारा, इतिहास, कसले बनाएको, जयप्रकाश मल्ल, रणबहादुर शाह, मल्लकाल, शाहकाल
+Evidence: Documented (Royal Chronicles, DoA Epigraphical Field Surveys)
+Sources: Kathmandu Valley Royal Chronicles, Department of Archaeology (DoA) Field Inscriptions, Regmi Research Series
+
+English:
+22 Dhara (Balaju Baisdhara) is a monumental public water architecture complex established in the 18th century. Historical chronicles and epigraphical records confirm a two-phase royal commission:
+1. The Initial 21 Spouts: Commissioned in 1774 CE (Nepal Sambat 894 / 1831 BS) by the last Malla king of Kathmandu, King Jaya Prakash Malla. He built twenty-one stone water spouts along with a sunken bathing court for the spiritual purification and water needs of traveling pilgrims.
+2. The 22nd Spout: In 1789 CE (1846 BS / 1855 BS in alternate records), during the early Shah dynasty, King Rana Bahadur Shah added the twenty-second spout, completing the iconic alignment of twenty-two spouts known today as Baisdhara.
+Later in the 19th and mid-20th century, King Mahendra renovated the surrounding park into Mahendra Park, introducing landscaped ponds and rest houses while keeping the sacred stone fountain complex intact.
+
+Nepali:
+२२ धारा (बालाजु बाइसधारा) १८औँ शताब्दीमा निर्मित काठमाडौँको एक अद्वितीय र ऐतिहासिक जल संरचना हो। ऐतिहासिक अभिलेख र वंशावली अनुसार यो दुई चरणमा निर्माण भएको थियो:
+१. प्रारम्भिक २१ धारा: काठमाडौँका अन्तिम मल्ल राजा जयप्रकाश मल्लले वि.सं. १८३१ (नेपाल संवत् ८९४ / सन् १७७४) मा तीर्थालुहरूको सुविधा र स्नानका लागि २१ वटा कलात्मक ढुङ्गेधारा निर्माण गराएका थिए।
+२. २२ औँ धारा: त्यसको केही वर्षपछि वि.सं. १८४६ (सन् १७८९) मा शाहवंशीय राजा रणबहादुर शाहले थप एक धारा थपेर २२ धारा पुर्याई यसलाई पूर्णता दिएका थिए।
+पछि १९औँ र २०औँ शताब्दीमा राजा महेन्द्रको पालामा यसको वरिपरि महेन्द्र पार्क (बालाजु उद्यान) निर्माण गरी पोखरी र बगैँचा विस्तार गरिएको भए पनि प्राचीन ढुङ्गेधाराको मौलिक स्वरूप सुरक्षित राखिएको छ।
+
+--------------------------------------------------------------------------------
+SECTION 3: 22 DHARA - HYDRAULIC ENGINEERING, NAGARJUN AQUIFER & MAKARA SPOUTS
+--------------------------------------------------------------------------------
+Topic: 22 Dhara Architecture & Hydraulic Engineering
+Keywords: 22 dhara architecture, makara, hitimanga, water source, aquifer, nagarjun, jamacho, hiti gah, engineering, drainage, वास्तुकला, मकर, हितिमंगः, पानीको मुहान, नागार्जुन, जामाचो, हिति-गाः, इन्जिनियरिङ
+Evidence: Documented (Traditional Hydraulic Engineering Surveys)
+Sources: UNESCO Traditional Water Architecture Survey, Kathmandu Valley Hydraulic Studies
+
+English:
+The architecture of 22 Dhara demonstrates advanced Newar hydraulic engineering:
+1. The Makara Spouts (Hitimanga): Each of the twenty-two spouts is carved from dense, durable grey schist stone in the likeness of the Makara—a mythical amphibious aquatic beast combining crocodile jaws, an elephant trunk, and fish tail. In Hindu and Buddhist iconography, Makara represents the sacred vehicle of river goddess Ganga and water deity Varuna, symbolizing purity and fertile abundance.
+2. Subterranean Aquifer: The water is supplied by subterranean natural gravity springs that recharge in the pristine granite watershed of Nagarjun Hill (Jamacho).
+3. Thermal Moderation: Because the water travels through deep subterranean gravel-sand aquifers and terracotta conduits (hitidau), it is geothermally buffered—feeling refreshingly cool during hot summer months and comfortably lukewarm during the cold winter.
+4. Sunken Basin (Hiti-gah): The hitis discharge into a stone-paved sunken courtyard (hiti-gah) designed to control water velocity, prevent splashing, and feed downstream irrigation channels and retention ponds.
+
+Nepali:
+२२ धाराको वास्तुकलाले परम्परागत नेवार जल इन्जिनियरिङको उच्चतम नमुना प्रस्तुत गर्दछ:
+१. मकर ढुङ्गेधारा (हितिमंगः): बाइसवटै धाराहरू कडा खैरो ढुङ्गामा पौराणिक जलजीव 'मकर' को स्वरूपमा कुँदिएका छन्। मकर गोहीको मुख, हात्तीको सुँड र माछाको पुच्छर भएको पौराणिक प्राणी हो, जसलाई गंगा र वरुणको वाहन मानिन्छ।
+२. प्राकृतिक मुहान: यसको पानी नागार्जुन डाँडा (जामाचो) को प्राकृतिक भूमिगत जलाधार क्षेत्रबाट गुरुत्व बलका आधारमा निरन्तर बग्दछ।
+३. प्राकृतिक तापक्रम अनुकूलन: जमिनमुनिको बालुवा-गिट्टीको प्राकृतिक तह र माटोका प्राचीन कुलो (हितिदँ) हुँदै आउने भएकाले यो पानी हिउँदमा न्यानो र वर्षायाममा चिसो रहने अनौठो प्राकृतिक गुण बोकेको हुन्छ।
+४. हिति-गाः (गहिरो ढुङ्गे चोक): पानीको चाप नियन्त्रण गर्न र बाछिटा रोक्न सतहभन्दा गहिरो ढुङ्गे चोक निर्माण गरिएको छ, जहाँबाट पानी पोखरी र खेतीयोग्य जमिनतर्फ निकास हुन्छ।
+
+--------------------------------------------------------------------------------
+SECTION 4: 22 DHARA - ADJACENT SACRED SHRINES (BAL NARAYAN & JAL BHAIRAV)
+--------------------------------------------------------------------------------
+Topic: 22 Dhara Adjacent Sacred Shrines
+Keywords: bal narayan, jalashayana narayana, sleeping vishnu, budhanilkantha replica, jal bhairav, shrines, बाल नारायण, जलशयन नारायण, बूढानीलकण्ठ, जल भैरव, मन्दिरहरू
+Evidence: Documented (DoA Religious Monument Survey, Balaju Inventory)
+Sources: Department of Archaeology Monograph, Regmi Research Series
+
+English:
+Within the Balaju garden complex adjacent to the spouts stand several important historic shrines:
+1. Bal Narayan (Jalashayana Narayana): An exquisite open-air stone sculpture of Lord Vishnu reclining on the coils of serpent Ananta Shesha in a sacred pool of water. It was consecrated in the 17th-18th century as a royal replica of the Budhanilkantha deity. Reigining kings of Kathmandu were strictly forbidden by ancient superstition and royal curse from ever looking upon the original Budhanilkantha idol; thus, Bal Narayan was consecrated at Balaju so monarchs could offer worship safely.
+2. Jal Bhairav: A protective shrine dedicated to Bhairava, ensuring the safety of water flows and banishing evil spirits.
+3. Shital Mai Shrine: A historic sanctum dedicated to Shitala Devi, revered for protecting children and households from viral contagions.
+
+Nepali:
+२२ धारा उद्यान परिसरभित्र धार्मिक दृष्टिले अत्यन्तै महत्वपूर्ण देवस्थलहरू रहेका छन्:
+१. बाल नारायण (जलशयन नारायण): पानीको पोखरीभित्र शेषनागको शय्यामा शयन गरिरहनुभएका भगवान् विष्णुको भव्य ढुङ्गे मूर्ति। प्राचीन मान्यता अनुसार काठमाडौँका राजाहरूलाई बूढानीलकण्ठको मूल मूर्ति हेर्न बन्देज (अशुभ) रहेकाले राजाहरूको दर्शनका लागि बालाजुमा बूढानीलकण्ठकै प्रतिरूपका रूपमा बाल नारायण स्थापना गरिएको थियो।
+२. जल भैरव: जलक्षेत्रको रक्षा गर्ने र नकारात्मक शक्तिबाट जोगाउने भैरवको देवालय।
+३. सीतल माई मन्दिर: बालबच्चाको स्वास्थ्य रक्षा गर्ने र महामारी निवारण गर्ने देवीको मन्दिर।
+
+--------------------------------------------------------------------------------
+SECTION 5: 22 DHARA - BAISDHARA MELA, LHUTI PUNHI & CULTURAL BELIEFS
+--------------------------------------------------------------------------------
+Topic: Baisdhara Mela, Lhuti Punhi & Ritual Bathing
+Keywords: baisdhara mela, lhuti punhi, balaju purnima, chaitra purnima, baisakh, festival, ritual bathing, skin ailments, water quality, मेला, ल्हुति पुन्हि, बालाजु पूर्णिमा, चैत्र पूर्णिमा, स्नान, जनविश्वास, पानीको शुद्धता
+Evidence: Documented / Cultural Practice & Religious Belief (Distinguished from medical facts)
+Sources: Living Heritage Field Documentation, Nepal Cultural Studies Center, Ekantipur & OnlineKhabar reports
+
+English:
+1. Annual Festival Timing: The celebrated festival is known locally as Baisdhara Mela (in Newar tradition, Lhuti Punhi or Balaju Purnima). It is observed on the full moon day of Chaitra (Chaitra Shukla Purnima), which occasionally shifts according to lunar calculations into late April/Baisakh. Devotees are always advised to verify the exact festival date for the current year with the local festival organizing committee and Guthi.
+2. Pilgrimage & Bathing Rituals: Tens of thousands of pilgrims from Kathmandu Valley, Nuwakot, and adjoining districts arrive at daybreak to bathe sequentially under all twenty-two spouts. Devotees also float earthen butter lamps (diyo) in the ponds in loving memory of departed family ancestors.
+3. Spiritual & Physical Beliefs: Devotees traditionally believe that ritual immersion in Baisdhara cleanses sins, earns spiritual merit comparable to visiting high Himalayan pilgrimage sites like Gosainkunda and Muktinath, and relieves rheumatism and skin diseases.
+4. Scientific & Archival Clarification: The claim that the water cures skin ailments or illnesses is recorded strictly as an intangible cultural and religious faith, NOT as medical or scientific fact. Modern visitors must observe hygiene: chemical soaps and detergents are strictly banned under the heritage hitis to preserve the water ecology.
+
+Nepali:
+१. मेलाको समय: २२ धाराको प्रमुख उत्सव 'बाइसधारा मेला' (नेवार भाषामा ल्हुति पुन्हि वा बालाजु पूर्णिमा) हो। यो मेला चैत्र शुक्ल पूर्णिमाका दिन पर्दछ, जुन चन्द्र पात्रो अनुसार वैशाख महिनामा पनि पर्न सक्छ। मेलाको ठ्याक्कै मिति स्थानीय गुठी तथा मेला व्यवस्थापन समितिसँग पुष्टि गर्नुपर्दछ।
+२. स्नान र पितृ तर्पण: काठमाडौँ उपत्यका, नुवाकोट लगायतका क्षेत्रबाट हजारौँ श्रद्धालुहरू २२ वटै धारामा क्रमैसँग स्नान गर्दछन्। श्रद्धालुहरूले पोखरीमा आफ्ना दिवङ्गत पितृहरूको सम्झनामा दियो (बत्ती) बालेर बगाउने परम्परा छ।
+३. धार्मिक विश्वास: यस दिन बाइसधारामा स्नान गर्नाले गोसाइँकुण्ड र मुक्तिनाथ गए सरहको पुण्य मिल्ने र छालाका रोग तथा बाथ निको हुने जनविश्वास छ।
+४. वैज्ञानिक तथा अभिलेखीय स्पष्टोक्ति: धारामुनि नुहाउँदा छालाको रोग निको हुने विषयलाई केवल सांस्कृतिक तथा धार्मिक आस्थाका रूपमा लिइएको छ, यसलाई चिकित्सकीय तथ्य मान्न सकिँदैन। ढुङ्गेधाराको जलप्रणाली जोगाउन धारामुनि सिधै रासायनिक साबुन वा स्याम्पु प्रयोग गर्न कडा प्रतिबन्ध लगाइएको छ।
+
+--------------------------------------------------------------------------------
+SECTION 6: PYAH THWAM AJIMA (PYATHO AJIMA) - IDENTITY & MATRIKA COSMOLOGY
+--------------------------------------------------------------------------------
+Topic: Pyah Thwam Ajima Sacred Identity
+Keywords: pyah thwam ajima, pyatho ajima, shitala mai, mother goddess, matrika, pith, sacred stone, animism, प्याः थ्वँ अजिमा, प्याठो अजिमा, शीतला माई, मातृका, शक्तिपीठ, प्राकृतिक शिला, परिचय
+Evidence: Documented (Newar Tantric & Matrika Traditions)
+Sources: Gérard Toffin (Cult of Mātṛkā/Ajimā Goddesses), Ward 16 Cultural Registry
+
+English:
+Pyah Thwam Ajima (also spelled Pyatho Ajima and revered locally as Shitala Mai) is a historic mother-goddess sanctuary in Ward 16:
+1. Maternal Protector (Ajima): In the indigenous Newar language, "Ajima" literally translates to grandmother, embodying primordial maternal protectresses stationed around human settlements. In valley cosmology, Ajimas are linked with the Ashta Matrika (Eight Mother Goddesses) who protect communities against pestilence, fever, and childhood illnesses.
+2. Aniconic River Stone (Pith): Unlike later classical Hindu temples that venerate anthropomorphic cast-bronze or marble idols, the sanctum of Pyah Thwam Ajima enshrines an aniconic natural river stone (Pith stone). This natural rock embodies the unmanifested, raw cosmic power of the earth and divine maternal presence.
+3. Name Etymology: Traditional oral analysis parses "Pyah" as extreme thirst or drought, and "Thwam" as indigenous Newar fermented rice beverage. Oral legends recall an era when ancestral settlers suffered drought and epidemic, seeking refuge and offering rice beverage to the mother goddess, who brought rain and restored vitality.
+
+Nepali:
+प्याः थ्वँ अजिमा (प्याठो अजिमा वा स्थानीय रूपमा शीतला माई) वडा नं. १६ को एक ऐतिहासिक मातृशक्ति पीठ हो:
+१. मातृ संरक्षक (अजिमा): नेपाल भाषामा 'अजिमा' को शाब्दिक अर्थ 'हजुरआमा' वा मातृका स्वरूप हो। नेवार सभ्यतामा उपत्यका र बस्तीको सुरक्षाका लागि अष्टमातृकाका रूपमा अजिमाहरूको स्थापना गरिएको हुन्छ, जसले टोलवासीलाई बिफर, ठेउला, ज्वरो र बालबच्चाका रोगव्याधिबाट बचाउने विश्वास गरिन्छ।
+२. प्राकृतिक शिला (पीठ): मानव आकारको धातु वा प्रस्तर मूर्तिको सट्टा यस मन्दिरको गर्भगृहभित्र एक पवित्र प्राकृतिक नदी शिला (पीठ ढुङ्गा) स्थापित छ, जसले प्रकृतिको अनादि शक्तिलाई प्रतिनिधित्व गर्दछ।
+३. नामको व्युत्पत्ति: स्थानीय मौखिक परम्परा अनुसार 'प्याः' को अर्थ प्यास वा खडेरी र 'थ्वँ' को अर्थ नेवारी परम्परागत जाँड (चामलको पेय) हो। प्राचीन कालमा खडेरी र महामारी पर्दा मातृदेवीलाई थ्वँ चढाएर आराधना गर्दा पानी परेको र रोग शान्त भएको लोककथा यससँग जोडिएको छ।
+
+--------------------------------------------------------------------------------
+SECTION 7: PYAH THWAM AJIMA - PAGODA ARCHITECTURE & WOODCRAFT
+--------------------------------------------------------------------------------
+Topic: Pyah Thwam Ajima Architecture
+Keywords: architecture of ajima, pagoda, dachi appa, sal timber, tundal, struts, woodcarving, torana, वास्तुकला, पागोडा, दाची अप्पा, काष्ठकला, टुँडाल, तोरण
+Evidence: Documented (Architectural Field Survey)
+Sources: Newar Architectural Heritage Survey (Gutschow), Lalitpur & Kathmandu Strut Documentation
+
+English:
+The shrine showcases exquisite late medieval Newar pagoda craft:
+1. Masonry: The external load-bearing walls are built with Dachi Appa—traditional high-fired, wedge-shaped terracotta bricks with polished red outer faces, laid with razor-thin mud mortar joints.
+2. Timber Roof Struts (Tunal / Tundals): Supporting the heavy clay-tiled overhanging pagoda roof are hand-carved Sal wood struts. Each strut is a masterwork depicting a multi-armed Matrika goddess standing gracefully over her respective mount (vahana) or a supporting Yaksha/Vyala chimera.
+3. Entrance & Threshold: The doorway is crowned by a finely chased repoussé brass Torana depicting protective tantric guardians, flanked by sculpted stone guardian lions.
+
+Nepali:
+प्याः थ्वँ अजिमा मन्दिर परम्परागत मल्लकालीन नेवारी पागोडा शैलीको अनुपम उदाहरण हो:
+१. गारो र इँटा: मन्दिरको बाहिरी गारो परम्परागत 'दाची अप्पा' (विशेष चिल्लो र चोसो परेको रातो इँटा) ले माटोको मसिनो जोडाइमा निर्माण गरिएको छ।
+२. काठका टुँडालहरू: झिँगटीको भारी छानालाई थाम्ने सालका काठका टुँडालहरूमा कलात्मक बहुभुजाधारी मातृका देवीहरू आ-आफ्नो वाहनमाथि उभिएको स्वरूपमा कुँदिएका छन्।
+३. प्रवेशद्वार र तोरण: मन्दिरको मुख्य ढोकामाथि धातुको कलात्मक तोरण र ढोकाको दायाँबायाँ ढुङ्गाका रक्षक सिंहहरू स्थापित छन्।
+
+--------------------------------------------------------------------------------
+SECTION 8: SACRED DRISTI LEKHAN (EYE-PAINTING) RITUAL BY CHITRAKAR GUTHI
+--------------------------------------------------------------------------------
+Topic: Dristi Lekhan Ritual & Pũ Chitrakar Tradition
+Keywords: dristi lekhan, eye painting, chitrakar, pu, guthi, ritual, sacred ceremony, restricted ritual, दृष्टि लेखन, आँखा रंगाउने, चित्रकार, पुँ, गुठी, अनुष्ठान, गोपनीयता
+Evidence: Documented & Oral Tradition (Living Heritage Custodians)
+Sources: Balaju Chitrakar Guthi Archives, Ward 16 Living Heritage Field Documentation
+
+English:
+1. Sacred Ritual: During the annual Lhuti Purnima festival cycle, a secret consecration ceremony called Dristi Lekhan (literally "Eye Painting / Eye Awakening") is performed at Pyah Thwam Ajima.
+2. Hereditary Artisans: The ceremony is executed exclusively by initiated members of the hereditary Pũ (Chitrakar) artisan lineage. Using mineral pigments mixed with sacred binders, the Chitrakar master paints the stylized eyes, eyebrows, and third eye upon the deity's visage, awakening the divine presence (Prana Pratishtha).
+3. Sacred Secrecy & Protocol: Dristi Lekhan is an esoteric tantric rite, NOT a public art exhibition. While the ritual is underway, visual access to the sanctum is shielded. Photography and video recording of the unfinished deity or the eye-painting process are strictly prohibited by Guthi rules to preserve sanctity.
+
+Nepali:
+१. दृष्टि लेखन अनुष्ठान: वार्षिक ल्हुति पूर्णिमाको अवसरमा प्याः थ्वँ अजिमा मन्दिरमा 'दृष्टि लेखन' (आँखा रंगाउने तथा प्राणप्रतिष्ठा गर्ने) अत्यन्तै पवित्र र तान्त्रिक विधि सम्पन्न गरिन्छ।
+२. वंशानुगत चित्रकार (पुँ) समुदाय: यो अनुष्ठान परम्परागत पुँ (चित्रकार) समुदायका दीक्षित कालिगडहरूद्वारा मात्र सम्पन्न गरिन्छ। प्राकृतिक खनिज रंगहरूको प्रयोग गरेर देवीको आँखा र दृष्टि कोरेपछि मात्र मन्दिरमा देवीको प्रत्यक्ष उपस्थिति भएको मानिन्छ।
+३. गोपनीयता र मर्यादा: दृष्टि लेखन सर्वसाधारणको मनोरञ्जनका लागि गरिने चित्रकला नभई एक गोप्य तान्त्रिक पूजा हो। यो विधि भइरहँदा मन्दिरमा पर्दा लगाइन्छ र गुठीको नियम अनुसार यसको तस्बिर वा भिडियो खिच्न कडा निषेध गरिएको छ।
+
+--------------------------------------------------------------------------------
+SECTION 9: DAFA BHAJAN MUSICAL TRADITIONS & LIVING DEVOTION
+--------------------------------------------------------------------------------
+Topic: Dafa Bhajan & Intangible Cultural Heritage
+Keywords: dafa bhajan, musical tradition, khin drum, taa cymbals, phalecha, pati, gunla, दाफा भजन, खिं बाजा, ताः, फलेचा, पाटी, गुँला, भजन कीर्तन
+Evidence: Documented & Active Living Heritage
+Sources: Ward 16 Intangible Cultural Heritage Registry, Community Elders Oral Documentation
+
+English:
+Pyah Thwam Ajima is sustained by living devotional music:
+1. Evening Dafa Bhajan: At dusk, local elders and musicians of the Dafa Khala assemble at the adjoining temple colonnade (Phalecha/Pati). They chant centuries-old classical devotional ragas and stotras in the Nepal Bhasa language.
+2. Sacred Instrumentation: The singing is rhythmic and disciplined, accompanied by the double-headed Khin drum (which symbolizes primordial rhythm), hand brass cymbals (Taa and Babhu), and harmonium.
+3. Gunla Observance: Throughout the sacred monsoon month of Gunla, traditional musical processions honor the Ajima to invoke wellness and ward off seasonal diseases.
+
+Nepali:
+प्याः थ्वँ अजिमा जीवन्त सांस्कृतिक संगीतले सधैं गुञ्जायमान रहन्छ:
+१. साँझको दाफा भजन: हरेक साँझ स्थानीय दाफा खलः (भजन मण्डली) का अग्रज तथा गायकहरू मन्दिरसँगै रहेको फलेचा (पाटी) मा भेला भई नेपाल भाषाका प्राचीन राग तथा भजनहरू गाउँछन्।
+२. परम्परागत बाजाहरू: भजन गायनमा माटो वा काठले बनेको दुईमुखे 'खिं' बाजा, काँसको सानो 'ताः' र 'बभु' (झ्याली) बजाएर ताल दिइन्छ।
+३. गुँला पर्व: विशेषगरी वर्षायामको पवित्र गुँला महिनाभरि बिहानीपख बाजागाजासहित मन्दिर परिक्रमा गरी नगरको सुस्वास्थ्यको कामना गरिन्छ।
+
+--------------------------------------------------------------------------------
+SECTION 10: GUTHI STEWARDSHIP SYSTEM & TRADITIONAL OFFERINGS
+--------------------------------------------------------------------------------
+Topic: Guthi System & Traditional Offerings
+Keywords: guthi system, offerings, thwam, aila, samay baji, stewardship, गुठी प्रणाली, पूजा सामग्री, थ्वँ, अय्लाः, समय् बजि, संरक्षण
+Evidence: Documented (Nepal Guthi Sansthan Archives & Community Lineages)
+Sources: Nepal Guthi Sansthan Archives, Ward 16 Heritage Committee
+
+English:
+1. The Guthi Stewardship: The day-to-day upkeep, festival financing, and ritual cycles of Pyah Thwam Ajima are managed autonomously by lineage Guthis (traditional socio-religious endowments). The Guthi system ensures intergenerational transmission of duties without state dependency.
+2. Traditional Offerings: Devotees present traditional Newar ritual items to the mother goddess, including Thwam (fermented rice beer), Aila (distilled liquor), vermilion powder (abir, sindoor), fresh marigolds, and Samay Baji (ceremonial platter containing beaten rice, roasted black soybeans, ginger, and choila). For non-meat offerings, squash (kubhindo) or eggplant is substituted symbolically.
+
+Nepali:
+१. गुठी संरक्षण प्रणाली: प्याः थ्वँ अजिमाको नित्यपूजा, वार्षिक पर्व र मर्मत-सम्भार स्थानीय नेवार गुठीयार परिवारहरूले पुर्ख्यौली जिम्मेवारीका रूपमा सञ्चालन गर्दै आएका छन्। गुठी व्यवस्थाले राज्यको मुख नताकी समुदायकै सहभागितामा सम्पदा जोगाउन मद्दत गरेको छ।
+२. परम्परागत पूजा सामग्री: देवीलाई पूजा गर्दा थ्वँ (जाँड), अय्लाः (रक्सी), अबीर, सिन्दूर, सयपत्री फूल तथा परम्परागत 'समय् बजि' (चिउरा, भटमास, अदुवा, छोइला) चढाउने गरिन्छ। बलि नदिनेहरूले कुभिन्डो वा भन्टालाई प्रतिकात्मक रूपमा चढाउने गर्दछन्।
+
+--------------------------------------------------------------------------------
+SECTION 11: CANONICAL GROUNDING & FACT VERIFICATION RULES
+--------------------------------------------------------------------------------
+Topic: Archival Grounding & RAG Fact Verification Standard
+Keywords: grounding rules, verification policy, safety, medical disclaimer, rules, नियम, प्रमाणीकरण नीति, सत्यतथ्य
+Evidence: Archival Documentation Policy (2026)
+Sources: Ward 16 Heritage Documentation Policy
+
+English:
+1. Strict Factual Grounding: Responses must be synthesized exclusively from this verified knowledge base document. If an inquiry requests information not present in these verified sections, the guide must state:
+"I do not have verified archival records regarding that matter. For unverified questions, please consult with the local Guthi elders, the festival committee, or the Ward 16 Heritage Office."
+2. Medical Disclaimer: Never state that 22 Dhara water cures medical conditions or is universally safe to drink without testing. Frame healing traditions strictly as "cultural and religious faith."
+3. Language Adaptation: The guide must detect and reply in the user's inquiry language—offering fluent, culturally respectful Nepali for Nepali queries, English for English queries, or clear bilingual explanations when requested.
+
+Nepali:
+१. कडा तथ्यगत आधार: उत्तरहरू यस प्रमाणित ज्ञान दस्तावेजमा आधारित भएर मात्र दिनुपर्दछ। अभिलेखमा नभएका विषयमा सोधिएमा सहायकले स्पष्ट भन्नुपर्छ:
+"यस विषयमा हाम्रो डिजिटल अभिलेखमा प्रमाणित विवरण उपलब्ध छैन। थप जानकारीका लागि स्थानीय गुठी, मेला व्यवस्थापन समिति वा वडा १६ कार्यालयमा सम्पर्क गर्न सक्नुहुन्छ।"
+२. स्वास्थ्य सम्बन्धी सचेतना: २२ धाराको पानी पिउन योग्य छ वा यसले रोग निको पार्छ भनेर दाबी गर्नु हुँदैन। यसलाई केवल "धार्मिक तथा सांस्कृतिक आस्था" का रूपमा उल्लेख गर्नुपर्छ।
+३. भाषा अनुकूलन: प्रयोगकर्ताले नेपालीमा प्रश्न सोधेमा शुद्ध र आदरार्थी नेपालीमा तथा अंग्रेजीमा सोधेमा अंग्रेजीमा उत्तर दिनुपर्दछ।
+
+================================================================================
+END OF OFFICIAL KNOWLEDGE BASE DOCUMENT
+================================================================================
+
+
+================================================================================
+SECTION 12: GURU NANAK MATH & GURU NANAK PURNIMA (BALAJU, WARD 16)
+प्राचीन उदासीन श्री गुरु नानक मठ र गुरु नानक पूर्णिमा (बालाजु, काठमाडौँ वडा १६)
+================================================================================
+
+[ENGLISH HERITAGE DOCUMENTATION]
+1. Historical Significance & Guru Nanak's Visit:
+- Founder of Sikhism, Guru Nanak Dev Ji, visited Kathmandu around 1516 AD during his third Udasi (travels).
+- During his travels through the Himalayas, he stayed and meditated on the banks of the Bishnumati River in Balaju, close to the present-day Balaju bridge / Ward 16 area.
+- According to historical accounts and local chronicles, Guru Nanak met a prominent royal yogi named Sidh Hari Daas at this riverside sanctuary. Impressed by the Guru's spiritual depth and teachings on oneness, Hari Daas became his follower and caretaker of the sacred sanctuary.
+
+2. Sacred Relics & Architecture:
+- The site houses the "Prachin Udasin Shri Guru Nanak Math" (also known as Gurdwara Guru Nanak Math, Balaju).
+- Preserves an ancient sacred stone slab engraved with holy footprints (Charan Paduka) marking the exact spot where Guru Nanak sat in deep meditation.
+- Retains classical Nepali courtyard and traditional timber architecture, managed in the Udasi lineage with support from Guthi Sansthan.
+
+3. Guru Nanak Purnima (Guru Nanak Jayanti):
+- Occasion: Celebrated annually on Kartik Shukla Purnima (कात्तिक शुक्ल पूर्णिमा / October-November).
+- Observances: Continuous chanting and recitation of Sri Guru Granth Sahib (Akhand Path), devotional hymns (Shabad Kirtan), Ardas, and community kitchen feast (Langar) open to all people without distinction of caste, religion, or background.
+- Other Sister Shrines: Alongside the Balaju Math, the main functioning central Sikh temple in the valley is Gurdwara Guru Nanak Satsang in Kupondole, and the historic Bhasmeshwor Guru Nanak Math near Pashupatinath.
+
+[नेपाली सम्पदा अभिलेखीकरण]
+१. ऐतिहासिक पृष्ठभूमि तथा गुरु नानकको बालाजु आगमन:
+- सिख धर्मका प्रवर्तक गुरु नानक देवले सन् १५१६ तिर आफ्नो तेस्रो उदासी (धार्मिक यात्रा) का क्रममा काठमाडौँ उपत्यकाको भ्रमण गर्नुभएको थियो।
+- उहाँले बालाजुस्थित पवित्र विष्णुमती नदीको किनार (हालको वडा नं. १६ क्षेत्र) मा केही समय तपस्या र ध्यान गर्नुभएको थियो।
+- यहाँ बस्दा उहाँको भेट तत्कालीन राजगुरु/सिद्ध योगी हरिदाससँग भएको थियो। गुरु नानकको आध्यात्मिक चिन्तन र समानताको उपदेशबाट प्रभावित भएर योगी हरिदास उहाँका अनुयायी बनेका थिए।
+
+२. पवित्र चरण पादुका र मठ:
+- यहाँ 'प्राचीन उदासीन श्री गुरु नानक मठ' (बालाजु) स्थापित छ।
+- मठभित्र गुरु नानक ध्यान बसेको पवित्र शिलामा कुँदिएका पदचिह्न (चरण पादुका) सुरक्षित छन्।
+- यो मल्लकालीन नेपाली परम्परागत वास्तुकला र उदासीन सम्प्रदायको ऐतिहासिक केन्द्र हो।
+
+३. गुरु नानक पूर्णिमा (जयन्ती) उत्सव:
+- समय: प्रत्येक वर्ष कात्तिक शुक्ल पूर्णिमाका दिन मनाइन्छ।
+- धार्मिक विधि: गुरु ग्रन्थ साहिबको अखण्ड पाठ, शब्द कीर्तन, दीप प्रज्वलन, चरण पूजा र सर्वसाधारणका लागि जातपात रहित लङ्गर (सामूहिक महाप्रसाद) भोजन गराइन्छ।

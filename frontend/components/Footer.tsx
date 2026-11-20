@@ -23,7 +23,7 @@ const link = "inline-flex min-h-[32px] items-center text-sm text-cream/75 transi
 
 export default function Footer() {
   const path = usePathname();
-  const { t } = useLanguage();
+  const { t, isNepali } = useLanguage();
   if (path.startsWith("/admin")) return null;
 
   return (
@@ -72,8 +72,10 @@ export default function Footer() {
           </nav>
 
           <div>
-            <p className={head}>{t("components.footer.aboutCol", "About")}</p>
-            <p className="mt-4 text-sm leading-relaxed text-cream/60">{t("components.footer.respect")}</p>
+            <p className={head}>ABOUT</p>
+            <p className="mt-4 text-sm leading-relaxed text-cream/75">
+              Please do not photograph or share restricted rituals without the permission of the Guthi and the community. Beliefs on this site are recorded as beliefs, not as medical or historical fact.
+            </p>
             <Link href="/sources" className="mt-3 inline-flex min-h-[32px] items-center text-sm text-marigold underline decoration-marigold/50 underline-offset-4 hover:decoration-marigold">
               {t("components.footer.sourcesLink")}
             </Link>

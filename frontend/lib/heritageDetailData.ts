@@ -834,7 +834,7 @@ export const HERITAGE_SITES_DATA: Record<"22-dhara" | "pyatho-ajima", HeritageSi
         ne: "मन्दिरको काष्ठकला, परम्परागत ईँटा र पवित्र गर्भगृह बुझ्न तलका नम्बरहरूमा क्लिक गर्नुहोस्।",
       },
       image: {
-        src: "/images/pyatho-ajima/architecture-overview.jpg",
+        src: "/images/pyatho-ajima/hero.jpg",
         alt: "Pyatho Ajima Temple architectural facade layout",
       },
       items: [
@@ -945,7 +945,7 @@ export const HERITAGE_SITES_DATA: Record<"22-dhara" | "pyatho-ajima", HeritageSi
         label: "Pre-Restoration Setting",
         date: "Pre-2015 Documentation",
         source: "Community Heritage Archive",
-        src: "/images/pyatho-ajima/comparison-historic.jpg",
+        src: "/media/shrine.jpg",
         caption: {
           en: "Pyatho Ajima Temple before seismic stabilization and courtyard restoration.",
           ne: "२०७२ को भूकम्पअघिको मन्दिर तथा परिसरको दृश्य।",
@@ -955,7 +955,7 @@ export const HERITAGE_SITES_DATA: Record<"22-dhara" | "pyatho-ajima", HeritageSi
         label: "Post-Restoration Stewardship",
         date: "Contemporary Archive",
         source: "Ward 16 Cultural Documentation",
-        src: "/images/pyatho-ajima/comparison-contemporary.jpg",
+        src: "/images/pyatho-ajima/hero.jpg",
         caption: {
           en: "Restored temple structure with secured timber joinery and clean stone paving.",
           ne: "पुनर्निर्माणपछि काष्ठकला र छाना सुरक्षित गरिएको वर्तमान मन्दिर।",

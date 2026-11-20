@@ -1,10 +1,9 @@
 /**
- * lib/gallery.ts: all gallery albums and items in one place.
+ * lib/gallery.ts: authentic gallery albums and media items.
  *
- * PLACEHOLDERS: until real photographs arrive, each album repeats the project's existing photos and
- * video, shown with different crops so the grid looks like a camera roll. Every such item has
- * `placeholder: true` (the viewer then says "Sample"). To go live, replace entries in `media` with
- * real files in /public/media and set `placeholder: false`. Nothing else needs to change.
+ * Media items are sourced directly from public/images/22-dhara and
+ * public/images/pyatho-ajima, presenting genuine photographs of the sites
+ * with natural scaling and bilingual captions.
  */
 
 export type Bi = { en: string; ne: string };
@@ -29,7 +28,7 @@ export type MediaItem = {
   /** which part of the picture to show: x/y are percentages, zoom 1 = whole picture */
   crop: { x: number; y: number; zoom: number };
   duration?: string;
-  /** show the whole picture uncropped (visitor photos) */
+  /** show the whole picture uncropped (visitor photos & authentic photos) */
   natural?: boolean;
   placeholder: boolean;
 };
@@ -40,15 +39,15 @@ export const albums: Album[] = [
   {
     id: "dhara",
     title: { en: "22 Dhara", ne: "२२ धारा" },
-    blurb: { en: "The stone spouts", ne: "ढुङ्गेधाराहरू" },
-    cover: "/media/spouts.jpg",
+    blurb: { en: "The 22 stone spouts and sacred water complex", ne: "२२ ढुङ्गेधारा र ऐतिहासिक जल परिसर" },
+    cover: "/images/22-dhara/hero.jpg",
     tone: "teal",
   },
   {
     id: "ajima",
     title: { en: "Pyah Thwam Ajima", ne: "प्याः थ्वँ अजिमा" },
-    blurb: { en: "The shrine", ne: "मन्दिर" },
-    cover: "/media/shrine.jpg",
+    blurb: { en: "The mother-goddess shrine and courtyard", ne: "मातृदेवी मन्दिर र प्रांगण" },
+    cover: "/images/pyatho-ajima/hero.jpg",
     tone: "brick",
   },
   {
@@ -59,74 +58,256 @@ export const albums: Album[] = [
   },
 ];
 
-// ---- placeholder generation -------------------------------------------------------------
+const centerCrop = { x: 50, y: 50, zoom: 1 };
 
-/** Different crops of the same picture, so a repeated photo still looks like many photos. */
-const CROPS: MediaItem["crop"][] = [
-  { x: 50, y: 50, zoom: 1 },
-  { x: 8, y: 20, zoom: 1.7 },
-  { x: 92, y: 20, zoom: 1.7 },
-  { x: 8, y: 90, zoom: 1.7 },
-  { x: 92, y: 90, zoom: 1.7 },
-  { x: 50, y: 50, zoom: 2.1 },
-  { x: 28, y: 50, zoom: 1.9 },
-  { x: 72, y: 50, zoom: 1.9 },
-  { x: 50, y: 15, zoom: 1.5 },
-  { x: 50, y: 85, zoom: 1.5 },
-  { x: 15, y: 60, zoom: 2.3 },
-  { x: 85, y: 40, zoom: 2.3 },
-  { x: 35, y: 25, zoom: 2.5 },
-  { x: 65, y: 75, zoom: 2.5 },
-  { x: 50, y: 50, zoom: 1.35 },
-  { x: 20, y: 80, zoom: 1.55 },
-  { x: 80, y: 15, zoom: 1.45 },
-  { x: 45, y: 65, zoom: 2 },
-];
-
-const NE_DIGITS = ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"];
-const ne = (n: number) => String(n).split("").map((d) => NE_DIGITS[Number(d)]).join("");
-
-function photos(album: "dhara" | "ajima", src: string, count: number, name: Bi): MediaItem[] {
-  return Array.from({ length: count }, (_, i) => ({
-    id: `${album}-photo-${i + 1}`,
-    album,
-    type: "photo" as const,
-    src,
+// ---- 22 Dhara authentic media -------------------------------------------------------------
+const dharaMedia: MediaItem[] = [
+  {
+    id: "dhara-hero",
+    album: "dhara",
+    type: "photo",
+    src: "/images/22-dhara/hero.jpg",
     caption: {
-      en: `${name.en}, photo ${i + 1}`,
-      ne: `${name.ne}, तस्बिर ${ne(i + 1)}`,
+      en: "22 Dhara Spouts Complex Overview",
+      ne: "२२ धारा जल परिसरको अवलोकन",
     },
-    crop: CROPS[i % CROPS.length],
-    placeholder: true,
-  }));
-}
-
-function clips(album: AlbumId, count: number, name: Bi): MediaItem[] {
-  return Array.from({ length: count }, (_, i) => ({
-    id: `${album}-video-${i + 1}`,
-    album,
-    type: "video" as const,
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "dhara-spouts-row",
+    album: "dhara",
+    type: "photo",
+    src: "/images/22-dhara/spouts-row.jpg",
+    caption: {
+      en: "Linear alignment of the 22 stone spouts",
+      ne: "२२ वटा ढुङ्गेधाराको लहर",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "dhara-vibrant-spouts",
+    album: "dhara",
+    type: "photo",
+    src: "/images/22-dhara/vibrant-spouts.jpg",
+    caption: {
+      en: "Continuous spring water flowing from sacred hitis",
+      ne: "ढुङ्गेधाराबाट अविरल बग्ने प्राकृतिक मूलको पानी",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "dhara-spouts-detail",
+    album: "dhara",
+    type: "photo",
+    src: "/images/22-dhara/spouts-detail.jpg",
+    caption: {
+      en: "Detail of stone spouts and drainage basin",
+      ne: "ढुङ्गेधाराको निकास र जलप्रणालीको विवरण",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "dhara-makara-carving",
+    album: "dhara",
+    type: "photo",
+    src: "/images/22-dhara/makara-carving.jpg",
+    caption: {
+      en: "Intricate Makara (Hitimanga) aquatic beast stone carving",
+      ne: "मकर (हितिमंगः) को कलात्मक ढुङ्गे बुट्टा",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "dhara-architecture-overview",
+    album: "dhara",
+    type: "photo",
+    src: "/images/22-dhara/architecture-overview.jpg",
+    caption: {
+      en: "Architectural layout of the sunken hiti-gah courtyard",
+      ne: "हिति-गाः (गहिरो ढुङ्गे चोक) को वास्तुकला संरचना",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "dhara-baisdhara-mela",
+    album: "dhara",
+    type: "photo",
+    src: "/images/22-dhara/baisdhara-mela.jpg",
+    caption: {
+      en: "Baisdhara Mela festival gathering and ritual bathing",
+      ne: "बाइसधारा मेलामा भेला भएका भक्तजन र स्नान",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "dhara-heritage-garden",
+    album: "dhara",
+    type: "photo",
+    src: "/images/22-dhara/heritage-garden.jpg",
+    caption: {
+      en: "Surrounding historic Balaju heritage gardens and ponds",
+      ne: "ऐतिहासिक बालाजु सम्पदा बगैँचा र पोखरी",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "dhara-historic-archival",
+    album: "dhara",
+    type: "photo",
+    src: "/images/22-dhara/historic-archival.jpg",
+    caption: {
+      en: "Archival record of pilgrims and bathers at Baisdhara",
+      ne: "२२ धारा तीर्थयात्राको ऐतिहासिक अभिलेख तस्बिर",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "dhara-comparison-historic",
+    album: "dhara",
+    type: "photo",
+    src: "/images/22-dhara/comparison-historic.jpg",
+    caption: {
+      en: "Historic black & white archival photograph of the spouts",
+      ne: "बालाजु धाराको ऐतिहासिक पुरानो श्यामश्वेत तस्बिर",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "dhara-comparison-contemporary",
+    album: "dhara",
+    type: "photo",
+    src: "/images/22-dhara/comparison-contemporary.jpg",
+    caption: {
+      en: "Contemporary restored layout of 22 Dhara",
+      ne: "२२ धाराको हालको समकालीन स्वरूप",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "dhara-360-gardens",
+    album: "dhara",
+    type: "photo",
+    src: "/images/22-dhara/360-gardens.jpg",
+    caption: {
+      en: "Panoramic garden vista overlooking Nagarjun foothills",
+      ne: "नागार्जुन फेदीतर्फ फैलिएको बगैँचाको विस्तृत दृश्य",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "dhara-360-spouts",
+    album: "dhara",
+    type: "photo",
+    src: "/images/22-dhara/360-spouts.jpg",
+    caption: {
+      en: "Wide panoramic view across the water spouts courtyard",
+      ne: "ढुङ्गेधारा परिसरको विस्तृत ३६०° परिदृश्य",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "dhara-video-walk",
+    album: "dhara",
+    type: "video",
     src: "/media/spouts-walk.mp4",
     poster: "/media/spouts-walk-poster.jpg",
     caption: {
-      en: `${name.en}, clip ${i + 1}`,
-      ne: `${name.ne}, क्लिप ${ne(i + 1)}`,
+      en: "Video walkthrough alongside the 22 spouts",
+      ne: "२२ धारा परिसरको भिडियो यात्रा",
     },
-    crop: CROPS[(i * 3 + 2) % CROPS.length],
+    crop: centerCrop,
     duration: "0:15",
-    placeholder: true,
-  }));
-}
+    natural: true,
+    placeholder: false,
+  },
+];
 
-const dharaName: Bi = { en: "22 Dhara", ne: "२२ धारा" };
-const ajimaName: Bi = { en: "Pyah Thwam Ajima", ne: "प्याः थ्वँ अजिमा" };
+// ---- Pyah Thwam Ajima authentic media ------------------------------------------------------
+const ajimaMedia: MediaItem[] = [
+  {
+    id: "ajima-hero",
+    album: "ajima",
+    type: "photo",
+    src: "/images/pyatho-ajima/hero.jpg",
+    caption: {
+      en: "Pyah Thwam Ajima shrine and pagoda facade",
+      ne: "प्याः थ्वँ अजिमा मन्दिरको मुख्य स्वरूप",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "ajima-temple-front",
+    album: "ajima",
+    type: "photo",
+    src: "/images/pyatho-ajima/temple-front.jpg",
+    caption: {
+      en: "Front threshold and entrance to the sanctum",
+      ne: "मन्दिरको मूल प्रवेश द्वार र प्रांगण",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "ajima-ritual-worship",
+    album: "ajima",
+    type: "photo",
+    src: "/images/pyatho-ajima/ritual-worship.jpg",
+    caption: {
+      en: "Devotees making morning offerings and performing rituals",
+      ne: "नित्यपूजा र अनुष्ठानमा सहभागी भक्तजनहरू",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+  {
+    id: "ajima-360-threshold",
+    album: "ajima",
+    type: "photo",
+    src: "/images/pyatho-ajima/360-threshold.jpg",
+    caption: {
+      en: "Threshold view toward the inner sanctum",
+      ne: "गर्भगृह प्रवेशको ३६०° दृश्य",
+    },
+    crop: centerCrop,
+    natural: true,
+    placeholder: false,
+  },
+];
 
-/** Photos and clips shown in an album, newest first. Visitor photos are loaded live, not listed here. */
+/** Photos and clips shown in an album, newest first. Visitor photos are loaded live from API. */
 export const media: MediaItem[] = [
-  ...photos("dhara", "/media/spouts.jpg", 18, dharaName),
-  ...clips("dhara", 4, dharaName),
-  ...photos("ajima", "/media/shrine.jpg", 15, ajimaName),
-  ...clips("ajima", 3, ajimaName),
+  ...dharaMedia,
+  ...ajimaMedia,
 ];
 
 export const getAlbum = (id: string) => albums.find((a) => a.id === id);
