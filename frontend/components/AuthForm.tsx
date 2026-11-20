@@ -1,16 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { announceAuthChange } from "@/lib/useUser";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
+/** Admin sign-in. Visitors do not need an account, so there is no sign-up. */
+export default function AuthForm() {
   const router = useRouter();
   const { t } = useLanguage();
-  const signup = mode === "signup";
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);
@@ -22,10 +20,10 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
     setError("");
     setBusy(true);
     try {
-      const r = await fetch(`/api/auth/${mode}`, {
+      const r = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ email, password }),
       });
       const d = await r.json();
       if (!r.ok) {
@@ -33,7 +31,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
         return;
       }
       announceAuthChange();
-      router.push(d.user?.role === "admin" ? "/admin" : "/reviews");
+      router.push(d.user?.role === "admin" ? "/admin" : "/");
       router.refresh();
     } catch {
       setError(t("components.auth.netError", "Couldn't connect. Check your network and try again."));
@@ -48,20 +46,6 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
   return (
     <form onSubmit={submit} className="wood-frame rounded-3xl bg-paper p-6" noValidate>
       <div className="space-y-4">
-        {signup && (
-          <label className="block">
-            <span className="mb-1 block text-sm font-semibold text-wood">{t("components.auth.displayName", "Display name")}</span>
-            <input
-              className={input}
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              autoComplete="nickname"
-              maxLength={40}
-              placeholder={t("components.auth.namePlaceholder", "Shown on your posts")}
-              required
-            />
-          </label>
-        )}
         <label className="block">
           <span className="mb-1 block text-sm font-semibold text-wood">{t("components.auth.email", "Email")}</span>
           <input
@@ -74,7 +58,6 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
             placeholder={t("components.auth.emailPlaceholder", "you@example.com")}
             required
           />
-          {signup && <span className="mt-1 block text-xs text-wood/60">{t("components.auth.neverPublic", "Never shown publicly.")}</span>}
         </label>
         <label className="block">
           <span className="mb-1 block text-sm font-semibold text-wood">{t("components.auth.password", "Password")}</span>
@@ -82,14 +65,10 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
             <input
               className={`${input} pr-20`}
               type={show ? "text" : "password"}
-              autoComplete={signup ? "new-password" : "current-password"}
+              autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder={
-                signup
-                  ? t("components.auth.passwordSignup", "At least 8 characters")
-                  : t("components.auth.passwordLogin", "Your password")
-              }
+              placeholder={t("components.auth.passwordLogin", "Your password")}
               required
             />
             <button
@@ -114,30 +93,9 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
         disabled={busy}
         className="mt-6 min-h-[54px] w-full rounded-full bg-brick font-semibold text-cream shadow-lg transition active:scale-95 disabled:opacity-60"
       >
-        {busy
-          ? t("components.auth.wait", "Please wait…")
-          : signup
-            ? t("components.auth.createAccount", "Create account")
-            : t("components.auth.signIn", "Sign in")}
+        {busy ? t("components.auth.wait", "Please wait…") : t("components.auth.signIn", "Sign in")}
       </button>
 
-      <p className="mt-4 text-center text-sm text-wood/80">
-        {signup ? (
-          <>
-            {t("components.auth.haveAccount", "Already have an account?")}{" "}
-            <Link href="/login" className="font-semibold text-brick underline underline-offset-4">
-              {t("components.auth.signIn", "Sign in")}
-            </Link>
-          </>
-        ) : (
-          <>
-            {t("components.auth.newHere", "New here?")}{" "}
-            <Link href="/signup" className="font-semibold text-brick underline underline-offset-4">
-              {t("components.auth.createLink", "Create an account")}
-            </Link>
-          </>
-        )}
-      </p>
     </form>
   );
 }

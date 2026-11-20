@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Post, Status } from "@/lib/posts";
-import PostCard from "./PostCard";
+import type { Submission, Status } from "@/lib/submissions";
+import SubmissionCard from "./SubmissionCard";
 import { Notice } from "./ui";
 import { chip, field } from "@/lib/styles";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -14,7 +14,7 @@ const LOAD_FAIL = "__load_fail__";
 export default function AdminQueue() {
   const { t } = useLanguage();
   const [status, setStatus] = useState<Status>("pending");
-  const [posts, setPosts] = useState<Post[] | null>(null);
+  const [posts, setPosts] = useState<Submission[] | null>(null);
   const [counts, setCounts] = useState<Record<string, number>>({});
   const [reason, setReason] = useState<Record<string, string>>({});
   const [error, setError] = useState("");
@@ -23,12 +23,12 @@ export default function AdminQueue() {
 
   useEffect(() => {
     let live = true;
-    fetch(`/api/admin/posts?status=${status}`, { cache: "no-store" })
+    fetch(`/api/admin/submissions?status=${status}`, { cache: "no-store" })
       .then(async (r) => {
         const d = await r.json().catch(() => ({}));
         if (!live) return;
         if (!r.ok) return setPosts([]), setError(d.error ?? LOAD_FAIL);
-        setPosts(d.posts);
+        setPosts(d.submissions);
         setCounts(d.counts);
         setError("");
       })
@@ -39,8 +39,8 @@ export default function AdminQueue() {
   }, [status, tick]);
 
   async function act(id: string, action: "approve" | "reject" | "delete") {
-    if (action === "delete" && !confirm(t("components.admin.queue.confirmDelete", "Delete this post permanently?"))) return;
-    const url = action === "delete" ? `/api/admin/posts/${id}` : `/api/admin/posts/${id}/${action}`;
+    if (action === "delete" && !confirm(t("components.admin.queue.confirmDelete", "Delete this submission permanently?"))) return;
+    const url = action === "delete" ? `/api/admin/submissions/${id}` : `/api/admin/submissions/${id}/${action}`;
     const res = await fetch(url, {
       method: action === "delete" ? "DELETE" : "POST",
       headers: { "Content-Type": "application/json" },
@@ -88,8 +88,7 @@ export default function AdminQueue() {
           </Notice>
         ) : (
           posts.map((p) => (
-            <PostCard key={p.id} post={p}>
-              <p className="mt-1 break-all text-xs text-wood/55">{p.authorEmail}</p>
+            <SubmissionCard key={p.id} item={p}>
               <div className="mt-3 space-y-3">
                 {status !== "approved" && (
                   <button onClick={() => act(p.id, "approve")} className="min-h-[52px] w-full rounded-full bg-teal font-semibold text-cream active:scale-[0.98]">
@@ -114,7 +113,7 @@ export default function AdminQueue() {
                   {t("components.admin.queue.deletePermanently", "Delete permanently")}
                 </button>
               </div>
-            </PostCard>
+            </SubmissionCard>
           ))
         )}
       </div>

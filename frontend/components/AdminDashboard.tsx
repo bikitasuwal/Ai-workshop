@@ -3,14 +3,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useUser } from "@/lib/useUser";
-import type { Post } from "@/lib/posts";
-import PostCard from "./PostCard";
+import type { Submission } from "@/lib/submissions";
+import SubmissionCard from "./SubmissionCard";
 import { Notice, Reveal } from "./ui";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 type Stats = {
-  posts: { pending: number; approved: number; rejected: number };
-  users: { members: number; suspended: number };
+  submissions: { pending: number; approved: number; rejected: number };
 };
 
 function Tile({ href, n, label, ne, tone }: { href: string; n: number | string; label: string; ne: string; tone: string }) {
@@ -27,16 +26,16 @@ export default function AdminDashboard() {
   const user = useUser();
   const { t } = useLanguage();
   const [stats, setStats] = useState<Stats | null>(null);
-  const [latest, setLatest] = useState<Post[] | null>(null);
+  const [latest, setLatest] = useState<Submission[] | null>(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     let live = true;
     Promise.all([
       fetch("/api/admin/stats", { cache: "no-store" }).then((r) => (r.ok ? r.json() : Promise.reject())),
-      fetch("/api/admin/posts?status=pending", { cache: "no-store" }).then((r) => (r.ok ? r.json() : Promise.reject())),
+      fetch("/api/admin/submissions?status=pending", { cache: "no-store" }).then((r) => (r.ok ? r.json() : Promise.reject())),
     ])
-      .then(([s, p]) => live && (setStats(s), setLatest(p.posts.slice(0, 3))))
+      .then(([s, p]) => live && (setStats(s), setLatest(p.submissions.slice(0, 3))))
       .catch(() => live && setError(true));
     return () => {
       live = false;
@@ -53,7 +52,7 @@ export default function AdminDashboard() {
           {t("components.admin.dashboard.title", "Admin dashboard")}
         </h1>
         <p className="mx-auto mt-2 max-w-md text-center text-wood/80">
-          {t("components.admin.dashboard.welcome", "Welcome, {name}. Your job here is to review what visitors send. You don't post yourself.").replace(
+          {t("components.admin.dashboard.welcome", "Welcome, {name}. Your job here is to review the stories and photos visitors send.").replace(
             "{name}",
             user?.name ?? "",
           )}
@@ -66,41 +65,27 @@ export default function AdminDashboard() {
         </p>
       )}
 
-      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
+      <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
         <Tile
-          href="/admin/posts"
-          n={stats?.posts.pending ?? "–"}
+          href="/admin/submissions"
+          n={stats?.submissions.pending ?? "–"}
           label={t("components.admin.dashboard.tilePending", "Waiting for review")}
           ne="पर्खिरहेका"
           tone="bg-marigold text-wood"
         />
         <Tile
-          href="/admin/posts"
-          n={stats?.posts.approved ?? "–"}
+          href="/admin/submissions"
+          n={stats?.submissions.approved ?? "–"}
           label={t("components.admin.dashboard.tilePublished", "Published")}
           ne="प्रकाशित"
           tone="bg-teal text-cream"
         />
         <Tile
-          href="/admin/posts"
-          n={stats?.posts.rejected ?? "–"}
+          href="/admin/submissions"
+          n={stats?.submissions.rejected ?? "–"}
           label={t("components.admin.dashboard.tileRejected", "Rejected")}
           ne="अस्वीकृत"
           tone="bg-brick text-cream"
-        />
-        <Tile
-          href="/admin/users"
-          n={stats?.users.members ?? "–"}
-          label={t("components.admin.dashboard.tileMembers", "Members")}
-          ne="सदस्य"
-          tone="bg-cream text-wood"
-        />
-        <Tile
-          href="/admin/users"
-          n={stats?.users.suspended ?? "–"}
-          label={t("components.admin.dashboard.tileSuspended", "Suspended")}
-          ne="निलम्बित"
-          tone="bg-cream text-wood"
         />
       </div>
 
@@ -109,7 +94,7 @@ export default function AdminDashboard() {
           <h2 className="font-display text-xl text-brick">
             {t("components.admin.dashboard.needsReview", "Needs your review")}
           </h2>
-          <Link href="/admin/posts" className="min-h-[44px] content-center text-sm font-semibold text-teal underline underline-offset-4">
+          <Link href="/admin/submissions" className="min-h-[44px] content-center text-sm font-semibold text-teal underline underline-offset-4">
             {t("components.admin.dashboard.openAll", "Open all →")}
           </Link>
         </div>
@@ -118,15 +103,15 @@ export default function AdminDashboard() {
             <p className="text-center text-wood/60">{error ? "" : t("components.admin.dashboard.loading", "Loading…")}</p>
           ) : latest.length ? (
             latest.map((p) => (
-              <PostCard key={p.id} post={p}>
-                <Link href="/admin/posts" className="mt-3 inline-flex min-h-[48px] items-center rounded-full bg-brick px-6 font-semibold text-cream active:scale-95">
+              <SubmissionCard key={p.id} item={p}>
+                <Link href="/admin/submissions" className="mt-3 inline-flex min-h-[48px] items-center rounded-full bg-brick px-6 font-semibold text-cream active:scale-95">
                   {t("components.admin.dashboard.reviewThis", "Review this")}
                 </Link>
-              </PostCard>
+              </SubmissionCard>
             ))
           ) : (
             <Notice title={t("components.admin.dashboard.emptyTitle", "All caught up")}>
-              {t("components.admin.dashboard.emptyBody", "No posts are waiting.")}
+              {t("components.admin.dashboard.emptyBody", "Nothing is waiting.")}
             </Notice>
           )}
         </div>

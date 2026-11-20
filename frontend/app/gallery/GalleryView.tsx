@@ -17,7 +17,7 @@ export default function GalleryView() {
   const { t } = useLanguage();
 
   return (
-    <PageLayout variant="narrow">
+    <PageLayout variant="default">
       <Reveal>
         <SectionTitle titleKey="gallery" />
         <p className="mx-auto mt-3 max-w-md text-center text-wood/80">
@@ -42,7 +42,7 @@ export default function GalleryView() {
             {t("pages.gallery.moreBody")}
           </p>
           <Link
-            href="/stories/submit"
+            href="/stories/submit?type=photo"
             className="mt-5 inline-flex min-h-[50px] items-center rounded-full bg-brick px-7 font-semibold text-cream active:scale-95"
           >
             {t("pages.gallery.shareCta")}

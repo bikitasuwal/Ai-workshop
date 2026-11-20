@@ -40,9 +40,6 @@ export default function InteractiveSuite({ siteData }: InteractiveSuiteProps) {
     <section className="relative overflow-hidden rounded-3xl bg-cream/70 p-6 sm:p-10 border border-marigold/30">
       {/* Section Header */}
       <div className="text-center space-y-2">
-        <p className="font-deva text-sm font-semibold uppercase tracking-wider text-vermilion">
-          {isNepali ? "डिजिटल अन्तरक्रियात्मक अनुभव" : "Interactive Heritage Suite"}
-        </p>
         <h2 className="font-display text-3xl font-bold text-brick sm:text-4xl">
           {isNepali
             ? `${siteData.name.ne} अन्तरक्रियात्मक अन्वेषण`

@@ -19,7 +19,7 @@ export default function LivingTraditions() {
 
   return (
     <section className="bg-cream py-20 lg:py-28">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <SectionTitle titleKey="homeTraditions" />
           <p className="mx-auto mt-5 max-w-xl text-center text-wood/75">{t("home.traditions.sub")}</p>

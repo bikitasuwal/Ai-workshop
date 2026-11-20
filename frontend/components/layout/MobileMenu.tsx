@@ -11,7 +11,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import AccountMenu from "@/components/AccountMenu";
 import LanguageSwitcher from "@/i18n/LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
 import type { NavLink } from "./NavbarShell";
@@ -148,7 +147,6 @@ export default function MobileMenu({ links }: { links: NavLink[] }) {
             </p>
             <LanguageSwitcher variant="mobile" />
           </div>
-          <AccountMenu />
         </div>
       </div>
     </>

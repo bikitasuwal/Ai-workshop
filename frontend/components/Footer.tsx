@@ -29,7 +29,7 @@ export default function Footer() {
   return (
     <footer className="bg-wood text-cream/80" aria-label={t("components.footer.label", "Site footer")}>
       <div className="h-px bg-gradient-to-r from-transparent via-marigold/50 to-transparent" aria-hidden />
-      <div className="mx-auto max-w-6xl px-5 pb-10 pt-16 sm:px-8 lg:pt-20">
+      <div className="mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6 lg:px-8 lg:pt-20">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5 lg:gap-12">
           <div className="lg:col-span-2">
             <p className={head}>{t("home.hero.eyebrow")}</p>

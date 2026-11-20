@@ -7,12 +7,12 @@
 
 import Link from "next/link";
 import PageLayout from "@/components/ui/PageLayout";
-import { Reveal, SectionTitle, PagodaDivider } from "@/components/ui";
+import { Reveal, PagodaDivider } from "@/components/ui";
 import HeritageQuiz from "@/components/HeritageQuiz";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function QuizView() {
-  const { t, isNepali } = useLanguage();
+  const { isNepali } = useLanguage();
 
   return (
     <>

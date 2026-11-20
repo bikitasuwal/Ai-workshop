@@ -17,12 +17,11 @@ import { usePathname } from "next/navigation";
 import AccountMenu from "@/components/AccountMenu";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-type AdminLinkKey = "dashboard" | "posts" | "members" | "viewSite";
+type AdminLinkKey = "dashboard" | "posts" | "viewSite";
 
 const ADMIN_LINKS: { href: string; key: AdminLinkKey; label: string; exact: boolean }[] = [
   { href: "/admin", key: "dashboard", label: "Dashboard", exact: true },
-  { href: "/admin/posts", key: "posts", label: "Posts", exact: false },
-  { href: "/admin/users", key: "members", label: "Members", exact: false },
+  { href: "/admin/submissions", key: "posts", label: "Submissions", exact: false },
   { href: "/", key: "viewSite", label: "View site", exact: true },
 ];
 

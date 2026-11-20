@@ -100,7 +100,7 @@ export default function AudioNarrationPlayer({ audioData }: AudioNarrationPlayer
                 <div
                   key={i}
                   style={{
-                    height: isPlaying ? `${Math.max(15, (h * (0.6 + Math.random() * 0.4)))}%` : "20%",
+                    height: isPlaying ? `${Math.max(15, (h * (0.6 + (((i * 37 + Math.floor(currentTime) * 53) % 40) / 100))))}%` : "20%",
                     transition: "height 0.25s ease",
                   }}
                   className={`w-1 rounded-full ${

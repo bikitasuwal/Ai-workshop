@@ -57,9 +57,6 @@ export default function ComparisonSlider({ comparisonData }: ComparisonSliderPro
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <p className="font-deva text-xs font-semibold uppercase tracking-wider text-marigold">
-          {isNepali ? "समयको ऐना · देन एण्ड नाउ" : "Then & Now Archival Comparison"}
-        </p>
         <h3 className="font-display text-2xl font-bold text-brick sm:text-3xl">
           {isNepali ? title.ne : title.en}
         </h3>

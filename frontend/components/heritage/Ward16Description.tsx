@@ -11,13 +11,6 @@ interface Ward16DescriptionProps {
 export default function Ward16Description({ variant = "home" }: Ward16DescriptionProps) {
   const { isNepali } = useLanguage();
 
-  const stats = [
-    { value: isNepali ? "१६" : "16", label: isNepali ? "काठमाडौँ महानगरपालिका वडा नं." : "KMC Ward Number" },
-    { value: isNepali ? "०२" : "02", label: isNepali ? "प्रमुख विश्वप्रसिद्ध सम्पदा क्षेत्रहरू" : "Featured Historic Landmarks" },
-    { value: "300+", label: isNepali ? "वर्ष पुरानो जीवन्त संस्कृति" : "Years of Living Traditions" },
-    { value: "100%", label: isNepali ? "नागरिक संरक्षण प्रतिबद्धता" : "Community Stewardship" },
-  ];
-
   const neighborhoods = [
     {
       name: isNepali ? "बालाजु (बाइसधारा क्षेत्र)" : "Balaju (Baisdhara Enclave)",
@@ -49,9 +42,6 @@ export default function Ward16Description({ variant = "home" }: Ward16Descriptio
     <section className="space-y-8">
       {/* Header */}
       <Reveal className="text-center space-y-2">
-        <p className="font-deva text-xs font-semibold uppercase tracking-widest text-vermilion">
-          {isNepali ? "हाम्रो वडा · वडा नं. १६" : "Our Ward · Ward No. 16, Kathmandu"}
-        </p>
         <h2 className="font-display text-3xl font-bold text-brick sm:text-4xl">
           {variant === "dhara"
             ? isNepali
@@ -137,19 +127,6 @@ export default function Ward16Description({ variant = "home" }: Ward16Descriptio
                     Nepal Mandala
                   </span>
                 </div>
-              </div>
-
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-3">
-                {stats.map((s, idx) => (
-                  <div
-                    key={idx}
-                    className="wood-frame rounded-2xl bg-paper p-4 text-center text-wood shadow-xs"
-                  >
-                    <p className="font-display text-2xl font-bold text-brick">{s.value}</p>
-                    <p className="mt-1 text-[11px] leading-snug text-wood/75">{s.label}</p>
-                  </div>
-                ))}
               </div>
             </div>
           </Reveal>
