@@ -48,7 +48,7 @@ export const albums: Album[] = [
     id: "ajima",
     title: { en: "Pyatho Ajima", ne: "प्याठो अजिमा" },
     blurb: { en: "The shrine", ne: "मन्दिर" },
-    cover: "/media/shrine.jpg",
+    cover: "/media/shrine1.jpg",
     tone: "brick",
   },
   {
@@ -125,7 +125,7 @@ const ajimaName: Bi = { en: "Pyatho Ajima", ne: "प्याठो अजिम
 export const media: MediaItem[] = [
   ...photos("dhara", "/media/spouts.jpg", 18, dharaName),
   ...clips("dhara", 4, dharaName),
-  ...photos("ajima", "/media/shrine.jpg", 15, ajimaName),
+  ...photos("ajima", "/media/shrine1.jpg", 15, ajimaName),
   ...clips("ajima", 3, ajimaName),
 ];
 

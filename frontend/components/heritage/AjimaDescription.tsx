@@ -124,7 +124,7 @@ export default function AjimaDescription() {
             <figure className="mx-auto w-full max-w-sm lg:max-w-none">
               <div className="wood-frame relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-wood shadow-md">
                 <Image
-                  src="/media/shrine.jpg"
+                  src="/media/shrine1.jpg"
                   alt={tr("The Pyatho Ajima shrine in Balaju, Ward 16", "बालाजु, वडा नं. १६ को प्याठो अजिमा मन्दिर")}
                   fill
                   className="object-cover"
