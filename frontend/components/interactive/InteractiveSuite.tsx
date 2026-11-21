@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import ComparisonSlider from "./ComparisonSlider";
-import AudioNarrationPlayer from "./AudioNarrationPlayer";
 import QuizCard from "@/components/ui/QuizCard";
 import { quizFor } from "@/lib/quizzes";
 import { HeritageSiteDetail } from "@/lib/heritageDetailData";
@@ -10,15 +9,13 @@ import { useLanguage } from "@/i18n/LanguageContext";
 
 interface InteractiveSuiteProps {
   siteData: HeritageSiteDetail;
-  /** Show the Audio Tour tab. */
-  showAudio?: boolean;
   /** Show the "Historical Context Notes" box under the Then & Now slider. */
   showComparisonNotes?: boolean;
 }
 
-export default function InteractiveSuite({ siteData, showAudio = true, showComparisonNotes = true }: InteractiveSuiteProps) {
+export default function InteractiveSuite({ siteData, showComparisonNotes = true }: InteractiveSuiteProps) {
   const { isNepali } = useLanguage();
-  const [activeTab, setActiveTab] = useState<"quiz" | "comparison" | "audio">("quiz");
+  const [activeTab, setActiveTab] = useState<"quiz" | "comparison">("quiz");
 
   const tabs = [
     {
@@ -31,12 +28,7 @@ export default function InteractiveSuite({ siteData, showAudio = true, showCompa
       label: isNepali ? "विगत र वर्तमान" : "Then & Now",
       icon: "⚖️",
     },
-    {
-      id: "audio" as const,
-      label: isNepali ? "मौखिक अडियो" : "Audio Tour",
-      icon: "🎧",
-    },
-  ].filter((tab) => showAudio || tab.id !== "audio");
+  ];
 
   const placeKey = siteData.id === "22-dhara" ? "dhara" : "ajima";
 
@@ -93,7 +85,6 @@ export default function InteractiveSuite({ siteData, showAudio = true, showCompa
           </div>
         )}
         {activeTab === "comparison" && <ComparisonSlider comparisonData={siteData.comparison} showNotes={showComparisonNotes} />}
-        {activeTab === "audio" && <AudioNarrationPlayer audioData={siteData.audio} />}
       </div>
     </section>
   );

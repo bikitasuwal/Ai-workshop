@@ -12,6 +12,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 
 const SITE_LINKS = [
   { href: "/", key: "home" },
+  { href: "/places", key: "places" },
   { href: "/gallery", key: "gallery" },
   { href: "/festival", key: "festival" },
   { href: "/stories", key: "stories" },

@@ -8,10 +8,6 @@ const nextConfig: NextConfig = {
   distDir: process.env.NEXT_DIST_DIR || ".next", // lets a second copy run for testing without clashing
   cacheComponents: true,
   partialPrefetching: true,
-    // The old Places page is now the Home page.
-  async redirects() {
-    return [{ source: "/places", destination: "/", permanent: true }];
-  },
   async rewrites() {
     return {
       beforeFiles: [],
